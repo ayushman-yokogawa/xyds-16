@@ -1,0 +1,69 @@
+import { Component, EventEmitter, Input, Output } from "@angular/core";
+import * as i0 from "@angular/core";
+import * as i1 from "@angular/common";
+import * as i2 from "@angular/material/chips";
+import * as i3 from "@angular/material/icon";
+export class XyChipsComponent {
+    constructor() {
+        this.disabled = false;
+        this.selected = false;
+        this.checked = false;
+        this.removeIcon = true;
+        this.color = "accent";
+        this.removeChips = new EventEmitter();
+    }
+    ngOnInit() { }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.1", ngImport: i0, type: XyChipsComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.2.1", type: XyChipsComponent, selector: "xy-chips", inputs: { chipsLabel: "chipsLabel", avatar: "avatar", value: "value", id: "id", icon: "icon", removeBtn: "removeBtn", disabled: "disabled", selected: "selected", checked: "checked", removeIcon: "removeIcon", color: "color" }, outputs: { removeChips: "removeChips" }, ngImport: i0, template: `
+    <mat-chip-option  [disabled]="disabled" color="accent" [value]="value" [id]="id" [selected]="selected">
+        <mat-icon *ngIf="checked">check</mat-icon>
+        <mat-icon *ngIf="icon" class="myCustomIcon">{{icon}}</mat-icon>
+        <img matChipAvatar src="{{avatar}}" alt="Photo of a Shiba Inu" *ngIf="avatar"/>
+       <span class='chips-content'> {{chipsLabel}}</span>
+
+        <button matChipRemove  (click)="removeChips.emit()" *ngIf="removeBtn">
+            <mat-icon>cancel</mat-icon>
+        </button>
+  </mat-chip-option>
+  `, isInline: true, styles: [":host ::ng-deep .mat-mdc-chip{height:32px}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected{background-color:#056fcf;color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label{color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected .chips-content{color:#fff}:host ::ng-deep .mat-mdc-chip .mat-mdc-chip-remove{color:#39f;line-height:0}:host ::ng-deep .mat-mdc-chip .myCustomIcon{font-size:14px;width:auto;height:auto;margin-right:.5rem}:host ::ng-deep .mat-mdc-chip .chips-content{font-size:12px}:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label{color:#004f9b!important;display:flex;align-items:center}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected :focus{background-color:transparent!important}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip:focus{background-color:#cfe8ff;color:#004f9b;box-shadow:0 3px 6px #00000029}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip{background-color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip{background-color:#fff;color:#004f9b;border:1px solid #004F9B}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled{background-color:transparent;border:1px solid rgba(52,65,77,.4);color:#34414d66;pointer-events:none}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled .mat-mdc-chip-remove{color:#666;line-height:0}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip .mat-mdc-chip-remove{color:#004f9b!important;line-height:0;opacity:1!important}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected{background-color:#056fcf!important;color:#fff!important}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected mat-icon{color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__checkmark{color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected :focus{background-color:#cfe8ff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected.mat-mdc-chip-disabled{background-color:#adb3b8;border:none;color:#34414d66}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected .mat-mdc-chip-remove{color:#fff!important;line-height:0;opacity:1}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip:hover{background-color:#056fcf33!important}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip:focus{border:1px solid #94CCFF;background-color:#0a1f33!important}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip{background-color:transparent!important;color:#056fcf!important;border:1px solid #2F78DD}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled{background-color:transparent;border:1px solid #666666;color:#ffffff4d!important;pointer-events:none}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled .mat-mdc-chip-remove{color:#666;line-height:0}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected{background-color:#056fcf!important;color:#fff!important}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected.mat-mdc-chip-disabled{background-color:#666!important;border:none;color:#fff6}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip-remove{color:#056fcf;line-height:0}\n"], dependencies: [{ kind: "directive", type: i1.NgIf, selector: "[ngIf]", inputs: ["ngIf", "ngIfThen", "ngIfElse"] }, { kind: "directive", type: i2.MatChipAvatar, selector: "mat-chip-avatar, [matChipAvatar]" }, { kind: "component", type: i2.MatChipOption, selector: "mat-basic-chip-option, [mat-basic-chip-option], mat-chip-option, [mat-chip-option]", inputs: ["color", "disabled", "disableRipple", "tabIndex", "selectable", "selected"], outputs: ["selectionChange"] }, { kind: "directive", type: i2.MatChipRemove, selector: "[matChipRemove]" }, { kind: "component", type: i3.MatIcon, selector: "mat-icon", inputs: ["color", "inline", "svgIcon", "fontSet", "fontIcon"], exportAs: ["matIcon"] }] }); }
+}
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.1", ngImport: i0, type: XyChipsComponent, decorators: [{
+            type: Component,
+            args: [{ selector: "xy-chips", template: `
+    <mat-chip-option  [disabled]="disabled" color="accent" [value]="value" [id]="id" [selected]="selected">
+        <mat-icon *ngIf="checked">check</mat-icon>
+        <mat-icon *ngIf="icon" class="myCustomIcon">{{icon}}</mat-icon>
+        <img matChipAvatar src="{{avatar}}" alt="Photo of a Shiba Inu" *ngIf="avatar"/>
+       <span class='chips-content'> {{chipsLabel}}</span>
+
+        <button matChipRemove  (click)="removeChips.emit()" *ngIf="removeBtn">
+            <mat-icon>cancel</mat-icon>
+        </button>
+  </mat-chip-option>
+  `, styles: [":host ::ng-deep .mat-mdc-chip{height:32px}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected{background-color:#056fcf;color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label{color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected .chips-content{color:#fff}:host ::ng-deep .mat-mdc-chip .mat-mdc-chip-remove{color:#39f;line-height:0}:host ::ng-deep .mat-mdc-chip .myCustomIcon{font-size:14px;width:auto;height:auto;margin-right:.5rem}:host ::ng-deep .mat-mdc-chip .chips-content{font-size:12px}:host ::ng-deep .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label{color:#004f9b!important;display:flex;align-items:center}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected :focus{background-color:transparent!important}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip:focus{background-color:#cfe8ff;color:#004f9b;box-shadow:0 3px 6px #00000029}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip{background-color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip{background-color:#fff;color:#004f9b;border:1px solid #004F9B}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled{background-color:transparent;border:1px solid rgba(52,65,77,.4);color:#34414d66;pointer-events:none}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled .mat-mdc-chip-remove{color:#666;line-height:0}:host ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip .mat-mdc-chip-remove{color:#004f9b!important;line-height:0;opacity:1!important}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected{background-color:#056fcf!important;color:#fff!important}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected mat-icon{color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__checkmark{color:#fff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected :focus{background-color:#cfe8ff}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected.mat-mdc-chip-disabled{background-color:#adb3b8;border:none;color:#34414d66}:host ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected .mat-mdc-chip-remove{color:#fff!important;line-height:0;opacity:1}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip:hover{background-color:#056fcf33!important}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip:focus{border:1px solid #94CCFF;background-color:#0a1f33!important}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip{background-color:transparent!important;color:#056fcf!important;border:1px solid #2F78DD}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled{background-color:transparent;border:1px solid #666666;color:#ffffff4d!important;pointer-events:none}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-standard-chip.mat-mdc-chip-disabled .mat-mdc-chip-remove{color:#666;line-height:0}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected{background-color:#056fcf!important;color:#fff!important}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip.mat-mdc-chip-selected.mat-mdc-chip-disabled{background-color:#666!important;border:none;color:#fff6}:host-context(.dark-theme) ::ng-deep .mat-mdc-chip-remove{color:#056fcf;line-height:0}\n"] }]
+        }], ctorParameters: function () { return []; }, propDecorators: { chipsLabel: [{
+                type: Input
+            }], avatar: [{
+                type: Input
+            }], value: [{
+                type: Input
+            }], id: [{
+                type: Input
+            }], icon: [{
+                type: Input
+            }], removeBtn: [{
+                type: Input
+            }], disabled: [{
+                type: Input
+            }], selected: [{
+                type: Input
+            }], checked: [{
+                type: Input
+            }], removeIcon: [{
+                type: Input
+            }], color: [{
+                type: Input
+            }], removeChips: [{
+                type: Output
+            }] } });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoieHktY2hpcHMuY29tcG9uZW50LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vLi4vcHJvamVjdHMveHktZGVzaWduc3lzdGVtL3NyYy9saWIveHktY2hpcHMveHktY2hpcHMuY29tcG9uZW50LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsWUFBWSxFQUFFLEtBQUssRUFBVSxNQUFNLEVBQUUsTUFBTSxlQUFlLENBQUM7Ozs7O0FBbUIvRSxNQUFNLE9BQU8sZ0JBQWdCO0lBbUIzQjtRQVpTLGFBQVEsR0FBWSxLQUFLLENBQUM7UUFDMUIsYUFBUSxHQUFZLEtBQUssQ0FBQztRQUMxQixZQUFPLEdBQVksS0FBSyxDQUFDO1FBQ3pCLGVBQVUsR0FBWSxJQUFJLENBQUM7UUFDM0IsVUFBSyxHQU1NLFFBQVEsQ0FBQztRQUNuQixnQkFBVyxHQUFHLElBQUksWUFBWSxFQUFFLENBQUM7SUFDNUIsQ0FBQztJQUVoQixRQUFRLEtBQVUsQ0FBQzs4R0FyQlIsZ0JBQWdCO2tHQUFoQixnQkFBZ0IsMlRBZGpCOzs7Ozs7Ozs7OztHQVdUOzsyRkFHVSxnQkFBZ0I7a0JBaEI1QixTQUFTOytCQUNFLFVBQVUsWUFDVjs7Ozs7Ozs7Ozs7R0FXVDswRUFJUSxVQUFVO3NCQUFsQixLQUFLO2dCQUNHLE1BQU07c0JBQWQsS0FBSztnQkFDRyxLQUFLO3NCQUFiLEtBQUs7Z0JBQ0csRUFBRTtzQkFBVixLQUFLO2dCQUNHLElBQUk7c0JBQVosS0FBSztnQkFDRyxTQUFTO3NCQUFqQixLQUFLO2dCQUNHLFFBQVE7c0JBQWhCLEtBQUs7Z0JBQ0csUUFBUTtzQkFBaEIsS0FBSztnQkFDRyxPQUFPO3NCQUFmLEtBQUs7Z0JBQ0csVUFBVTtzQkFBbEIsS0FBSztnQkFDRyxLQUFLO3NCQUFiLEtBQUs7Z0JBT0ksV0FBVztzQkFBcEIsTUFBTSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgRXZlbnRFbWl0dGVyLCBJbnB1dCwgT25Jbml0LCBPdXRwdXQgfSBmcm9tIFwiQGFuZ3VsYXIvY29yZVwiO1xyXG5cclxuXHJcbkBDb21wb25lbnQoe1xyXG4gIHNlbGVjdG9yOiBcInh5LWNoaXBzXCIsXHJcbiAgdGVtcGxhdGU6IGBcclxuICAgIDxtYXQtY2hpcC1vcHRpb24gIFtkaXNhYmxlZF09XCJkaXNhYmxlZFwiIGNvbG9yPVwiYWNjZW50XCIgW3ZhbHVlXT1cInZhbHVlXCIgW2lkXT1cImlkXCIgW3NlbGVjdGVkXT1cInNlbGVjdGVkXCI+XHJcbiAgICAgICAgPG1hdC1pY29uICpuZ0lmPVwiY2hlY2tlZFwiPmNoZWNrPC9tYXQtaWNvbj5cclxuICAgICAgICA8bWF0LWljb24gKm5nSWY9XCJpY29uXCIgY2xhc3M9XCJteUN1c3RvbUljb25cIj57e2ljb259fTwvbWF0LWljb24+XHJcbiAgICAgICAgPGltZyBtYXRDaGlwQXZhdGFyIHNyYz1cInt7YXZhdGFyfX1cIiBhbHQ9XCJQaG90byBvZiBhIFNoaWJhIEludVwiICpuZ0lmPVwiYXZhdGFyXCIvPlxyXG4gICAgICAgPHNwYW4gY2xhc3M9J2NoaXBzLWNvbnRlbnQnPiB7e2NoaXBzTGFiZWx9fTwvc3Bhbj5cclxuXHJcbiAgICAgICAgPGJ1dHRvbiBtYXRDaGlwUmVtb3ZlICAoY2xpY2spPVwicmVtb3ZlQ2hpcHMuZW1pdCgpXCIgKm5nSWY9XCJyZW1vdmVCdG5cIj5cclxuICAgICAgICAgICAgPG1hdC1pY29uPmNhbmNlbDwvbWF0LWljb24+XHJcbiAgICAgICAgPC9idXR0b24+XHJcbiAgPC9tYXQtY2hpcC1vcHRpb24+XHJcbiAgYCxcclxuICBzdHlsZVVybHM6IFtcIi4veHktY2hpcHMuY29tcG9uZW50LnNjc3NcIl0sXHJcbn0pXHJcbmV4cG9ydCBjbGFzcyBYeUNoaXBzQ29tcG9uZW50IGltcGxlbWVudHMgT25Jbml0IHtcclxuICBASW5wdXQoKSBjaGlwc0xhYmVsITogYW55O1xyXG4gIEBJbnB1dCgpIGF2YXRhciE6IGFueTtcclxuICBASW5wdXQoKSB2YWx1ZSE6IHN0cmluZztcclxuICBASW5wdXQoKSBpZCE6IHN0cmluZztcclxuICBASW5wdXQoKSBpY29uITogc3RyaW5nO1xyXG4gIEBJbnB1dCgpIHJlbW92ZUJ0biE6IGJvb2xlYW47XHJcbiAgQElucHV0KCkgZGlzYWJsZWQ6IGJvb2xlYW4gPSBmYWxzZTtcclxuICBASW5wdXQoKSBzZWxlY3RlZDogYm9vbGVhbiA9IGZhbHNlO1xyXG4gIEBJbnB1dCgpIGNoZWNrZWQ6IGJvb2xlYW4gPSBmYWxzZTtcclxuICBASW5wdXQoKSByZW1vdmVJY29uOiBib29sZWFuID0gdHJ1ZTtcclxuICBASW5wdXQoKSBjb2xvcjpcclxuICAgIHwgXCJhY2NlbnRcIlxyXG4gICAgfCBcImNyaXRpY2FsXCJcclxuICAgIHwgXCJlcnJvclwiXHJcbiAgICB8IFwid2FybmluZ1wiXHJcbiAgICB8IFwiYXR0ZW50aW9uXCJcclxuICAgIHwgXCJzYWZlX25vcm1hbFwiID0gXCJhY2NlbnRcIjtcclxuICBAT3V0cHV0KCkgcmVtb3ZlQ2hpcHMgPSBuZXcgRXZlbnRFbWl0dGVyKCk7XHJcbiAgY29uc3RydWN0b3IoKSB7fVxyXG5cclxuICBuZ09uSW5pdCgpOiB2b2lkIHt9XHJcbn1cclxuIl19

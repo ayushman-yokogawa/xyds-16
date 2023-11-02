@@ -1,0 +1,8 @@
+export const tableConst = {
+    actionButton: {
+        edit: 'edit',
+        delete: 'delete',
+        view: 'View',
+    },
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi9wcm9qZWN0cy94eS1kZXNpZ25zeXN0ZW0vc3JjL2xpYi94eS10YWJsZS9jb21wb25lbnRzL2NvbnN0cy90YWJsZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxNQUFNLENBQUMsTUFBTSxVQUFVLEdBQUc7SUFDeEIsWUFBWSxFQUFFO1FBQ1osSUFBSSxFQUFFLE1BQU07UUFDWixNQUFNLEVBQUUsUUFBUTtRQUNoQixJQUFJLEVBQUUsTUFBTTtLQUNiO0NBQ0YsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCB0YWJsZUNvbnN0ID0ge1xyXG4gIGFjdGlvbkJ1dHRvbjoge1xyXG4gICAgZWRpdDogJ2VkaXQnLFxyXG4gICAgZGVsZXRlOiAnZGVsZXRlJyxcclxuICAgIHZpZXc6ICdWaWV3JyxcclxuICB9LFxyXG59XHJcbiJdfQ==

@@ -1,0 +1,35 @@
+import { AfterViewInit, OnInit, QueryList } from '@angular/core';
+import { MatLegacyRadioChange as MatRadioChange, MatLegacyRadioGroup as MatRadioGroup } from "@angular/material/legacy-radio";
+import { ControlValueAccessor, FormBuilder, FormControl, FormGroup } from "@angular/forms";
+import { XyRadioComponent } from "./xy-radio.component";
+import { XyErrorComponent } from "../xy-error/xy-error.component";
+import * as i0 from "@angular/core";
+export declare class XyRadioGroupComponent implements OnInit, AfterViewInit, ControlValueAccessor {
+    fb: FormBuilder;
+    _color: any;
+    name: string;
+    _required: boolean;
+    set required(s: string | boolean);
+    get required(): boolean;
+    _disabled: boolean;
+    set disabled(s: string | boolean);
+    get disabled(): boolean;
+    formGroup: FormGroup;
+    formControl: FormControl;
+    buttonGroup: MatRadioGroup;
+    radios: QueryList<XyRadioComponent>;
+    errors: QueryList<XyErrorComponent>;
+    private _onTouchedCallback;
+    private _onChangeCallback;
+    constructor(fb: FormBuilder);
+    ngOnInit(): void;
+    ngAfterViewInit(): void;
+    set color(c: string);
+    get color(): any;
+    registerOnChange(fn: any): void;
+    registerOnTouched(fn: any): void;
+    writeValue(obj: any): void;
+    onChange($event: MatRadioChange): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<XyRadioGroupComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<XyRadioGroupComponent, "xy-radio-group", never, { "name": { "alias": "name"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "formGroup": { "alias": "formGroup"; "required": false; }; "formControl": { "alias": "formControl"; "required": false; }; "color": { "alias": "color"; "required": false; }; }, {}, ["radios", "errors"], ["*"], false, never>;
+}
