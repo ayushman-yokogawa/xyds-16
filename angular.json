@@ -54,7 +54,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/xy-designsystem-app",
+            "outputPath": "docs/xy-designsystem-app",
             "index": "projects/xy-designsystem-app/src/index.html",
             "main": "projects/xy-designsystem-app/src/main.ts",
             "polyfills": "projects/xy-designsystem-app/src/polyfills.ts",
