@@ -16,7 +16,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build xy-designsystem",
-    "build-app": "ng build --base-href=/XYDS-SampleApp/ xy-designsystem-app",
+    "build-app": "ng build --base-href=/XYDS-SampleApp/xy-designsystem-app",
     "watch": "ng build --watch --configuration development xy-designsystem",
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
