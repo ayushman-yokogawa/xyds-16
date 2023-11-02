@@ -1,0 +1,20 @@
+<mat-form-field appearance="fill" [class]="styleClass()">
+  <input #textInput
+         matInput
+         [formControl]="formControl"
+         [placeholder]="placeholder"
+         (input)="onChanged($event)"
+         [errorStateMatcher]="errorStateMatcher"
+         (focus)="onFocus($event)"
+         (blur)="onBlur($event)"
+         (keyup)="onKeyUp($event)"
+         class="xy-searchbox"
+         autocomplete="off"
+  >
+  <button *ngIf="!searched" class="xy-searchbox-search-button" (click)="onClickSearch($event)">
+    <mat-icon>search</mat-icon>
+  </button>
+  <button *ngIf="searched" class="xy-searchbox-clear-button" (click)="onClickClear($event)">
+    <mat-icon>clear</mat-icon>
+  </button>
+</mat-form-field>

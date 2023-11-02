@@ -1,0 +1,88 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+
+:host{
+   .grid{
+    display: flex;
+    align-items: center;
+    width: 100%;
+   }
+}
+::ng-deep{
+    &.mat-progress-spinner.mat-accent circle, .mat-spinner.mat-accent circle{
+        stroke: #056fcf !important;
+    }
+     .xy-snackbar{
+        background-color: #056fcf;
+        position: absolute;
+        left: -30px;
+        height: auto;
+        width: auto;
+        padding: 0.3rem 1rem;
+        box-shadow: 0 3px 6px #0003;
+        border-radius: 4px;
+
+        &.xy-ab-snack{
+            width: auto;
+            left: -200px;
+            background-color: white;
+            .content{
+                color: black;
+              
+            }
+        }
+     }
+    &.mat-mdc-snack-bar-container .mdc-snackbar__surface{
+        background-color: transparent;
+     }
+
+    &.mat-mdc-snack-bar-container {
+        background: none;
+        box-shadow: none;
+        padding: 0 ;
+        .flex{
+            text-align: center;
+        }
+        .content{
+            width: auto;
+            color: white;
+            margin-right: 1rem;
+            font-size: 14px;
+            font-weight: 100;
+            font-family: 'Noto Sans';
+            .mat-icon{
+                margin-right: 0.5rem;
+                margin-top: 3px;
+            }
+            p{
+                display: flex;
+                align-items: center;
+            }
+        }
+        .snackbar-action{
+            width: auto;
+            display: flex;
+            gap: 0px 4px;
+            justify-content: end;
+        }
+        .snackbar-action{
+            font-size: 0.8rem;
+        }
+    }
+}
+
+:host-context(.dark-theme){
+    .xy-snackbar{
+        background-color: #333333;
+        .content {
+            color: white;
+        }
+     }
+    ::ng-deep{
+        &.mat-mdc-snack-bar-container {
+            background-color: none !important;
+        }
+    }
+}

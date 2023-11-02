@@ -1,0 +1,18 @@
+:host ::ng-deep .mat-mdc-form-field .xy-searchbox-search-button {
+  position: absolute;
+  top: 10px;
+  right: 4px;
+  width: auto !important;
+  height: 1.5rem;
+}
+:host ::ng-deep .mat-mdc-form-field .xy-searchbox-clear-button {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  width: 2.5rem !important;
+  height: 1.5rem;
+}
+
+:host-context(.dark-theme) :ng-deep .mat-autocomplete-panel {
+  background-color: #333333;
+}/*# sourceMappingURL=xy-autocomplete.component.css.map */

@@ -1,0 +1,66 @@
+@use '@angular/material' as mat;
+@use "xy-accent" as xy-accent;
+@use "xy-light" as xy-light;
+@use "xy-dark" as xy-dark;
+@use 'sass:map';
+
+@include mat.core();
+
+$xy-base: mat.define-palette(xy-light.$yl-bluegray-palette, 900, 50, 900);
+$xy-primary: mat.define-palette(xy-light.$yl-blue-palette, 900, 50, 900);
+$xy-accent: mat.define-palette(xy-light.$yl-blue-palette, A500, A100, A700);
+
+$xy-dark-base: mat.define-palette(xy-dark.$yd-gray-palette, 900, 50, 900);
+$xy-dark-primary: mat.define-palette(xy-dark.$yd-blue-palette, 900, 50, 900);
+$xy-dark-accent: mat.define-palette(xy-dark.$yd-blue-palette, A500, A100, A700);
+
+$xy-critical: mat.define-palette(xy-accent.$critical-palette, A400, A100, A700);
+$xy-error: mat.define-palette(xy-accent.$error-palette, A400, A100, A700);
+$xy-warn: mat.define-palette(xy-accent.$warning-palette, A400, A100, A700);
+$xy-attention: mat.define-palette(xy-accent.$attention-palette, A400, A100, A700);
+$xy-safe_normal: mat.define-palette(xy-accent.$safe_normal-palette, A200, A100, A700);
+$xy-disabled: mat.define-palette(xy-accent.$disabled-palette, 500, 300, 700);
+$xy-white-palette: mat.define-palette(xy-accent.$yl-white-palette, 400, 400, 400);
+$xy-black-palette: mat.define-palette(xy-accent.$yl-black-palette, 400, 400, 400);
+
+$xy-light-theme: mat.define-light-theme((
+  color: (
+    primary: $xy-primary,
+    accent: $xy-accent,
+    warn: $xy-warn,
+  )
+));
+
+$xy-white: mat.get-color-from-palette($xy-white-palette, 400);
+$xy-black: mat.get-color-from-palette($xy-black-palette, 400);
+
+@include mat.all-component-themes($xy-light-theme);
+
+body {
+  background: mat.get-color-from-palette($xy-base, 50);
+  color: mat.get-color-from-palette($xy-base, 50-contrast);
+  @media(max-width: 767px){
+    background-color: transparent;
+  }
+}
+:host-context(.dark-theme) {
+  body {
+    background: mat.get-color-from-palette($xy-dark-base, 900);
+    color: mat.get-color-from-palette($xy-dark-base, 50-contrast);
+  }
+}
+
+.xy-blue{
+  color: $xy-white;
+  background-color: mat.get-color-from-palette($xy-primary, 700);
+}
+.xy-indigo{
+  color: $xy-white;
+  background-color: mat.get-color-from-palette($xy-primary, 800);
+}
+.xy-white{
+  color: mat.get-color-from-palette($xy-base, 50-contrast);
+  background-color: $xy-white;
+}
+@import "xy-typography";
+@import "xy-component";

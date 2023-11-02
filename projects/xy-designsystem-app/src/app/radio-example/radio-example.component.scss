@@ -1,0 +1,12 @@
+table.fullWidth{
+  width: 100%;
+}
+
+xy-container{
+  height: 300px;
+
+  ::ng-deep > div{
+    background: rgba(255,255,255,0.1) !important;
+  }
+}
+

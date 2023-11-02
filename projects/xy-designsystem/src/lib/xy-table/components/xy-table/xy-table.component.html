@@ -1,0 +1,504 @@
+<!-- <div class="delete-btn">
+  <mat-icon (click)="removeSelectedRows()">delete</mat-icon>
+</div> -->
+
+ <!-- <div class="mat-elevation-z8">
+  <table mat-table multiTemplateDataRows [dataSource]="dataSource" aria-describedby="table" matSort class="scroller">
+    <ng-container *ngFor="let column of columnDefs" [matColumnDef]=column.columnDef>
+        <ng-container *ngIf="column.checkboxRequired === true">
+          <th mat-header-cell *matHeaderCellDef>
+  
+            <mat-checkbox 
+                  (change)="$event ? masterToggle() : null"
+                  [checked]="selection.hasValue() && isAllSelected()"
+                  [indeterminate]="selection.hasValue() && !isAllSelected()" (focus)="selectRow(column)">
+            </mat-checkbox> 
+          </th> 
+        </ng-container>
+        <ng-container *ngIf="column.isSort === true">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> {{column.headerCellDef | titlecase}} </th>
+        </ng-container> 
+        <ng-container *ngIf="column.isSort === false">
+          <th mat-header-cell *matHeaderCellDef> {{column.headerCellDef | titlecase}} </th>
+        </ng-container>
+
+
+        <td mat-cell *matCellDef="let data">
+          <xy-table-cell [columnDef]="column" [data]="data">  </xy-table-cell>
+          <ng-container *ngIf="column.cellDef.type === 'menu'">
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="arrowBtn" aria-label="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button> 
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item   (click)="edit(data)" *ngIf="isEditRequired">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item  (click)="delete(data)" *ngIf="isDeleteRequired">
+                <mat-icon>delete_outline</mat-icon>
+                <span>Delete</span>
+              </button> 
+            </mat-menu> 
+          </ng-container>
+
+          <ng-container *ngIf="column.cellDef.type === 'action'">
+            <button mat-icon-button aria-label="expand row" class="arrowBtn" (click)="toggleRow(data)" *ngIf="expandRequired">
+                <mat-icon *ngIf="expandedElement !== data">keyboard_arrow_down</mat-icon>
+                <mat-icon *ngIf="expandedElement === data">keyboard_arrow_up</mat-icon>
+            </button>
+          </ng-container>
+          
+    <ng-container  *ngIf="column.checkboxRequired == true"> 
+              <mat-checkbox (click)="$event.stopPropagation()"
+                (change)="$event ? selection.toggle(data) : null"
+                [checked]="selection.isSelected(data)">
+              </mat-checkbox>
+          </ng-container>
+        </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="expandedDetail">
+      <tr>
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+          <div class="inner-table-detail" *ngIf="expandRequired"
+            [@detailExpand]="element?.id == expandedElement?.id ? 'expanded' : 'collapsed'">
+            <div class="collapse-table mat-elevation-z8" *ngIf="expandedElement">
+               
+              
+                <div *ngIf="expandAsData">
+                  <p>{{element?.expandableRow?.expandData}}</p>
+                </div>
+  
+  
+                <div *ngIf="expandAsTableData">
+                  <table mat-table multiTemplateDataRows [dataSource]="expandedDataSource" aria-describedby="table" 
+                    class="scroller" >
+      
+                    <ng-container *ngFor="let column of expandcolumnDefs" [matColumnDef]=column.columnDef>
+                      <ng-container *ngIf="column.checkboxRequired === true">
+                        <th mat-header-cell *matHeaderCellDef>
+                        </th>
+                      </ng-container>
+                      <ng-container>
+                        <th mat-header-cell *matHeaderCellDef> {{column.headerCellDef | titlecase}} </th>
+                      </ng-container>
+      
+                      <td mat-cell *matCellDef="let data">
+                        <xy-table-cell [columnDef]="column" [data]="data"></xy-table-cell>
+                       
+                    
+                        <ng-container *ngIf="column.checkboxRequired === true">
+                          <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(data) : null"
+                          [checked]="selection.isSelected(data)"
+                          >
+                        </mat-checkbox>
+                        </ng-container>
+                      </td>
+                    </ng-container>
+      
+                    <ng-container >
+                      <tr mat-header-row *matHeaderRowDef="expandColumnsToDisplay; sticky:true"></tr>
+                      <tr mat-row *matRowDef="let element; columns: expandColumnsToDisplay;" 
+                      [ngClass]="{highlighted: selection.isSelected(element)}" (click)="selectRow(element)">
+                      </tr>
+                    </ng-container>
+                  </table>
+                </div>
+               
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky:true"></tr>
+
+      <tr mat-row *matRowDef="let element, let data; columns: columnsToDisplay;"
+        [class.accordion-element-row]="element.addresses?.data.length"
+        [class.accordion-active]="expandedElement?.id === element?.id"
+        (click)="onClickRight($event, data)" (mousedown)="onMouseDown($event, data)" (mouseup)="onMouseUp($event, data)"
+        [ngClass]="{highlighted: selection.isSelected(element)}" (click)="selectRow(element)">
+      </tr>
+      
+      <tr mat-row  *matRowDef="let data; columns: ['expandedDetail']"  class="innertable-row"></tr>
+    </ng-container>
+    
+
+  </table>
+  
+  <mat-paginator [length]="length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                [attr.aria-label]="ariaLabel"
+                showFirstLastButtons >
+  </mat-paginator>
+</div> -->
+<div class="table-actionbar" *ngIf="tableactionBar">
+  <div class="left-col">
+    <div class="filter-search" *ngIf="tableSearchBar">
+      <xy-input placeholder="{{searchPlaceholder}}" (value)="value" small (keyup)="applyFilter($event)"></xy-input>
+    </div> 
+  </div>
+  <div class="right-col">
+      <xy-button icon-button icon="delete" color="critical" (click)="removeSelectedRows()" *ngIf="deleteAllTrig"> </xy-button>
+      <xy-button icon-button icon="sync" color="accent" (click)="refresh($event)" *ngIf="tableRefresh"></xy-button>
+      <xy-button icon-button color="accent" icon="tune"  [matMenuTriggerFor]="menu" class="table-config-menu" *ngIf="columnHideTrig">
+        <mat-menu #menu="matMenu">
+          <span class="table-config-menu-label">Edit Columns</span>
+          <div class="table-config-menu-options">
+            <mat-checkbox 
+              *ngFor="let cd of columnDefs; let i = index"
+              (click)="$event.stopPropagation()" [(ngModel)]="cd.visible">
+              {{cd.headerCellDef}}
+            </mat-checkbox>
+          </div>
+      </mat-menu>
+      </xy-button>
+  </div>
+</div>
+
+
+<div class="mat-elevation-z8">
+  <table mat-table multiTemplateDataRows [dataSource]="dataSource" aria-describedby="table" matSort class="scroller">
+    <ng-container *ngFor="let column of columnDefs" [matColumnDef]=column.columnDef>
+        <ng-container *ngIf="column.checkboxRequired === true">
+          <th mat-header-cell *matHeaderCellDef>
+            <!-- column checkbox -->
+            <mat-checkbox 
+            (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()" (focus)="selectRow(column)">
+            </mat-checkbox>
+          </th>
+        </ng-container>
+
+        <ng-container *ngIf="column.isSort === true">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>
+            {{column.headerCellDef | titlecase}} 
+            <div class="d-flex">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" [matMenuTriggerFor]="searchMenu">  
+                <mat-icon>filter_list</mat-icon>
+              </button> -->
+              <mat-menu #searchMenu="matMenu">
+                <ng-template matMenuContent>
+                  <!-- <div class="filterBox" style="width: 200px; height: 233px;">
+                    <div class="filter-search" >
+                      <xy-input placeholder="Global Filter" (value)="value" small (keyup)="applyFilter($event)"></xy-input>
+                    </div> 
+                    
+                    <h6 class="filterTitle">Filter By Column</h6>
+                    <div class="columnBox">
+                      <div class="options" *ngFor="let empfilter of empFilters;">
+                        <h6>{{empfilter.name}}</h6>
+                        <div class="filter-group"  *ngFor="let op of empfilter.options;  let i = index"> 
+                          <mat-checkbox  [value]="op"
+                          (change)="applyEmpFilter($event, empfilter)" (value)="empfilter.defaultValue">
+                          {{op}}
+                          </mat-checkbox>
+                          <hr>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                        <h6>Custom Filter Fields</h6>
+                          <ng-container *ngTemplateOutlet="intlies"></ng-container>
+                    </div>
+                      <br>
+                    </div> 
+                 -->
+                </ng-template>
+              </mat-menu>
+            </div>  
+          </th>
+        </ng-container>
+
+        <ng-container *ngIf="column.isSort === false">
+          <th mat-header-cell *matHeaderCellDef> {{column.headerCellDef | titlecase}}</th>
+        </ng-container>
+
+       
+        <td mat-cell *matCellDef="let data">
+          <xy-table-cell [columnDef]="column" [data]="data"></xy-table-cell>
+         
+
+          <ng-container *ngIf="column.cellDef.type === 'menu'">
+             <!-- <button mat-icon-button [matMenuTriggerFor]="menu" class="arrowBtn" aria-label="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button> 
+             <mat-menu #menu="matMenu">
+              <button mat-menu-item  (click)="edit(data)" *ngIf="isEditRequired">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item  (click)="delete(data)" *ngIf="isDeleteRequired">
+                <mat-icon>delete_outline</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>  -->
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" >
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="delete(data)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+              <button mat-menu-item (click)="edit(data)">
+                <mat-icon>edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item (click)="onViewClick()">
+                <mat-icon>visibility</mat-icon>
+                <span>View Details</span>
+              </button>
+            </mat-menu>
+          </ng-container>
+
+          <!-- <ng-container *ngIf="column.CustomELement == true">
+            <ng-container *ngTemplateOutlet="intlies2"></ng-container>
+          </ng-container> -->
+
+      
+          <!-- <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+            <mat-cell *matCellDef="let column" action-buttons  (buttonAction)="onTableAction($event)">
+              {{ column.visible }}
+            </mat-cell>
+          </ng-container>  -->
+          
+          <!-- column checkbox -->
+            
+          <ng-container  *ngIf="column.checkboxRequired == true"> 
+            <mat-checkbox (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(data) : null"
+              [checked]="selection.isSelected(data)">
+            </mat-checkbox>
+          </ng-container>
+
+          
+          <!-- <ng-container *ngIf="column.htmlElement == true"> 
+              <xy-button light-weight-button color="accent"  (click)="onClick($event)">{{buttonText}}</xy-button>
+          </ng-container> -->
+
+        </td>
+     
+      
+    </ng-container>
+
+    <!-- Expanded Content Column -->
+    <ng-container matColumnDef="expandedDetail">
+      <tr>
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+          <div class="inner-table-detail" *ngIf="expandRequired"
+            [@detailExpand]="element?.id == expandedElement?.id ? 'expanded' : 'collapsed'">
+            <div class="collapse-table mat-elevation-z8" *ngIf="expandedElement">
+                <!-- Expandable View Data -->
+                <div *ngIf="expandAsData">
+                  <p>{{element?.expandableRow?.expandData}}</p>
+                </div>
+                <!-- Expandable View table -->
+                <div *ngIf="expandAsTableData">
+                  <table mat-table multiTemplateDataRows [dataSource]="expandedDataSource" aria-describedby="table" 
+                    class="scroller" >
+      
+                    <ng-container *ngFor="let column of expandcolumnDefs" [matColumnDef]=column.columnDef>
+                      <ng-container *ngIf="column.checkboxRequired === true">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                      </ng-container>
+
+                      <ng-container>
+                        <th mat-header-cell *matHeaderCellDef> {{column.headerCellDef | titlecase}} </th>
+                      </ng-container>
+      
+                      <td mat-cell *matCellDef="let data">
+                        <xy-table-cell [columnDef]="column" [data]="data"></xy-table-cell>
+                       
+                        <!-- column checkbox -->
+                        <ng-container *ngIf="column.checkboxRequired === true">
+                          <mat-checkbox (click)="$event.stopPropagation()"
+                          (change)="$event ? selection.toggle(data) : null"
+                          [checked]="selection.isSelected(data)"
+                          >
+                        </mat-checkbox>
+                        </ng-container>
+                      </td>
+                    </ng-container>
+      
+                    <!-- <ng-container>
+                      <tr mat-header-row *matHeaderRowDef="getDisplayedColumns(); sticky:true"></tr>
+                      <tr mat-row *matRowDef="let element; columns: getDisplayedColumns();" 
+                      [ngClass]="{highlighted: selection.isSelected(element)}" (click)="selectRow(element)">
+                      </tr>
+                    </ng-container> -->
+                  </table>
+                </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+          
+      
+      <tr mat-header-row *matHeaderRowDef="getDisplayedColumns(); sticky:true"></tr>
+
+      <tr mat-row *matRowDef="let element; columns:  dataSource.data.length > 0 && dataSource.filteredData.length > 0 ? getDisplayedColumns() :  ['empty-row'];"
+        [class.accordion-element-row]="element.addresses?.data.length"
+        [class.accordion-active]="expandedElement?.id === element?.id"
+        [ngClass]="{highlighted: selection.isSelected(element)}" (click)="selectRow(element)">
+      </tr>
+      <tr mat-row  ></tr>
+    </ng-container>
+    
+  </table>
+
+  <td class="noData" *ngIf="dataSource.filteredData.length <= 0">
+    {{noDataMessage}}
+  </td>
+
+  <mat-paginator [length]="length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="pageSizeOptions"
+                [attr.aria-label]="ariaLabel"
+                showFirstLastButtons >
+  </mat-paginator>
+
+</div>
+
+<!-- <div class="table-actionbar">
+  <div class="action-box">
+    <button color="warn" mat-mini-fab aria-label="Example icon button with a home icon"  (click)="removeSelectedRows()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button color="primary" mat-mini-fab aria-label="Example icon button with a home icon" >
+      <mat-icon>refresh</mat-icon>
+    </button>
+
+    <button  mat-mini-fab color="primary"  [matMenuTriggerFor]="menu" class="table-config-menu">
+      <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+      <mat-menu #menu="matMenu">
+        <span class="table-config-menu-label">Edit Columns</span>
+        <div class="table-config-menu-options">
+          <mat-checkbox 
+            *ngFor="let cd of columns; let i = index"
+            (click)="$event.stopPropagation()"
+            [(ngModel)]="cd.visible">
+            {{cd.header}}
+          </mat-checkbox>
+        </div>
+    </mat-menu>
+    </button>
+    
+  </div>
+</div>
+
+
+
+<mat-table  #table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8" matSort>
+
+
+  <ng-container matColumnDef="select" >
+    <mat-header-cell *matHeaderCellDef>
+      <mat-checkbox color="primary" (change)="$event ? masterToggle() : null"
+        [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </mat-header-cell>
+    <mat-cell *cdkCellDef="let row">
+      <mat-checkbox color="primary" (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+        [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </mat-cell>
+  </ng-container>
+
+
+  <ng-container *ngFor="let column of columns;"  [matColumnDef]="column.columnDef">
+    <mat-header-cell *cdkHeaderCellDef mat-sort-header>
+        {{column.header}}
+        <div class="d-flex">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" [matMenuTriggerFor]="menu">
+            <mat-icon>filter_list</mat-icon>
+          </button>
+          <mat-menu #menu>
+            <ng-template matMenuContent>
+              <div>
+                <mat-checkbox class="mat-menu-item">{{column.visible}}</mat-checkbox>  
+              </div>
+              <div class="filterBox">
+                  <div class="filterGroup">
+                    <label for="">By {{column.header}}</label>
+                    <input type="text" [(ngModel)]="value" (keyup)="applyFilter($event)"> 
+                  </div>
+                  <div>
+                    <ng-container *ngTemplateOutlet="intlies"></ng-container>
+                  </div>
+              </div>
+            </ng-template>
+          </mat-menu>
+        </div>
+    </mat-header-cell>
+    <mat-cell *cdkCellDef="let row">{{ row[column.columnDef] }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="expandedDetail">
+    <tr>
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+        <div class="inner-table-detail" *ngIf="expandRequired"
+          [@detailExpand]="element?.id == expandedElement?.id ? 'expanded' : 'collapsed'">
+          <div class="collapse-table mat-elevation-z8" *ngIf="expandedElement">
+             
+              <div *ngIf="expandAsData">
+                <p>{{element?.expandableRow?.expandData}}</p>
+              </div>
+
+              <div *ngIf="expandAsTableData">
+                <table mat-table multiTemplateDataRows [dataSource]="expandedDataSource" aria-describedby="table" 
+                  class="scroller" >
+    
+                  <ng-container *ngFor="let column of expandcolumnDefs" [matColumnDef]=column.columnDef>
+                    <ng-container >
+                      <th mat-header-cell *matHeaderCellDef>
+                      </th>
+                    </ng-container>
+                    <ng-container>
+                      <th mat-header-cell *matHeaderCellDef> {{column.columnDef | titlecase}} </th>
+                    </ng-container>
+    
+                  </ng-container>
+    
+                  <ng-container >
+                    <tr mat-header-row *matHeaderRowDef="expandColumnsToDisplay; sticky:true"></tr>
+                    <tr mat-row *matRowDef="let element; columns: expandColumnsToDisplay;" 
+                    [ngClass]="{highlighted: selection.isSelected(element)}" (click)="selectRow(element)">
+                    </tr>
+                  </ng-container>
+                </table>
+              </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay; sticky:true"></tr>
+
+    <tr mat-row  *matRowDef="let data; columns: ['expandedDetail']"  class="innertable-row"></tr>
+  </ng-container>
+  
+
+ 
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+    <mat-cell *matCellDef="let element" action-buttons  (buttonAction)="onTableAction($event)">
+      {{ element.weight }}
+    </mat-cell>
+  </ng-container>
+  
+  <mat-header-row *matHeaderRowDef="getDisplayedColumns();" ></mat-header-row>
+  <mat-row *matRowDef="let row; columns: getDisplayedColumns();"  [class.accordion-element-row]="row.addresses?.data.length"
+  [class.accordion-active]="expandedElement?.id === row?.id"
+  [ngClass]="{highlighted: selection.isSelected(row)}" (click)="selectRow(row)"></mat-row>
+</mat-table>
+
+
+<mat-paginator [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              [attr.aria-label]="ariaLabel"
+              showFirstLastButtons >
+</mat-paginator>  -->

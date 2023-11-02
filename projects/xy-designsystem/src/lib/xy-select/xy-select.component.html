@@ -1,0 +1,35 @@
+<mat-form-field  [class]="styleClass()">
+  <mat-label *ngIf="label && !small">{{label}}</mat-label>
+  <mat-select #sel placeholder="{{label}}" [disableOptionCentering]="true" class="xy-select" panelClass="xy-select-panel" [required]="_required" [formControl]="selectFormControl"
+  (valueChange)="onChange($event)"[multiple]="multiple">
+    <ng-container *ngIf="dataSourceData != null && dataSourceData.length > 0">
+      <mat-option  *ngFor="let item of dataSourceData" [id]="item.id" [value]="item.value" [disabled]="item.disabled">
+        <mat-icon *ngIf="item.icon">{{item.icon}}</mat-icon>
+          {{item.value}}
+      </mat-option>
+    </ng-container>
+    <ng-template>
+      <mat-select-trigger>
+        <ng-container *ngIf="selectedValue">
+          <mat-icon *ngIf="selectedValue.icon">{{selectedValue.icon}} </mat-icon>
+          {{selectFormControl.value}}
+        </ng-container>
+        
+        <ng-container *ngIf="multiple == true">
+          {{selectedValue.value?.[0] || ''}}
+          <span *ngIf="(selectedValue.value?.length || 0) > 1" class="xy-multiple-select">
+            (+{{(selectedValue.value?.length || 0) - 1}} {{selectedValue.value?.length === 2 ? 'other' : 'others'}})
+          </span>
+        </ng-container>
+      </mat-select-trigger>
+    </ng-template>
+
+  </mat-select>
+  <mat-hint *ngIf="hint">
+    <ng-content select="xy-hint"></ng-content>
+  </mat-hint>
+  <mat-error *ngIf="hasError()" class="mat-error">
+    {{ getErrorMessage() }}
+  </mat-error>
+</mat-form-field>
+

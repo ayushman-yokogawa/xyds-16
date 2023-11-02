@@ -1,0 +1,92 @@
+
+<div class="mobile-header">
+    <xy-topAppBar title="Header" [menuBtn]="true"  [multiple]="true" [profile]="false" username="Micheal Doe" avatar="../../assets/images/Avatar.svg"  role="Yokogawa Admin">
+        <xy-badge size="small" color="warn" class="inverted-badge">
+            <mat-icon>notifications_none</mat-icon>
+        </xy-badge>
+        <p>EN</p>
+        <mat-icon>search</mat-icon>
+    </xy-topAppBar>
+    <br><br>
+
+    <xy-topAppBar title="Header" [menuBtn]="true"  [multiple]="true" [profile]="false" >
+       <div class="search" *ngIf="searchBar">
+            <xy-searchbox #searchbox1 value="" ></xy-searchbox>
+       </div>
+        <mat-icon (click)="searchBarToggle()">search</mat-icon>
+    </xy-topAppBar>
+    <br><br>
+
+    <xy-topAppBar title="Header"  [multiple]="true" [profile]="false" >
+        <mat-icon>search</mat-icon>
+    </xy-topAppBar>
+    <br><br>
+    
+    <xy-topAppBar title="Header"  (menuClose)="menuClose()" [menuBtn]="true" [multiple]="true" [profile]="false" >
+        <xy-badge size="small" color="warn" class="inverted-badge">
+            <mat-icon>notifications_none</mat-icon>
+        </xy-badge>
+        <p>EN</p>
+        <mat-icon>search</mat-icon>
+    </xy-topAppBar>
+
+  
+</div>
+<!-- 
+
+<h4>Simple Header</h4>
+<br>
+<xy-topAppBar title="Sightseeings Spots"  [multiple]="true" [profile]="false" username="Micheal Doe" avatar="../../assets/images/Avatar.svg"  role="Yokogawa Admin">
+</xy-topAppBar>
+
+<h4>Basic Header</h4>
+<br>
+
+<xy-topAppBar title="Sightseeings Spots"  [multiple]="true" [profile]="true" username="Micheal Doe" avatar="../../assets/images/Avatar.svg"  role="Yokogawa Admin">
+    <xy-searchbox #searchbox1 value="" ></xy-searchbox>
+    <xy-badge matBadge="8"  size="small" color="warn" class="inverted-badge">
+        <mat-icon>notifications_none</mat-icon>
+    </xy-badge>
+    <p>EN</p>
+</xy-topAppBar>
+
+
+
+
+
+<h4>Simple Header with Sidenav</h4>
+<br>
+<xy-topAppBar title="Sightseeings Spots"  [linkToSidenav]="sidenav3" [multiple]="true"></xy-topAppBar>
+
+<xy-sidenav-container #sidenav3 sticky collapse>
+    <xy-sidenav [draggable]="true">
+        <xy-button icon-button class="xy-sidenav-toolbox-item"><mat-icon>settings</mat-icon></xy-button>
+        <xy-button icon-button class="xy-sidenav-toolbox-item"><mat-icon>settings</mat-icon></xy-button>
+        <xy-button icon-button class="xy-sidenav-toolbox-item"><mat-icon>settings</mat-icon></xy-button>
+        <xy-sidenav-item icon="crop_7_5" name="Button" routerLink="/button">Button</xy-sidenav-item>
+        <xy-sidenav-item icon="view_column" name="Button Toggle" routerLink="/button_toggle">Button Toggle</xy-sidenav-item>
+    </xy-sidenav>
+</xy-sidenav-container>
+
+
+
+<h4>Header with Sidenav</h4>
+<br>
+<xy-topAppBar title="Sightseeings Spots"  [linkToSidenav]="sidenav2" [multiple]="true" [profile]="true" username="Micheal Doe" avatar="../../assets/images/Avatar.svg"  role="Yokogawa Admin">
+    <xy-searchbox #searchbox1 value="" ></xy-searchbox>
+    <xy-badge matBadge="8"  size="small" color="warn" class="inverted-badge">
+        <mat-icon>notifications_none</mat-icon>
+    </xy-badge>
+    <p>EN</p>
+</xy-topAppBar>
+
+<xy-sidenav-container #sidenav2 sticky collapse>
+    <xy-sidenav [draggable]="true">
+        <xy-button icon-button class="xy-sidenav-toolbox-item"><mat-icon>settings</mat-icon></xy-button>
+        <xy-button icon-button class="xy-sidenav-toolbox-item"><mat-icon>settings</mat-icon></xy-button>
+        <xy-button icon-button class="xy-sidenav-toolbox-item"><mat-icon>settings</mat-icon></xy-button>
+        <xy-sidenav-item icon="crop_7_5" name="Button" routerLink="/button">Button</xy-sidenav-item>
+        <xy-sidenav-item icon="view_column" name="Button Toggle" routerLink="/button_toggle">Button Toggle</xy-sidenav-item>
+    </xy-sidenav>
+</xy-sidenav-container>
+   -->

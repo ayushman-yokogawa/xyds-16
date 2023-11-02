@@ -1,0 +1,152 @@
+<!-- <div class="checkList">
+    <form [formGroup]="form">
+        <mat-checkbox *ngFor="let cd of EmpListColumnDef"  [formControlName]="cd.columnDef">{{cd.headerCellDef}}</mat-checkbox>
+    </form>
+</div>
+
+<xy-table  
+    [xyTableData]="empList" 
+    [columnDefs]="EmpListColumnDef" 
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="pageSizeOptions" 
+    [length]="length" 
+    [DisplayPaginatorLabel]="DisplayPaginatorLabel"
+    [expandRequired]="true"
+    [expandcolumnDefs]="ExpandDetailColumnDef"
+    [expandTableDetail]="expandTableDetail" 
+    (expandDetail)="expandDetail($event)"
+    [expandAsTableData]="true"
+    [expandAsData]="false"
+    [isEditRequired]="true"
+    [isDeleteRequired]="true"
+    (editRow)="editRow($event)" 
+    (deleteRow)="deleteRow($event)">
+</xy-table>
+
+
+ -->
+
+
+ <!-- <div class="checkList">
+    <form [formGroup]="form">
+        <mat-checkbox *ngFor="let cd of columns"  [formControlName]="cd.columnDef">{{cd.header}}</mat-checkbox>
+    </form>
+</div> -->
+<!-- <button mat-button [matMenuTriggerFor]="menu" class="table-config-menu">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+    <mat-menu #menu="matMenu">
+      <span class="table-config-menu-label">Edit Columns</span>
+      <div class="table-config-menu-options">
+        <mat-checkbox 
+          *ngFor="let cd of columns; let i = index"
+          (click)="$event.stopPropagation()"
+          [(ngModel)]="cd.visible">
+          {{cd.header}}
+        </mat-checkbox>
+      </div>
+  </mat-menu>
+  </button> -->
+  <!-- <xy-table  
+  [xyTableData]="empList" 
+  [columnDefs]="EmpListColumnDef" 
+  [pageSize]="pageSize" 
+  [pageSizeOptions]="pageSizeOptions" 
+  [length]="length" 
+  [DisplayPaginatorLabel]="DisplayPaginatorLabel"
+  [expandRequired]="true"
+  [expandcolumnDefs]="ExpandDetailColumnDef"
+  [expandTableDetail]="expandTableDetail" 
+  (expandDetail)="expandDetail($event)"
+  [expandAsTableData]="true"
+  [expandAsData]="false"
+  [isEditRequired]="true"
+  [isDeleteRequired]="true"
+  (editRow)="editRow($event)" 
+  (deleteRow)="deleteRow($event)">
+</xy-table> -->
+
+
+<!-- <xy-table  
+    (action)="onTableAction($event)"
+    [xyTableData]="empList" 
+    [columnDefs]="EmpListColumnDef" 
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="pageSizeOptions" 
+    [length]="length" 
+    [DisplayPaginatorLabel]="DisplayPaginatorLabel"
+    [expandRequired]="true"
+    [expandcolumnDefs]="ExpandDetailColumnDef"
+    [expandTableDetail]="expandTableDetail" 
+    (expandDetail)="expandDetail($event)"
+    [expandAsTableData]="true"
+    [expandAsData]="false"
+    [isEditRequired]="true"
+    [isDeleteRequired]="true"
+    (editRow)="editRow($event)" 
+    (deleteRow)="deleteRow($event)"
+    [customfilter]="filter"
+    [buttonText]="buttonText"
+   >
+</xy-table>
+ -->
+
+<xy-table
+  [xyTableData]="empList" 
+  [columnDefs]="EmpListColumnDef" 
+  [pageSize]="pageSize" 
+  [pageSizeOptions]="pageSizeOptions" 
+  [length]="length" 
+  [DisplayPaginatorLabel]="DisplayPaginatorLabel"
+  [expandRequired]="false"
+  [expandcolumnDefs]="ExpandDetailColumnDef"
+  [expandTableDetail]="expandTableDetail" 
+  (expandDetail)="expandDetail($event)"
+  [expandAsTableData]="false"
+  [expandAsData]="true"
+  [isEditRequired]="true"
+  [isDeleteRequired]="true"
+  (editRow)="editRow($event)" 
+  (deleteRow)="deleteRow($event)"
+  [tableactionBar]="true"
+  [tableSearchBar]="true"
+  [deleteAllTrig]="true"
+  [columnHideTrig]="true"
+  [tableRefresh]="false"
+  searchPlaceholder="Search table data"
+  noDataMessage="No Data Found">
+</xy-table>
+
+<ng-template #filter>
+  <xy-input label="Custom Fields" type="text" small></xy-input>
+  <br>
+  <xy-button type="button">Apply</xy-button>
+</ng-template>
+
+<!-- <ng-template #progress>
+  <span class="badge">In Progress</span>
+</ng-template> -->
+
+
+
+
+ <!-- <xy-table
+    
+    [dataset]="data" 
+    [columns]="columns"
+    [pageSize]="pageSize" 
+    [pageSizeOptions]="pageSizeOptions" 
+    [length]="length" 
+    [DisplayPaginatorLabel]="DisplayPaginatorLabel"
+    [getCustomFilter]="filter"
+  >
+</xy-table> -->
+
+<!-- <ng-template #filter>
+   <div class="filterScan">
+      <label for="">Scan Values</label>
+      <br>
+      <input type="text" (keyup)='applyFilter2($event)'>
+    </div>
+    <br>
+    <button type="button" (click)="Test()">Open</button>
+</ng-template>  -->

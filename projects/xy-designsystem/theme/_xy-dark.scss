@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use 'xy-accent';
+
+$primary-text: #F3F3F3;
+
+$yd-gray-palette: (
+  50: #F3F3F3,
+  100: #DDDDDD,
+  200: #BBBBBB,
+  300: #999999,
+  400: #777777,
+  500: #666666,
+  600: #444444,
+  700: #333333,
+  800: #222222,
+  900: #1A1A1A,
+  A100:#979797,
+  contrast: (
+    50: $primary-text,
+    100: $primary-text,
+    200: $primary-text,
+    300: $primary-text,
+    400: $primary-text,
+    500: $primary-text,
+    600: $primary-text,
+    700: $primary-text,
+    800: $primary-text,
+    900: $primary-text,
+  )
+);
+$yd-blue-palette: (
+  50: #DDEEFF,
+  100: #BBDDFF,
+  200: #94CCFF,
+  300: #77BBFF,
+  400: #4BA8FF,
+  500: #3399FF,
+  600: #328BF0,
+  700: #2F78DD,
+  800: #005DCC,
+  900: #004CA8,
+  A100: #DDEEFF,
+  A200: #94CCFF,
+  A300:#298AE1,
+  A400:#96C9F8,
+  A500: #4BA8FF,
+  A700: #2F78DD,
+  contrast: (
+    50: $primary-text,
+    100: $primary-text,
+    200: $primary-text,
+    300: $primary-text,
+    400: $primary-text,
+    500: $primary-text,
+    600: $primary-text,
+    700: $primary-text,
+    800: $primary-text,
+    900: $primary-text,
+    A100: $primary-text,
+    A200: $primary-text,
+    A500: $primary-text,
+    A700: $primary-text,
+  )
+);

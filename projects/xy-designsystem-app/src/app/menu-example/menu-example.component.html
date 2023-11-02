@@ -1,0 +1,123 @@
+<div style="height: 50px"></div>
+<table style="width: 100%;">
+  <tr>
+    <td style="width: 20%;">
+      <xy-menu label="Default" [isOverOpen]="true">
+        <xy-menu-item>Menu 1</xy-menu-item>
+        <xy-menu-item>Menu 2</xy-menu-item>
+        <xy-menu-item>Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="With Icon">
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="With Checkbox" [checkable]="true">
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="Small" small>
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="With Scroll bar" [checkable]="true" [visible-item]=10>
+        <xy-menu-item>Menu 1</xy-menu-item>
+        <xy-menu-item>Menu 2</xy-menu-item>
+        <xy-menu-item>Menu 3</xy-menu-item>
+        <xy-menu-item>Menu 4</xy-menu-item>
+        <xy-menu-item>Menu 5</xy-menu-item>
+        <xy-menu-item>Menu 6</xy-menu-item>
+        <xy-menu-item>Menu 7</xy-menu-item>
+        <xy-menu-item>Menu 8</xy-menu-item>
+        <xy-menu-item>Menu 9</xy-menu-item>
+        <xy-menu-item>Menu 10</xy-menu-item>
+        <xy-menu-item>Menu 11</xy-menu-item>
+        <xy-menu-item>Menu 12</xy-menu-item>
+        <xy-menu-item>Menu 13</xy-menu-item>
+        <xy-menu-item>Menu 14</xy-menu-item>
+        <xy-menu-item>Menu 15</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="Small with Checkbox" small [checkable]="true" >
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 20%;">
+      <xy-menu label="Above" yPosition="above">
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="Below" yPosition="below">
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="Before" xPosition="before">
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu label="After" xPosition="after">
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 20%;">
+      <xy-menu label="Nested menu">
+        <xy-menu-item icon="settings">Menu 1</xy-menu-item>
+        <xy-menu-item [level]=2 disabled icon="settings">Menu 1-1</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 1-2</xy-menu-item>
+        <xy-menu-item [level]=3 icon="settings">Menu 1-2-1</xy-menu-item>
+        <xy-menu-item [level]=3 icon="settings">Menu 1-2-2</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 1-3</xy-menu-item>
+        <xy-menu-item [level]=3 icon="settings">Menu 1-3-1</xy-menu-item>
+        <xy-menu-item [level]=3 icon="settings">Menu 1-3-2</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 2</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 2-1</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 2-2</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 2-3</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 3</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 3-1</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 3-2</xy-menu-item>
+        <xy-menu-item [level]=2 icon="settings">Menu 3-3</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 4</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 5</xy-menu-item>
+        <xy-menu-item icon="settings">Menu 6</xy-menu-item>
+      </xy-menu>
+    </td>
+    <td style="width: 20%;">
+      <xy-menu icon="menu">
+        <xy-menu-item>Menu 1</xy-menu-item>
+        <xy-menu-item>Menu 2</xy-menu-item>
+        <xy-menu-item>Menu 3</xy-menu-item>
+      </xy-menu>
+    </td>
+  </tr>
+</table>
+
+

@@ -1,0 +1,37 @@
+
+<div class="xy-sidenav-toolbox">
+  <ng-content select=".xy-sidenav-toolbox-item"></ng-content>
+</div>
+<mat-nav-list cdkDropList (cdkDropListDropped)="drop($event)">
+  <ng-container *ngIf="dataSourceData != null && dataSourceData.length > 0">
+    <ng-container *ngFor="let item of dataSourceData">
+      <ng-container *ngIf="draggable; then draggableComp; else normal;"></ng-container>
+
+      <ng-template #inner>
+        <mat-icon class="xy-sidenav-item-left-icon" *ngIf="item.icon">{{item.icon}}</mat-icon>
+        <div class="xy-sidenav-item-content">
+          {{item.name}}
+        </div>
+        <mat-icon class="xy-sidenav-item-right-icon" *ngIf="item.rightIcon2" (click)="onClickRight2($event, item)">{{item.rightIcon2}}</mat-icon>
+        <mat-icon class="xy-sidenav-item-right-icon" *ngIf="item.rightIcon" (click)="onClickRight($event, item)">{{item.rightIcon}}</mat-icon>
+      </ng-template>
+
+      <ng-template #draggableComp>
+        <a [id]="item.id" [class]="item.class" mat-list-item mat-ripple [routerLink]="[item.routerLink]" routerLinkActive="xy-sidenav-active" (click)="onClickItem($event, item)" (keydown)="onKeyDown($event, item)" cdkDrag [cdkDragData]="item" (mouseenter)="dragHover(item)" (mouseleave)="dragHoverEnd(item)" (cdkDragStarted)="dragStart(item)" (cdkDragReleased)="dragEnd(item)">
+          <mat-icon class="xy-sidenav-item-dragging-icon">drag_indicator</mat-icon>
+          <ng-container *ngTemplateOutlet="inner"></ng-container>
+        </a>
+
+        <xy-custom-sidenav [items]="nestedItems" [noCustomIcon]="noCustomIcon" #nestedOn *ngIf="nestedOn || !draggable"></xy-custom-sidenav>      
+      
+      </ng-template>
+
+      <ng-template #normal>
+        <a [id]="item.id"  [class]="item.class" mat-list-item mat-ripple [routerLink]="[item.routerLink]" routerLinkActive="xy-sidenav-active" (click)="onClickItem($event, item)" (keydown)="onKeyDown($event, item)">
+          <ng-container *ngTemplateOutlet="inner"></ng-container>
+        </a>
+      </ng-template>
+
+    </ng-container>
+  </ng-container>
+</mat-nav-list>

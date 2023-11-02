@@ -1,0 +1,22 @@
+.xy-grid {
+  display: flex;
+  gap: 0px 50px;
+}
+
+.col {
+  width: 95%;
+}
+
+.inset-devider {
+  width: 100%;
+}
+.inset-devider .checkbox {
+  padding: 1rem;
+}
+
+.full ::ng-deep .mat-card {
+  padding: 0 !important;
+}
+.full ::ng-deep .mat-card .card-header {
+  padding: 1rem;
+}/*# sourceMappingURL=divider-example.component.css.map */

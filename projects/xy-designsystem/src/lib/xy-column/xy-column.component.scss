@@ -1,0 +1,53 @@
+:host{
+
+  ::ng-deep {
+    > xy-input{
+      mat-mdc-form-field{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .one-column{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    ::ng-deep {
+      > *{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+
+  .two-columns{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    ::ng-deep {
+      > *{
+        display: block;
+        width: calc(50% - 12px);
+      }
+    }
+  }
+
+  .three-columns{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    ::ng-deep {
+      > *{
+        display: block;
+        width: calc((100% - 48px) / 3);
+      }
+    }
+  }
+
+}

@@ -1,0 +1,112 @@
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+@use '../../../theme/xy-spacing' as spacing;
+
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
+
+:host{
+  .mat-sidenav-container{
+    height: 100%;
+
+    .mat-sidenav{
+      min-width: 245px;
+
+      &.xy-sidenav-small{
+        min-width: 48px;
+        width: 48px;
+      }
+
+      .mat-list-base{
+        padding-top: 0 !important;
+        padding-bottom: 20px;
+      }
+    }
+  }
+
+  .mat-sidenav-content{
+    padding: spacing.$spacing-m;
+  }
+}
+::ng-deep{
+  .hide{
+    display: none !important;
+  }
+}
+
+
+.mat-drawer-container{
+  background: mat.get-color-from-palette(theme.$xy-base, 50) !important;
+  color: mat.get-color-from-palette(theme.$xy-base, 50-contrast) !important;
+
+  .mat-drawer{
+    background: theme.$xy-white !important;
+  }
+}
+:host-context(.dark-theme) {
+  .mat-drawer-container{
+    background: mat.get-color-from-palette(theme.$xy-dark-base, 900) !important;
+    color: mat.get-color-from-palette(theme.$xy-dark-base, 50-contrast) !important;
+
+    .mat-drawer{
+      background: mat.get-color-from-palette(theme.$xy-dark-base, 700) !important;
+    }
+  }
+}
+
+:host-context(.spacing-xxs) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-xxs;
+  }
+}
+
+:host-context(.spacing-xs) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-xs;
+  }
+}
+
+:host-context(.spacing-s) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-s;
+  }
+}
+
+:host-context(.spacing-m) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-m;
+  }
+}
+
+:host-context(.spacing-l) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-l;
+  }
+}
+
+:host-context(.spacing-xl) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-xl;
+  }
+}
+
+:host-context(.spacing-xxl) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-xxl;
+  }
+}
+
+:host-context(.spacing-xxxl) {
+  .mat-sidenav-content{
+    padding: spacing.$spacing-xxxl;
+  }
+}
+

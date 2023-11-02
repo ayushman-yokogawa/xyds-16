@@ -1,0 +1,31 @@
+
+<mat-form-field [class]="styleClass()" *ngIf="datePicker">
+  <mat-label *ngIf="label && !small" [class]="labelClass()">{{label}}</mat-label>
+  <ng-container matPrefix>
+    <ng-content select="[matPrefix]"></ng-content>
+  </ng-container>
+
+  <input #textInput matInput [matDatepicker]="picker" [formControl]="dateControl" placeholder="Choose a date" class="xy-input"
+    [placeholder]="placeholder"
+    [readonly]="_readonly"
+    [required]="_required"
+    [disabled]="_disabled"
+  >
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+
+  
+</mat-form-field>
+
+<mat-form-field  [class]="styleClass()" *ngIf="daterange">
+  <mat-label *ngIf="label && !small" [class]="labelClass()">{{label}}</mat-label>
+  <mat-date-range-input  [rangePicker]="picker">
+    <input #textInput  matStartDate formControlName="start" placeholder="Start date" class="xy-input">
+    <input #textInput matEndDate formControlName="end" placeholder="End date" class="xy-input">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+
+  <!-- <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+  <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error> -->
+</mat-form-field>

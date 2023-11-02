@@ -1,0 +1,317 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+:host {
+  display: inline-block;
+
+  ::ng-deep .mat-mdc-checkbox {
+
+    font-family: theme.$base-font;
+
+    .mat-checkbox-label {
+      font-family: theme.$base-font;
+      font-size: 1rem;
+    }
+    &:not(.mat-checkbox-disabled).cdk-keyboard-focused {
+      .mat-checkbox-persistent-ripple {
+        opacity: 0.5;
+      }
+    }
+    &:not(.mat-checkbox-disabled):hover {
+      .mat-checkbox-persistent-ripple {
+        opacity: 0.4;
+      }
+    }
+
+    .mdc-checkbox__background{
+      position: absolute;
+      z-index: 100;
+    }
+
+    .mat-checkbox-ripple {
+      .mat-ripple-element{
+        box-sizing: border-box;
+        border: transparent 1px solid;
+      }
+    }
+
+    &:hover:not(:active):not(.cdk-focused):not(.mat-checkbox-disabled){
+      .mat-checkbox-persistent-ripple{
+        opacity: 0.2 !important;
+      }
+    }
+    &:active{
+      .mat-checkbox-persistent-ripple{
+        opacity: 0 !important;
+      }
+      .mat-ripple-element:not(.mat-checkbox-persistent-ripple){
+        opacity: 0.3 !important;
+      }
+    }
+    &.cdk-focused{
+      .mat-checkbox-persistent-ripple{
+        opacity: 1 !important;
+        border: 1px transparent solid;
+      }
+    }
+
+    &.mat-accent{
+      .mdc-label{
+        color: mat.get-color-from-palette(theme.$xy-accent, A700) !important;
+      }
+      .mdc-checkbox__background:not(.mat-tab-disabled){
+        border-color: mat.get-color-from-palette(theme.$xy-accent, A500) !important;
+      }
+      .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
+        background-color: mat.get-color-from-palette(theme.$xy-accent, A500) !important;
+      }
+      .mdc-checkbox__ripple{
+        background-color: mat.get-color-from-palette(theme.$xy-accent, 500) !important;
+      }
+      .mat-ripple-element:not(.mat-checkbox-persistent-ripple){
+        background-color: mat.get-color-from-palette(theme.$xy-accent, 500) !important;
+      }
+      &.cdk-focused{
+        .mat-checkbox-persistent-ripple{
+          background-color: transparent !important;
+        }
+      }
+      &.cdk-focused.cdk-keyboard-focused{
+        .mat-checkbox-persistent-ripple{
+          border-color: mat.get-color-from-palette(theme.$xy-accent, 700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.2) !important;
+        }
+      }
+    }
+
+    // &.mat-critical{
+    //   .mat-checkbox-label{
+    //     color: mat.get-color-from-palette(theme.$xy-critical, A700) !important;
+    //   }
+    //   .mdc-checkbox__background:not(.mat-tab-disabled){
+    //     border-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+    //   }
+    //   .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+    //     background-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+    //   }
+    //   .mdc-checkbox__ripple{
+    //     background-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+    //   }
+    //   .mat-ripple-element:not(.mat-checkbox-persistent-ripple){
+    //     background-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+    //   }
+    //   &.cdk-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       background-color: transparent !important;
+    //     }
+    //   }
+    //   &.cdk-focused.cdk-keyboard-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       border-color: mat.get-color-from-palette(theme.$xy-critical, A700) !important;
+    //       background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+    //     }
+    //   }
+    // }
+
+    &.mat-error{
+      .mdc-label{
+        color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+      }
+      .mdc-checkbox__background:not(.mat-tab-disabled){
+        border-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+      .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+      .mdc-checkbox__ripple{
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+      .mat-ripple-element:not(.mat-checkbox-persistent-ripple){
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+      &.cdk-focused{
+        .mat-checkbox-persistent-ripple{
+          background-color: transparent !important;
+        }
+      }
+      &.cdk-focused.cdk-keyboard-focused{
+        .mat-checkbox-persistent-ripple{
+          border-color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+        }
+      }
+    }
+
+    // &.mat-warning{
+    //   .mat-checkbox-label{
+    //     color:  mat.get-color-from-palette(theme.$xy-warn, A700) !important;
+    //   }
+    //   .mdc-checkbox__background:not(.mat-tab-disabled){
+    //     border-color:  mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+    //   }
+    //   &.mat-checkbox-checked .mat-checkbox-background {
+    //     background-color: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+    //   }
+    //   .mat-checkbox-persistent-ripple{
+    //     background-color: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+    //   }
+    //   .mat-ripple-element:not(.mat-checkbox-persistent-ripple){
+    //     background-color: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+    //   }
+    //   &.cdk-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       background-color: transparent !important;
+    //     }
+    //   }
+    //   &.cdk-focused.cdk-keyboard-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       border-color: mat.get-color-from-palette(theme.$xy-warn, A700) !important;
+    //       background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+    //     }
+    //   }
+    // }
+
+    // &.mat-attention{
+    //   .mat-checkbox-label{
+    //     color: mat.get-color-from-palette(theme.$xy-attention, A700) !important;
+    //   }
+    //   .mdc-checkbox__background:not(.mat-tab-disabled){
+    //     border-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+    //   }
+    //   &.mat-checkbox-checked .mat-checkbox-background {
+    //     background-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+    //   }
+    //   .mat-checkbox-persistent-ripple{
+    //     background-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+    //   }
+    //   .mat-ripple-element:not(.mat-checkbox-persistent-ripple){
+    //     background-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+    //   }
+    //   &.cdk-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       background-color: transparent !important;
+    //     }
+    //   }
+    //   &.cdk-focused.cdk-keyboard-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       border-color: mat.get-color-from-palette(theme.$xy-attention, A700) !important;
+    //       background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+    //     }
+    //   }
+    // }
+
+    // &.mat-safe_normal{
+    //   .mat-checkbox-label{
+    //     color: mat.get-color-from-palette(theme.$xy-safe_normal, A700) !important;
+    //   }
+    //   .mdc-checkbox__background:not(.mat-tab-disabled){
+    //     border-color: mat.get-color-from-palette(theme.$xy-safe_normal, A200) !important;
+    //   }
+    //   &.mat-checkbox-checked .mat-checkbox-background {
+    //     background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A200) !important;
+    //   }
+    //   .mat-checkbox-persistent-ripple{
+    //     background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400) !important;
+    //   }
+    //   .mat-ripple-element:not(.mat-checkbox-persistent-ripple){
+    //     background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400) !important;
+    //   }
+    //   &.cdk-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       background-color: transparent !important;
+    //     }
+    //   }
+    //   &.cdk-focused.cdk-keyboard-focused{
+    //     .mat-checkbox-persistent-ripple{
+    //       border-color: mat.get-color-from-palette(theme.$xy-safe_normal, A700) !important;
+    //       background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+    //     }
+    //   }
+    // }
+
+    &.mat-mdc-checkbox-disabled{
+      .mdc-label{
+        opacity: 0.5;
+        color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mat-checkbox-checkmark-path{
+        stroke: mat.get-color-from-palette(theme.$xy-dark-base, 900);
+      }
+      .mdc-checkbox__background:not(.mat-tab-disabled){
+        opacity: 0.5;
+        border-color:  mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mdc-checkbox__native-control[disabled]:checked~.mdc-checkbox__background{
+        background-color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+    }
+  }
+
+
+}
+
+:host-context(.dark-theme) {
+  ::ng-deep .mat-mdc-checkbox {
+    .mdc-label {
+      color: theme.$xy-white !important;
+    }
+    .mdc-checkbox__checkmark{
+      color: mat.get-color-from-palette(theme.$xy-dark-base, 900) !important;
+    }
+
+  
+    &.mat-accent {
+      .mdc-checkbox__checkmark{
+        color: mat.get-color-from-palette(theme.$xy-dark-base, 900) !important;
+      }
+
+      .mdc-checkbox__background:not(.mat-tab-disabled) {
+        border-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500);
+      }
+
+      .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background{
+        background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500);
+      }
+      &.mat-mdc-checkbox-checked .mat-checkbox-background  .mdc-checkbox__ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500);
+      }
+
+      &:active {
+        .mat-ripple-element:not(.mat-checkbox-persistent-ripple) {
+          background-color: mat.get-color-from-palette(theme.$xy-accent, 500);
+        }
+      }
+
+      &.cdk-focused {
+        .mat-checkbox-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-checkbox-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-dark-primary, 200) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+        }
+      }
+    }
+
+    &.mat-mdc-checkbox-disabled{
+      .mdc-label{
+        opacity: 1;
+        color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mat-checkbox-checkmark-path{
+        stroke: mat.get-color-from-palette(theme.$xy-dark-base, 900);
+      }
+      .mdc-checkbox__background:not(.mat-tab-disabled){
+        opacity: 1;
+        border-color:  mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mdc-checkbox__native-control[disabled]:checked~.mdc-checkbox__background{
+        background-color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+    }
+  }
+}

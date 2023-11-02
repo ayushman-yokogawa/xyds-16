@@ -1,0 +1,47 @@
+<mat-button-toggle-group
+  name="{{'xy-button-toggle-'+name}}"
+  [id]="id"
+  [name]="name"
+  [(ngModel)]="_value"
+  *ngIf="!_multiple"
+  (input)="onChanged($event)"
+  [value]="value"
+  [disabled]="_disabled"
+  [attr.tabindex]="tabindex"
+  (change)="onChange($event)">
+  <ng-container *ngIf="dataSource && dataSource.length > 0">
+    <mat-button-toggle
+      *ngFor="let button of dataSource"
+      [value]="button.value"
+      [disabled]="button._disabled"
+    >
+      <mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon>
+      {{button.content}}
+    </mat-button-toggle>
+  </ng-container>
+</mat-button-toggle-group>
+<mat-button-toggle-group
+  name="{{'xy-button-toggle-'+name}}"
+  [id]="id"
+  [name]="name"
+  [(ngModel)]="_value"
+  *ngIf="_multiple"
+  [value]="_value"
+  [disabled]="_disabled"
+  [attr.tabindex]="tabindex"
+  (change)="onChange($event)"
+  multiple>
+  <ng-container *ngIf="dataSource && dataSource.length > 0">
+    <mat-button-toggle
+      *ngFor="let button of dataSource"
+      [value]="button.value"
+      [disabled]="button._disabled"
+    >
+      <mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon>
+      {{button.content}}
+    </mat-button-toggle>
+  </ng-container>
+</mat-button-toggle-group>
+<mat-error *ngFor="let item of errors;">
+  {{item.content.nativeElement.innerText}}
+</mat-error>

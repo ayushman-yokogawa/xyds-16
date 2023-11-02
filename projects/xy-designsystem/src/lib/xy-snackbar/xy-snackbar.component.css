@@ -1,0 +1,55 @@
+:host .grid {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+::ng-deep.mat-progress-spinner.mat-accent circle, ::ng-deep .mat-spinner.mat-accent circle {
+  stroke: #056fcf !important;
+}
+::ng-deep .xy-snackbar {
+  background-color: white;
+  position: absolute;
+  height: auto;
+  width: auto;
+  padding: 0.3rem 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+::ng-deep.mat-snack-bar-container {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+::ng-deep.mat-snack-bar-container .flex {
+  text-align: center;
+}
+::ng-deep.mat-snack-bar-container .content {
+  width: 100%;
+  color: black;
+  margin-right: 1rem;
+}
+::ng-deep.mat-snack-bar-container .content .mat-icon {
+  margin-right: 0.5rem;
+  margin-top: 3px;
+}
+::ng-deep.mat-snack-bar-container .content p {
+  display: flex;
+  align-items: center;
+}
+::ng-deep.mat-snack-bar-container .snackbar-action {
+  width: 25%;
+}
+::ng-deep.mat-snack-bar-container .content, ::ng-deep.mat-snack-bar-container .snackbar-action {
+  font-size: 0.8rem;
+}
+
+:host-context(.dark-theme) .xy-snackbar {
+  background-color: #333333;
+}
+:host-context(.dark-theme) .xy-snackbar .content {
+  color: white;
+}
+:host-context(.dark-theme) ::ng-deep.mat-snack-bar-container {
+  background-color: none !important;
+}/*# sourceMappingURL=xy-snackbar.component.css.map */

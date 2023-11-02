@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+<li [routerLink]="routerLink" routerLinkActive="xy-sidebar-item-active" class="ripple" [ngClass]="{'sidebar-header': menuIcon, 'tree' : tree}" class="sidenav-{{this.newLabelClass}}  {{this.className}}"
+  [matTooltip]="this.menuTooltip == true && this.label.length > this.charLimit ? this.label: ''"
+>
+  <a disabled *ngIf="!tree">
+    <div class="items">
+      <mat-icon class="mat-18 xy-sidenav-icon" *ngIf="icon && !customIcon">
+        {{icon}}
+      </mat-icon>
+      <span class="material-symbols-rounded customIcon" *ngIf="!icon && customIcon">
+        {{customIcon}}
+      </span>
+      <span class="label" *ngIf="label">{{label}}</span>
+      <span class="label" *ngIf="!label">
+        <ng-content></ng-content>
+      </span>
+      <span class="logo" *ngIf="logo">
+        <mat-icon class="mat-18">
+          {{menuIcon}} 
+        </mat-icon>
+        <span class="material-symbols-rounded">
+          {{menuIcon}} 
+        </span>
+      </span>
+    </div>
+  </a>
+  <a *ngIf="tree">
+    <ng-content select="xy-tree"></ng-content>
+  </a>
+</li>
+
+
+

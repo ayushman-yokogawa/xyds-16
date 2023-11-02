@@ -1,0 +1,188 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+ 
+
+:host {
+   .xy-progress-bar{
+        display: flex;
+        margin-top: 1rem;
+   }
+   
+    ::ng-deep {
+        .mat-progress-bar{
+            border-radius: 10px;
+            width: 95%;
+            margin-right: 12px;
+
+        }
+        .xy-progressbar{
+            position: relative;
+        }
+        .progress-success{
+            img{
+                width: 20px;
+            }
+        }
+        .progress-help{
+            font-size: 12px;
+            position: relative;
+            top: -8px;
+        }
+
+       .progress-success{
+        position: absolute;
+        top: 0px;
+        right: 56px;
+        }
+        .progress-label{
+            font-size: 12px;
+            text-align: left;
+          }
+        .mat-critical {
+            .mat-progress-bar-fill::after {
+                    background-color:mat.get-color-from-palette(theme.$xy-critical, A200);
+                    
+                }
+                .mat-progress-bar-background {
+                    fill: mat.get-color-from-palette(theme.$xy-critical, A200);
+                }
+                .mat-progress-bar-buffer{
+                    background-color:mat.get-color-from-palette(theme.$xy-critical, A100);
+                }
+        }
+        .mat-warning {
+            .mat-progress-bar-fill::after {
+                background-color:mat.get-color-from-palette(theme.$xy-warn, A200);
+            }
+            .mat-progress-bar-background {
+                fill: mat.get-color-from-palette(theme.$xy-warn, A200);
+            }
+            .mat-progress-bar-buffer{
+                background-color:mat.get-color-from-palette(theme.$xy-warn, A100);
+            }
+        }
+        .mat-accent{
+            &.inline-progress {
+                .xy-progressbar{
+                    display: flex;
+                    font-size: 12px;
+                    text-align: left;
+                    line-height: 0;
+                    width: 14%;
+                }
+            }
+            .mat-progress-bar-fill::after {
+                background-color: mat.get-color-from-palette(theme.$xy-accent, A700) !important;
+                border-radius: 139px;
+            }
+            .mat-progress-bar-background {
+                fill: mat.get-color-from-palette(theme.$xy-accent, A700);
+            }
+           .mat-progress-bar-buffer{
+                background-color: #E1E3E6 !important;
+            }
+        }
+        .mat-error{
+            &.inline-progress {
+                .xy-progressbar{
+                    display: flex;
+                    font-size: 12px;
+                    text-align: left;
+                    line-height: 0;
+                    width: 14%;
+                }
+            }
+            .mat-progress-bar-fill::after {
+                background-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+                border-radius: 139px;
+            }
+            .mat-progress-bar-background {
+                fill: mat.get-color-from-palette(theme.$xy-accent, A700);
+            }
+           .mat-progress-bar-buffer{
+                background-color: #E1E3E6 !important;
+            }
+        }
+        .mat-attention{
+            &.inline-progress {
+                .xy-progressbar{
+                    display: flex;
+                    font-size: 12px;
+                    text-align: left;
+                    line-height: 0;
+                    width: 14%;
+                }
+            }
+            .mat-progress-bar-fill::after {
+                background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+                border-radius: 139px;
+            }
+            .mat-progress-bar-background {
+                fill: mat.get-color-from-palette(theme.$xy-accent, A700);
+            }
+           .mat-progress-bar-buffer{
+                background-color: #E1E3E6 !important;
+            }
+        }
+        .mat-safe_normal{
+            &.inline-progress {
+                .xy-progressbar{
+                    display: flex;
+                    font-size: 12px;
+                    text-align: left;
+                    line-height: 0;
+                    width: 14%;
+                }
+            }
+            .mat-progress-bar-fill::after {
+                background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400);
+                border-radius: 139px;
+            }
+            .mat-progress-bar-background {
+                fill: mat.get-color-from-palette(theme.$xy-accent, A700);
+            }
+           .mat-progress-bar-buffer{
+                background-color: #E1E3E6 !important;
+            }
+        }
+    }
+}
+:host-context(.dark-theme) {
+    .progress-success{
+        img{
+            filter: brightness(2.2);
+        }
+    }
+    .mat-critical {
+        .mat-progress-bar-fill::after {
+                background-color:mat.get-color-from-palette(theme.$xy-critical, A200);
+            }
+            .mat-progress-bar-background {
+                fill: mat.get-color-from-palette(theme.$xy-critical, A200);
+            }
+    }
+    .mat-warning {
+        .mat-progress-bar-fill::after {
+            background-color:mat.get-color-from-palette(theme.$xy-warn, A200);
+        }
+        .mat-progress-bar-background {
+            fill: mat.get-color-from-palette(theme.$xy-warn, A200);
+        }
+    }
+   ::ng-deep{
+    .mat-accent{
+        .mat-progress-bar-fill::after {
+            background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500) !important;
+        }
+        .mat-progress-bar-background {
+            fill: mat.get-color-from-palette(theme.$xy-accent, A700);
+        }
+        .mat-progress-bar-buffer{
+            background-color: #E1E1E1 !important;
+            }
+    }
+   }
+}
+

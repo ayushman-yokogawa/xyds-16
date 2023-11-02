@@ -1,0 +1,5 @@
+<ol class="breadcrumb">
+  <li class="breadcrumb-item" *ngFor="let item of breadcrumbItems; let last = last" [ngClass]="{ 'inactive-link': last }">
+    <a [routerLink]="item.link">{{ item.label }}</a>
+  </li>
+</ol>

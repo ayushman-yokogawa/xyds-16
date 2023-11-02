@@ -1,0 +1,121 @@
+<table>
+  <tr>
+    <th class="example-label">Standard Dropdown</th>
+    <td class="example-button-row">
+      <xy-select label="Dropdown List Name" errorMessage="Select one option" required>
+        <xy-option value="All Notifications">All Notifications</xy-option>
+        <xy-option value="Battery Low (disabled)" disabled>Battery Low (disabled)</xy-option>
+        <xy-option value="Signal Shift Detected">Signal Shift Detected</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+        <xy-hint>Required</xy-hint>
+      </xy-select>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Standard Dropdown Required</th>
+    <td class="example-button-row">
+      <xy-select label="Dropdown List Name" value="" required>
+        <xy-option value=""></xy-option>
+        <xy-option value="All Notifications">All Notifications</xy-option>
+        <xy-option value="Battery Low (disabled)" disabled>Battery Low (disabled)</xy-option>
+        <xy-option value="Signal Shift Detected">Signal Shift Detected</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+      </xy-select>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Small  Dropdown</th>
+    <td class="example-button-row">
+      <xy-select label="Dropdown List Name"  value="option3" small>
+        <xy-option value="All Notifications">All Notifications</xy-option>
+        <xy-option value="Battery Low (disabled)" disabled>Battery Low (disabled)</xy-option>
+        <xy-option value="Signal Shift Detected">Signal Shift Detected</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+      </xy-select>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Dropdown with Checkbox</th>
+      <xy-select label="Dropdown List Name" [multiple]="true"  formControlName="selectControl"  value="option3">
+        <xy-option value="All Notifications">All Notifications</xy-option>
+        <xy-option value="Battery Low">Battery Low (disabled)</xy-option>
+        <xy-option value="Signal Shift Detected">Signal Shift Detected</xy-option>
+        <xy-option value="Inactive">Inactive</xy-option>
+      </xy-select>
+  </tr>
+  <tr>
+    <th class="example-label">Dropdown Selected-With Icon</th>
+    <td class="example-button-row">
+      <xy-select label="One-line item"  shadow>
+        <xy-option value="All Notifications" icon="home">All Notifications</xy-option>
+        <xy-option value="Battery Low (disabled)" icon="home" disabled>Battery Low (disabled)</xy-option>
+        <xy-option value="Signal Shift Detected" icon="home">Signal Shift Detected</xy-option>
+        <xy-option value="Inactive" icon="home">Inactive</xy-option>
+        <xy-hint>Required</xy-hint>
+      </xy-select>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Disabled Dropdown</th>
+    <td class="example-button-row">
+      <xy-select label="One-line item" shadow disabled>
+        <xy-option value="All Notifications" icon="home">All Notifications</xy-option>
+        <xy-option value="Battery Low (disabled)" icon="home" disabled>Battery Low (disabled)</xy-option>
+        <xy-option value="Signal Shift Detected" icon="home">Signal Shift Detected</xy-option>
+        <xy-option value="Inactive" icon="home">Inactive</xy-option>
+        <xy-hint>Required</xy-hint>
+      </xy-select>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Disabled Dropdown value selected</th>
+    <td class="example-button-row">
+      <xy-select label="One-line item" value="option3" shadow disabled>
+        <xy-option value="All Notifications" icon="home">All Notifications</xy-option>
+        <xy-option value="Battery Low (disabled)" icon="home" disabled>Battery Low (disabled)</xy-option>
+        <xy-option value="Signal Shift Detected" icon="home">Signal Shift Detected</xy-option>
+        <xy-option value="Inactive" icon="home">Inactive</xy-option>
+        <xy-hint>Required</xy-hint>
+      </xy-select>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Dropdown with dataSource</th>
+    <td class="example-button-row">
+      <xy-select value="" [dataSource]="DATASOURCE" ></xy-select>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Dropdown Array  dataSource</th>
+    <td class="example-button-row">
+      <xy-select  [formControl]="selectControl" (change)="onSelect($event)">
+          <xy-option *ngFor="let data of array" [value]="data.value">
+              {{data.value}}
+          </xy-option>
+      </xy-select>
+    </td>
+
+  </tr>
+</table>

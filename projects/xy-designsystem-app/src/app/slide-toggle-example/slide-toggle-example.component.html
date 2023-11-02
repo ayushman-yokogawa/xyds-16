@@ -1,0 +1,62 @@
+<form [formGroup]="dwellingValues">
+  <table>
+    <tr>
+      <th class="example-label">Slide Toggle</th>
+        <td class="example-button-row">
+          <xy-slide-toggle 
+            [label]="'Toggle me'" 
+            color="accent"
+            formControlName="toggleControl"
+            [checked]="true"
+            [id]="'input1'"
+            [name]="'Standard Input'"
+            (change)="handleToggleChange($event)">
+            
+            Accent
+          </xy-slide-toggle>
+        </td>
+        <td class="example-button-row">
+          <xy-slide-toggle 
+            [label]="'Toggle me'" 
+            formControlName="toggleControl2"
+            color="error"
+            [id]="'input2'"
+            [name]="'Standard Input'"
+            (change)="handleToggleChange($event)">
+
+            Accent
+          </xy-slide-toggle>
+        </td>
+    </tr>
+    <tr>
+      <th class="example-label">Slide Toggle Disabled</th>
+        <td class="example-button-row">
+          <xy-slide-toggle 
+              [label]="'Toggle me'" 
+              color="accent"
+              [disabled]="true"
+              formControlName="toggleControl"
+              [id]="'input3'"
+              [name]="'Disabled Input'"
+              (change)="handleToggleChange($event)">
+
+              Accent
+          </xy-slide-toggle>
+        </td>
+        <td class="example-button-row">
+          <xy-slide-toggle 
+            
+              [label]="'Toggle me'" 
+              color="error"
+              [disabled]="true"
+              formControlName="toggleControl"
+              [id]="'input4'"
+              [name]="'Disabled Input'"
+              (change)="handleToggleChange($event)"
+              >
+              Accent
+            </xy-slide-toggle>
+        </td>
+    </tr> 
+  </table> 
+</form>

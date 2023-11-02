@@ -1,0 +1,147 @@
+
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+// @use "xy-accent" as xy-accent;
+// @use "xy-light" as xy-light;
+// @use "xy-dark" as xy-dark;
+
+::ng-deep .mat-badge-content{
+    color: theme.$xy-white !important;
+}
+:host{
+    // accent
+    &.default-accent.mat-badge-medium.mat-badge-overlap.mat-badge-after .mat-badge-content {
+        right: -15px;
+    }
+    &.default-accent.mat-badge-small.mat-badge-overlap.mat-badge-after .mat-badge-content{
+        right: -11px;
+        top: -4px;
+    }
+    &.default-accent {
+        .mat-badge-content{
+            background-color: mat.get-color-from-palette(theme.$xy-accent, A700) !important;
+            color: theme.$xy-white !important;
+            border-radius: 100%;
+            font-size: 14px;
+            border: 1px solid theme.$xy-white;
+            font-weight: 500;
+        }
+    }
+    &[size="large"] .mat-badge-content{
+            right: -20px !important;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            top: -14px;
+    }
+    &[size="small"] .mat-badge-content{   
+            right: -8px !important;
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+    }
+    &[size="medium"] .mat-badge-content{   
+            width: 22px;
+            height: 22px;
+            line-height: 22px;
+    }
+    &.default-critical {
+        .mat-badge-content{
+            background-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+            color: theme.$xy-white !important;
+            border-radius: 100%;
+            font-size: 12px;
+            border: 1px solid theme.$xy-white;
+            font-weight: 500;
+        }
+    }
+    &.accent-badge .mat-badge-content{
+        background-color: theme.$xy-white !important;
+        color: mat.get-color-from-palette(theme.$xy-accent, A700) !important;
+        border-radius: 100%;
+        border: 1px solid mat.get-color-from-palette(theme.$xy-accent, A700);
+        font-size: 14px;
+    }
+    &.outline-accent-badge .mat-badge-content{
+        background-color: mat.get-color-from-palette(theme.$xy-accent, A700) !important;
+        color: theme.$xy-white !important;
+        border-radius: 100%;
+        border: 1px solid mat.get-color-from-palette(theme.$xy-accent, A700) ;
+        font-size: 14px;
+    }
+    // critical
+    &.critical-badge .mat-badge-content{
+        background-color: theme.$xy-white !important;
+        color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+        border-radius: 100%;
+        border: 1px solid mat.get-color-from-palette(theme.$xy-critical, A400);
+        font-size: 14px;
+
+    }
+
+    //error 
+    &.default-warn .mat-badge-content{
+        background-color: #f44336!important;
+        color: theme.$xy-white!important;
+        border-radius: 100%;
+        border: 1px solid theme.$xy-white;
+        font-size: 11px;
+    }
+   
+    // warn
+    &.warn-badge .mat-badge-content{
+        background-color: theme.$xy-white !important;
+        color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+        border-radius: 100%;
+        border: 1px solid mat.get-color-from-palette(theme.$xy-error, A400);
+        font-size: 14px;
+    }
+
+    // inverted badge
+    &.inverted-badge .mat-badge-content{
+        background-color: theme.$xy-white!important;
+        color: mat.get-color-from-palette(theme.$xy-accent, A700)!important;
+        border-radius: 100%;
+        border: 1px solid mat.get-color-from-palette(theme.$xy-accent, A700);
+        font-size: 11px;
+        top: -15px;
+        mat-icon{
+            color: theme.$xy-white;
+        }
+    }
+    &.default-accent.mat-badge{
+        display: inline-block;
+    }
+    &.default-critical.mat-badge{
+        display: inline-block;
+    }
+    &.default-warn.mat-badge{
+        display: inline-block;
+    }
+    &.warn-badge.mat-badge{
+        display: inline-block;
+    }
+    &.critical-badge.mat-badge{
+        display: inline-block;
+    }
+    &.accent-badge.mat-badge{
+        display: inline-block;
+    } 
+    &.outline-accent-badge.mat-badge{
+        display: inline-block;
+    }
+}
+
+:host-context(.dark-theme) {
+    &.default-accent {
+        .mat-badge-content{
+            border: none;
+        }
+    }
+     // warn
+     &.warn-badge .mat-badge-content{
+        border: none;
+    }
+
+}
+

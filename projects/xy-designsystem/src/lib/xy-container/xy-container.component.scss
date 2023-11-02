@@ -1,0 +1,579 @@
+@use '../../../theme/xy-spacing' as spacing;
+
+:host{
+  background: black;
+
+  &>div{
+
+    height: inherit;
+
+    &.xy-wrap{
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+
+      ::ng-deep .mat-radio-group {
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+      }
+    }
+
+    &.xy-nowrap{
+      -webkit-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+
+      ::ng-deep .mat-radio-group {
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+      }
+    }
+
+    &.xy-horizontal {
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+
+      ::ng-deep .mat-radio-group {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+      }
+
+      &.xy-center {
+        -webkit-justify-content: center;
+        justify-content: center;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-justify-content: center;
+          justify-content: center;
+        }
+
+        &.xy-spacing-xxs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xxs;
+            margin-right: spacing.$spacing-xxs;
+          }
+        }
+
+        &.xy-spacing-xs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xs;
+            margin-right: spacing.$spacing-xs;
+          }
+        }
+
+        &.xy-spacing-s {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-s;
+            margin-right: spacing.$spacing-s;
+          }
+        }
+
+        &.xy-spacing-m {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-m;
+            margin-right: spacing.$spacing-m;
+          }
+        }
+
+        &.xy-spacing-l {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-l;
+            margin-right: spacing.$spacing-l;
+          }
+        }
+
+        &.xy-spacing-xl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xl;
+            margin-right: spacing.$spacing-xl;
+          }
+        }
+
+        &.xy-spacing-xxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xxl;
+            margin-right: spacing.$spacing-xxl;
+          }
+        }
+
+        &.xy-spacing-xxxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xxxl;
+            margin-right: spacing.$spacing-xxxl;
+          }
+        }
+      }
+
+      &.xy-left {
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+        }
+
+        &.xy-spacing-xxs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-xxs;
+          }
+        }
+
+        &.xy-spacing-xs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-xs;
+          }
+        }
+
+        &.xy-spacing-s {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-s;
+          }
+        }
+
+        &.xy-spacing-m {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-m;
+          }
+        }
+
+        &.xy-spacing-l {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-l;
+          }
+        }
+
+        &.xy-spacing-xl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-xl;
+          }
+        }
+
+        &.xy-spacing-xxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-xxl;
+          }
+        }
+
+        &.xy-spacing-xxxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-right: spacing.$spacing-xxxl;
+          }
+        }
+      }
+
+      &.xy-right {
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+        }
+
+        &.xy-spacing-xxs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xxs;
+          }
+        }
+
+        &.xy-spacing-xs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xs;
+          }
+        }
+
+        &.xy-spacing-s {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-s;
+          }
+        }
+
+        &.xy-spacing-m {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-m;
+          }
+        }
+
+        &.xy-spacing-l {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-l;
+          }
+        }
+
+        &.xy-spacing-xl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xl;
+          }
+        }
+
+        &.xy-spacing-xxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xxl;
+          }
+        }
+
+        &.xy-spacing-xxxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-left: spacing.$spacing-xxxl;
+          }
+        }
+      }
+
+      &.xy-justify {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+        }
+      }
+
+      &.xy-vertical-top{
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: flex-start;
+          align-items: flex-start;
+        }
+      }
+      &.xy-vertical-center{
+        -webkit-align-items: center;
+        align-items: center;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: center;
+          align-items: center;
+        }
+      }
+      &.xy-vertical-bottom{
+        -webkit-align-items: flex-end;
+        align-items: flex-end;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: flex-end;
+          align-items: flex-end;
+        }
+      }
+      &.xy-vertical-justify{
+        -webkit-align-items: center;
+        align-items: center;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: center;
+          align-items: center;
+        }
+      }
+    }
+
+    &.xy-vertical{
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-direction: column;
+      flex-direction: column;
+
+      height: inherit;
+
+      ::ng-deep .mat-radio-group {
+        width: 100%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+      }
+
+      &.xy-wrap{
+        height: inherit;
+
+        ::ng-deep .mat-radio-group {
+          height: inherit;
+        }
+      }
+
+      &.xy-left{
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: flex-start;
+          align-items: flex-start;
+        }
+      }
+
+      &.xy-center{
+        -webkit-align-items: center;
+        align-items: center;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: center;
+          align-items: center;
+        }
+      }
+
+      &.xy-right{
+        -webkit-align-items: flex-end;
+        align-items: flex-end;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: flex-end;
+          align-items: flex-end;
+        }
+      }
+
+      &.xy-justify{
+        -webkit-align-items: center;
+        align-items: center;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-align-items: center;
+          align-items: center;
+        }
+      }
+
+      &.xy-vertical-top{
+        -webkit-justify-content: flex-start;
+        justify-content: flex-start;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+        }
+
+        &.sxy-pacing-xxs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-xxs;
+          }
+        }
+
+        &.xy-spacing-xs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-xs;
+          }
+        }
+
+        &.xy-spacing-s {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-s;
+          }
+        }
+
+        &.xy-spacing-m {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-m;
+          }
+        }
+
+        &.xy-spacing-l {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-l;
+          }
+        }
+
+        &.xy-spacing-xl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-xl;
+          }
+        }
+
+        &.xy-spacing-xxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-xxl;
+          }
+        }
+
+        &.xy-spacing-xxxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-bottom: spacing.$spacing-xxxl;
+          }
+        }
+      }
+
+      &.xy-vertical-center{
+        -webkit-justify-content: center;
+        justify-content: center;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-justify-content: center;
+          justify-content: center;
+        }
+
+        &.xy-spacing-xxs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xxs;
+            margin-bottom: spacing.$spacing-xxs;
+          }
+        }
+
+        &.xy-spacing-xs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xs;
+            margin-bottom: spacing.$spacing-xs;
+          }
+        }
+
+        &.xy-spacing-s {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-s;
+            margin-bottom: spacing.$spacing-s;
+          }
+        }
+
+        &.xy-spacing-m {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-m;
+            margin-bottom: spacing.$spacing-m;
+          }
+        }
+
+        &.xy-spacing-l {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-l;
+            margin-bottom: spacing.$spacing-l;
+          }
+        }
+
+        &.xy-spacing-xl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xl;
+            margin-bottom: spacing.$spacing-xl;
+          }
+        }
+
+        &.xy-spacing-xxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xxl;
+            margin-bottom: spacing.$spacing-xxl;
+          }
+        }
+
+        &.xy-spacing-xxxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xxxl;
+            margin-bottom: spacing.$spacing-xxxl;
+          }
+        }
+      }
+
+      &.xy-vertical-bottom{
+        -webkit-justify-content: flex-end;
+        justify-content: flex-end;
+
+        ::ng-deep .mat-radio-group {
+          -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+        }
+
+        &.xy-spacing-xxs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xxs;
+          }
+        }
+
+        &.xy-spacing-xs {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xs;
+          }
+        }
+
+        &.xy-spacing-s {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-s;
+          }
+        }
+
+        &.xy-spacing-m {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-m;
+          }
+        }
+
+        &.xy-spacing-l {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-l;
+          }
+        }
+
+        &.xy-spacing-xl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xl;
+          }
+        }
+
+        &.xy-spacing-xxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xxl;
+          }
+        }
+
+        &.xy-spacing-xxxl {
+          ::ng-deep xy-radio,
+          ::ng-deep xy-checkbox {
+            margin-top: spacing.$spacing-xxxl;
+          }
+        }
+      }
+
+      &.xy-vertical-justify {
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+
+        ::ng-deep .mat-radio-group {
+          height: inherit;
+          -webkit-justify-content: space-between;
+          justify-content: space-between;
+        }
+      }
+
+    }
+  }
+}

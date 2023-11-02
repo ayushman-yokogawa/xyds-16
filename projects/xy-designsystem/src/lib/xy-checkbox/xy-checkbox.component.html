@@ -1,0 +1,24 @@
+<mat-checkbox  #checkbox
+               [id]="id"
+               [name]="name"
+               [value]="value"
+               [checked]="checked"
+               [color]="color"
+               [required]="_required"
+               [disabled]="_disabled"
+               [disableRipple]="_disableRipple"
+               [formControl]="checkedFormControl"
+               [attr.aria-label]="ariaLabel"
+               [attr.aria-describedby]="ariaDescribedby"
+               [attr.aria-labelledby]="ariaLabelledby"
+               [attr.tabindex]="tabindex"
+               (click)="onClick($event)"
+               (focus)="onFocus($event)"
+               (blur)="onBlur($event)">
+  <span class="xy-checkbox-label">{{label}}</span>
+  <ng-content></ng-content>
+</mat-checkbox>
+<mat-error *ngFor="let item of errors;">
+  {{item.content.nativeElement.innerText}}
+</mat-error> 
+

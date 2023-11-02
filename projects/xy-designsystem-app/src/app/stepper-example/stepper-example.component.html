@@ -1,0 +1,155 @@
+<h3>Stepper with Numbers</h3>
+<br>
+<xy-stepper #stepper [(counter)]="counter">
+	<xy-step>
+		<div step-title >Step 1</div>
+		<div step-content>
+            <h3>Content 1</h3>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem aliquid expedita, iste aspernatur?
+            </p>
+            <xy-progressbar value="100" color="accent" mode="determinate" label="Progress Bar Label" help="Optional Help Text" class="inline-progress"></xy-progressbar>
+
+        </div>
+		<div step-action>
+			<xy-button color="accent" (click)="stepper.nextStep()">Next Step</xy-button>
+		</div>
+	</xy-step>
+	<xy-step>
+		<div step-title>Step 2</div>
+		<div step-content>
+            <h3>Content 2</h3>
+            <p>
+                consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem aliquid expedita, iste aspernatur? Itaque odit exercitationem aliquid expedita, iste aspernatur?
+            </p>
+        </div>
+		<div step-action>
+            <xy-button color="accent" (click)="stepper.prevStep()">Pre Steps</xy-button>
+            &nbsp;
+			<xy-button color="accent" (click)="stepper.nextStep()">Next Step</xy-button>
+		</div>
+	</xy-step>
+	<xy-step >
+		<div step-title>Step 3</div>
+		<div step-content> 
+            <h3>Content 3</h3>
+            <p>
+                Itaque odit exercitationem aliquid expedita, iste aspernatur?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem
+            </p>
+        </div>
+		<div step-action>
+            <xy-button color="accent" (click)="stepper.prevStep()">Pre Steps</xy-button>
+            &nbsp;
+			<xy-button color="accent" (click)="stepper.nextStep()">Next Step</xy-button>
+        </div>
+	</xy-step>
+	<xy-step>
+		<div step-title>Step 4</div>
+		<div step-content> 
+            <h3>Content 4</h3>
+            <p>
+                Itaque odit exercitationem aliquid expedita, iste aspernatur?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem
+            </p>
+        </div>
+		<div step-action>
+            <xy-button color="accent" (click)="stepper.prevStep()">Pre Steps</xy-button>
+            &nbsp;
+			<xy-button color="accent" (click)="stepper.nextStep()">Next Step</xy-button>
+        </div>
+	</xy-step>
+</xy-stepper>
+<br><br>
+
+<h3>Stepper with Contaxtual Icon</h3>
+<br>
+<xy-stepper #stepper [(counter)]="counter2">
+	<xy-step icon="edit">
+		<div step-title >Step 1</div>
+		<div step-content>
+            <h3>Content 1</h3>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem aliquid expedita, iste aspernatur?
+            </p>
+        </div>
+		<div step-action>
+			<xy-button color="accent" (click)="nextStep2()">Next Step</xy-button>
+		</div>
+	</xy-step>
+	<xy-step icon="edit">
+		<div step-title>Step 2</div>
+		<div step-content>
+            <h3>Content 2</h3>
+            <p>
+                consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem aliquid expedita, iste aspernatur? Itaque odit exercitationem aliquid expedita, iste aspernatur?
+            </p>
+        </div>
+		<div step-action>
+            <xy-button color="accent"  (click)="prevStep2()">Pre Steps</xy-button>
+            &nbsp;
+			<xy-button color="accent" (click)="nextStep2()">Next Step</xy-button>
+		</div>
+	</xy-step>
+	<xy-step icon="settings">
+		<div step-title>Step 3</div>
+		<div step-content> 
+            <h3>Content 3</h3>
+            <p>
+                Itaque odit exercitationem aliquid expedita, iste aspernatur?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem
+            </p>
+        </div>
+		<div step-action>
+            <xy-button color="accent"  (click)="prevStep2()">Pre Steps</xy-button>
+            &nbsp;
+			<xy-button color="accent" (click)="nextStep2()">Next Step</xy-button>
+        </div>
+	</xy-step>
+
+</xy-stepper>
+<br><br>
+
+
+<h3>Vertical Stepper</h3>
+<br>
+<xy-stepper #stepper [(counter)]="counter3" vertical>
+	<xy-step >
+		<div step-title >Step 1</div>
+		<div step-content>
+            <h3>Content 1</h3>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem aliquid expedita, iste aspernatur?
+            </p>
+        </div>
+		<div step-action>
+			<xy-button color="accent" (click)="nextStep3()">Next Step</xy-button>
+		</div>
+	</xy-step>
+	<xy-step icon="edit">
+		<div step-title>Step 2</div>
+		<div step-content>
+            <h3>Content 2</h3>
+            <p>
+                consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem aliquid expedita, iste aspernatur? Itaque odit exercitationem aliquid expedita, iste aspernatur?
+            </p>
+        </div>
+		<div step-action>
+            <xy-button color="accent"  (click)="prevStep3()">Pre Steps</xy-button>
+            &nbsp;
+			<xy-button color="accent" (click)="nextStep3()">Next Step</xy-button>
+		</div>
+	</xy-step>
+	<xy-step icon="settings">
+		<div step-title>Step 3</div>
+		<div step-content> 
+            <h3>Content 3</h3>
+            <p>
+                Itaque odit exercitationem aliquid expedita, iste aspernatur?Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit vitae maxime quasi, ut laudantium nihil praesentium fugit quas eum nemo quo modi aperiam. Itaque odit exercitationem
+            </p>
+        </div>
+		<div step-action>
+            <xy-button color="accent"  (click)="prevStep3()">Pre Steps</xy-button>
+            &nbsp;
+			<xy-button color="accent" (click)="nextStep3()">Next Step</xy-button>
+        </div>
+	</xy-step>
+
+</xy-stepper>

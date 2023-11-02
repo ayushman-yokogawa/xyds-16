@@ -1,0 +1,10 @@
+table.fullWidth {
+  width: 100%;
+}
+
+xy-container {
+  height: 300px;
+}
+xy-container ::ng-deep > div {
+  background: rgba(255, 255, 255, 0.1) !important;
+}/*# sourceMappingURL=container-example.component.css.map */

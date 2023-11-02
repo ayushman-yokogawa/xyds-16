@@ -1,0 +1,1878 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+
+:host {
+  display: inline-block;
+  &.xy-blue{
+    padding: 22px;
+    align-items: center;
+    height: 100px;
+  }
+  button {
+    font-family: theme.$base-font !important;
+    font-weight: bold !important;
+
+    &.mat-mdc-button-disabled{
+      ::ng-deep .mat-mdc-button-wrapper {
+        pointer-events: none;
+      }
+    }
+
+    &:not(.mat-mdc-icon-button):not(.mat-fab):not(.mat-mini-fab) {
+      min-width: 80px;
+
+      &.has-icon{
+        padding-left: 12px;
+      }
+
+      ::ng-deep .mat-mdc-button-wrapper {
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      ::ng-deep .mat-mdc-icon{
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.5rem;
+        margin-right: 8px;
+        overflow: visible;
+      }
+    }
+
+    ::ng-deep img {
+      max-width: 24px;
+      max-height: 24px;
+    }
+
+    ::ng-deep .mat-ripple {
+      opacity: 1;
+
+      ::ng-deep .mat-ripple-element {
+        opacity: 1;
+      }
+    }
+
+    &.mat-mdc-icon-button {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      ::ng-deep {
+        .mat-mdc-button-wrapper {
+          margin: 0;
+          padding: 0;
+          line-height: 1;
+
+        }
+        .mat-mdc-button-wrapper ~ .mat-mdc-button-ripple-round{
+          transform: scale(1);
+        }
+
+        i, .mat-icon {
+          color: mat.get-color-from-palette(theme.$xy-base, 800);
+          line-height: 1;
+          height: 1.5rem;
+          width: 1.5rem;
+          overflow: visible;
+          &.material-icons{
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      ::ng-deep {
+        &:active{
+          i, .mat-icon {
+            color: mat.get-color-from-palette(theme.$xy-primary, 700);
+          }
+        }
+      }
+    }
+
+    &.prominent-button{
+      padding-left: 12px;
+
+      ::ng-deep .mat-icon{
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.5rem;
+        margin-right: 8px;
+        overflow: visible;
+      }
+    }
+
+    &.mat-mdc-button{
+      line-height: 36px;
+    }
+
+    &.mat-mdc-outlined-button{
+      line-height: 36px;
+    }
+    &.mat-mdc-unelevated-button{
+      line-height: 36px;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 5px;
+    }
+
+    &.mat-raised-button{
+      line-height: 36px;
+      border-width: 1px;
+      border-style: solid;
+    }
+
+    &.mat-primary {
+      &.mat-mdc-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 900);
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 700, 0.08);
+        }
+      }
+      &.mat-mdc-outlined-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 900);
+        border-color: mat.get-color-from-palette(theme.$xy-primary, 900);
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 700, 0.08);
+        }
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 900-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-primary, 900);
+        background-color: mat.get-color-from-palette(theme.$xy-primary, 900);
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 900，0.2);
+        }
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 900-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-primary, 900);
+        background-color: mat.get-color-from-palette(theme.$xy-primary, 900);
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 900，0.2);
+        }
+      }
+    }
+    &.mat-primary[disabled] {
+      &.mat-mdc-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        &:hover{
+          background-color: inherit;
+        }
+      }
+      &.mat-mdc-outlined-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-disabled, 600) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-disabled, 600) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+    }
+
+    &.mat-secondary {
+      &.mat-mdc-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 700);
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 700, 0.08);
+        }
+      }
+      &.mat-mdc-outlined-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 700);
+        border-color: mat.get-color-from-palette(theme.$xy-primary, 700);
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 700, 0.08);
+        }
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 700-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-primary, 700);
+        background-color: mat.get-color-from-palette(theme.$xy-primary, 700);
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-primary, 700-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-primary, 700);
+        background-color: mat.get-color-from-palette(theme.$xy-primary, 700);
+      }
+    }
+    &.mat-secondary[disabled] {
+      &.mat-mdc-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        &:hover{
+          background-color: inherit;
+        }
+      }
+      &.mat-mdc-outlined-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-disabled, 600) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-disabled, 600) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+    }
+
+    &.mat-secondary[disabled] {
+      &.mat-mdc-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        &:hover{
+          background-color: inherit;
+        }
+      }
+      &.mat-mdc-outlined-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-disabled, 600) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-disabled, 600) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-disabled, 500) !important;
+      }
+    }
+
+    &.mat-accent {
+      &.mat-mdc-unelevated-button:disabled{
+        color: #34414d66;
+        border-color: #adb3b8;
+        background-color: #adb3b8;
+      }
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-accent, A700);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-accent, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-accent, A500);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A100);
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-accent, A500) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-accent, 500, 0.2);
+        }
+      }
+      &.mat-mdc-button:disabled{
+        color: #34414d66;
+      }
+      &.mat-mdc-outlined-button:disabled{
+        color: #34414d66;
+        border-color: #34414d66;
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-accent, A700);
+        border: mat.get-color-from-palette(theme.$xy-accent, A500) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-accent, A500);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A100);
+        }
+        &.cdk-focused:active{
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-accent, 500, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: theme.$xy-white;
+        background-color: mat.get-color-from-palette(theme.$xy-accent, A500);
+        border-color: mat.get-color-from-palette(theme.$xy-accent, A500);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-accent, 500) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, 400);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-accent, 400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, 400);
+        }
+        &.cdk-focused:active{
+          background-color: mat.get-color-from-palette(theme.$xy-accent, 500);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.2);
+        }
+      }
+      &.mat-raised-button{
+        color: theme.$xy-white;
+        border-color: mat.get-color-from-palette(theme.$xy-accent, A500);
+        background-color: mat.get-color-from-palette(theme.$xy-accent, A500);
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+       
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.3) ;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.2);
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-accent, A700) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.2) !important;
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.3);
+              border: mat.get-color-from-palette(theme.$xy-accent, A700) 1px solid ;
+            }
+          }
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.2) ;
+              border: mat.get-color-from-palette(theme.$xy-accent, A700) 1px solid;              
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent ;
+            }
+          }
+        }
+      }
+    }
+
+    &.mat-critical {
+      &.mat-mdc-button:disabled{
+        color: #34414d66;
+      }
+      &.mat-mdc-unelevated-button:disabled{
+        color: #34414d66;
+        border-color: #adb3b8;
+        background-color: #adb3b8;
+      }
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-critical, A700);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-critical, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A100);
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-critical, A700);
+        border: mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-critical, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A100);
+        }
+        &.cdk-focused:active{
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-critical, A400-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+        border-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A200);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+        }
+        &.cdk-focused:active{
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A200);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-critical, A400-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+        background-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.3) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+            }
+          }
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.3) !important;
+              border: none;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-critical, A700) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-critical, A700) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.mat-error {
+      &.mat-mdc-button:disabled{
+        color: #34414d66;
+      }
+      &.mat-mdc-unelevated-button:disabled{
+        color: #34414d66;
+        border-color: #adb3b8;
+        background-color: #adb3b8;
+      }
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-error, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-error, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A100);
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-error, A400) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+        border: mat.get-color-from-palette(theme.$xy-error, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-error, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-error, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-error, A100);
+        }
+        &.cdk-focused:active{
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+        }
+      }
+    
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-error, A400-contrast) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400);
+        border-color: mat.get-color-from-palette(theme.$xy-error, A400);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-error, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A200);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-error, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400);
+        }
+        &.cdk-focused:active{
+          background-color: mat.get-color-from-palette(theme.$xy-error, A200);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-error, A400-contrast) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-error, A400);
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400);
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.3) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+            }
+          }
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.3) !important;
+              border: none;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-error, A700) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-error, A700) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.mat-warning {
+      &.mat-mdc-button:disabled{
+        color: #34414d66;
+      }
+      &.mat-mdc-unelevated-button:disabled{
+        color: #34414d66;
+        border-color: #adb3b8;
+        background-color: #adb3b8;
+      }
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-warn, A700);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-warn, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A100);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-warn, A700);
+        border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-warn, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A100);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-warn, A400-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+        border-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A200);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+        }
+        &.cdk-focused:active{
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A200);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-warn, A400-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+        background-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.3) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+            }
+            .mat-icon {
+              color: mat.get-color-from-palette(theme.$xy-warn, A700);
+            }
+          }
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.3) !important;
+              border: none;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-warn, A700) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-warn, A700) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.mat-attention {
+      &.mat-mdc-button:disabled{
+        color: #34414d66;
+      }
+      &.mat-mdc-unelevated-button:disabled{
+        color: #34414d66;
+        border-color: #adb3b8;
+        background-color: #adb3b8;
+      }
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-attention, A700);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A100);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-attention, A400) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-attention, A700);
+        border: mat.get-color-from-palette(theme.$xy-attention, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A100);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-attention, A400-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+        border-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-attention, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A200);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-attention, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A200);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-attention, A400-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+        background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.3) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+            }
+            .mat-icon {
+              color: mat.get-color-from-palette(theme.$xy-attention, A700);
+            }
+          }
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.3) !important;
+              border: none;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.mat-safe_normal {
+      &.mat-mdc-button:disabled{
+        color: #34414d66;
+      }
+      &.mat-mdc-unelevated-button:disabled{
+        color: #34414d66;
+        border-color: #adb3b8;
+        background-color: #adb3b8;
+      }
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A700);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A100);
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-safe_normal, A400) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A700);
+        border: mat.get-color-from-palette(theme.$xy-safe_normal, A400) 1px solid !important;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A100);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A100);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A700) 1px solid;
+          background-color: theme.$xy-white;
+        }
+        ::ng-deep .mat-ripple-element {
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A200-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400);
+        border: mat.get-color-from-palette(theme.$xy-safe_normal, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A200);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white !important;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A400) 1px solid !important;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400) !important;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A200-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-safe_normal, A200);
+        background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A200);
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.3) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+            }
+            .mat-icon {
+              color: mat.get-color-from-palette(theme.$xy-safe_normal, A700);
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.3) !important;
+              border: none;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-safe_normal, A700) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-safe_normal, A700) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+
+    &:not(.mat-primary):not(.mat-secondary):not(.mat-accent):not(.mat-critical):not(.mat-error):not(.mat-warning):not(.mat-attention):not(.mat-safe_normal) {
+      &.mat-mdc-button{
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-base, 900, 0.08);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-base, 900);
+        border: mat.get-color-from-palette(theme.$xy-base, 900) 1px solid;
+        &:hover{
+          background-color: mat.get-color-from-palette(theme.$xy-base, 900, 0.08);
+        }
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-base, 900-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-base, 900);
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-base, 900-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-base, 900);
+        background-color: mat.get-color-from-palette(theme.$xy-base, 900);
+      }
+      &[disabled] {
+        &.mat-mdc-button {
+          &:hover{
+            background-color: inherit;
+          }
+        }
+      }
+    }
+
+    &.mat-mdc-button-disabled {
+      &.mat-mdc-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 400, 0.4) !important;
+      }
+      &.mat-mdc-outlined-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 400, 0.4) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-disabled, 400, 0.4) !important;
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 400, 0.4) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-base, 400) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-base, 400) !important;
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-disabled, 400, 0.4) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-base, 400) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-base, 400) !important;
+      }
+      &.mat-mdc-icon-button {
+        ::ng-deep {
+          i, .mat-icon {
+            color: mat.get-color-from-palette(theme.$xy-disabled, 400, 0.4);
+          }
+        }
+      }
+    }
+  }
+}
+
+:host-context(.xy-blue){ 
+  button {
+    &.mat-mdc-icon-button:not([disabled]){
+      ::ng-deep {
+        i, .mat-icon {
+          color: theme.$xy-white !important;
+        }
+      }
+
+      ::ng-deep .mat-ripple-element{
+        background-color: mat.get-color-from-palette(theme.$xy-white-palette, 0.2) !important;
+      }
+
+      &:hover:not(.cdk-focused):not(:active){
+        ::ng-deep {
+          .mat-ripple{
+            background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.2) !important;
+          }
+        }
+      }
+      &:active:not(.cdk-focused):not(:hover){
+        ::ng-deep {
+          .mat-ripple{
+            background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3) !important;
+          }
+        }
+      }
+      &.cdk-focused:active{
+        border:mat.get-color-from-palette(theme.$xy-accent, 100) 1px solid!important;
+        background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.2) !important;
+      }
+      &:focus-visible:not(:active){
+        ::ng-deep {
+          .mat-ripple{
+            background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3) !important;
+            border: mat.get-color-from-palette(theme.$xy-primary, 100) 1px solid !important;
+          }
+        }
+      }
+    }
+    &.mat-mdc-icon-button[disabled] {
+      ::ng-deep {
+        i, .mat-icon {
+          color: mat.get-color-from-palette(theme.$xy-base, 400);
+        }
+      }
+    }
+  }
+}
+
+:host-context(.dark-theme) {
+  button {
+    &.mat-mdc-icon-button {
+      ::ng-deep {
+        i, .mat-icon {
+          color: theme.$xy-white;
+        }
+      }
+    }
+   
+    &.mat-error {
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-error, A200) !important;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-error, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.02);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-error, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-error, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-error, A200) !important;
+        border: mat.get-color-from-palette(theme.$xy-error, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-error, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+          border: mat.get-color-from-palette(theme.$xy-error, A400) 1px solid;
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-error, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-error, A400-contrast) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400);
+        border-color: mat.get-color-from-palette(theme.$xy-error, A400);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-error, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: transparent;
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-error, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A700);
+        }
+        &.cdk-focused:active{
+          background-color: mat.get-color-from-palette(theme.$xy-error, A700);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.1) !important;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-error, A100) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+              border: none;
+            }
+          }
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-error, 500) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+    &.mat-warning {
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-warn, A200) !important;
+        border: transparent 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-warn, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-warn, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-warn, A200) !important;
+        border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-warn, A400-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-warn, A400);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-warn, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A200);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A700);
+        }
+        &.cdk-focused:active{
+          border:  mat.get-color-from-palette(theme.$xy-warn, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A700);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.1) !important;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-warn, A100) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+              border: none;
+            }
+          }
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-dark-primary, 500) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+    &.mat-attention {
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-attention, A200) !important;
+        border: transparent 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-attention, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-attention, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-attention, A200) !important;
+        border: mat.get-color-from-palette(theme.$xy-attention, A400) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-attention, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-attention, A400-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-attention, A400);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-attention, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A200);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A700);
+        }
+        &.cdk-focused:active{
+          border:  mat.get-color-from-palette(theme.$xy-attention, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A700);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.1) !important;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+          border: mat.get-color-from-palette(theme.$xy-attention, A100) 1px solid ;
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+              border: none;
+            }
+          }
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-attention, A700) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+    &.mat-safe_normal {
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A200) !important;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A200) !important;
+        border: mat.get-color-from-palette(theme.$xy-safe_normal, A100) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A200-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400);
+        border:none !important;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border:none !important;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: theme.$xy-white;
+            opacity: 0.24;
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border:none !important;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A700);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-safe_normal, A200) 1px solid !important;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A700) !important;
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, A400, 0.36);
+        }
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+             background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.1) !important;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-safe_normal, A100) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+            //  border: none;
+            }
+          }
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-dark-primary, 500) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+    &.mat-accent {
+      &.mat-mdc-unelevated-button:disabled{
+        color: #ffffff4d;
+        border-color: #666;
+        background-color: #666;
+      }
+      &.mat-mdc-outlined-button:disabled{
+        color: #ffffff4d;
+        border-color: #ffffff4d;
+      }
+      &.mat-mdc-button:disabled{
+        color: #ffffff4d;
+      }
+      &.mat-mdc-button:not([disabled]) {
+        color: mat.get-color-from-palette(theme.$xy-dark-accent, 500);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover) {
+          border: mat.get-color-from-palette(theme.$xy-dark-accent, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.1);
+
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            border: mat.get-color-from-palette(theme.$xy-dark-accent, A200) 1px solid;
+            background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-accent, 500, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-dark-accent, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.1);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A400, 0.2);
+        }
+      }
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: theme.$xy-white;
+        background-color: mat.get-color-from-palette(theme.$xy-dark-accent, 500);
+        border-color: mat.get-color-from-palette(theme.$xy-dark-accent, 500);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-dark-primary, 200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 700);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: transparent;
+          }
+        }
+
+        &:hover:not(:active) {
+          border: mat.get-color-from-palette(theme.$xy-dark-primary, 200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 700);
+        }
+
+        &.cdk-focused:active {
+          border: mat.get-color-from-palette(theme.$xy-dark-primary, 500) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 700);
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: mat.get-color-from-palette(theme.$xy-dark-accent, 600) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-accent, 600);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-dark-accent, 200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-accent, 700);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.2);
+        }
+      }
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-dark-accent, 500) !important;
+        border: mat.get-color-from-palette(theme.$xy-dark-accent, A700) 1px solid;
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-dark-accent, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A700, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-accent, A700, 0.2);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          background-color: mat.get-color-from-palette(theme.$xy-accent, 500, 0.2);
+          border: mat.get-color-from-palette(theme.$xy-dark-accent, A700) 1px solid;
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-dark-accent, A200) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.02);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A400, 0.2);
+        }
+      }
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A400, 0.2) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-accent, A400, 0.1) !important;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-accent, A200) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-accent, 500, 0.2) !important;
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-accent, A400, 0.2) !important;
+              border: none;
+            }
+          }
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-accent, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-accent, 500) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+    &.mat-critical {
+      &.mat-mdc-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-critical, A200);
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-critical, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            border: mat.get-color-from-palette(theme.$xy-critical, A100) 1px solid;
+            background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+          }
+        }
+        &:hover:not(:active){
+          @include mat.elevation(2);
+          border: none;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+        }
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-critical, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+        }
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+        }
+      }
+
+      &.mat-mdc-outlined-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-critical, A200);
+        border: mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-critical, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+            transition: opacity 200ms cubic-bezier(0.35, 0, 0.25, 1),background-color 200ms cubic-bezier(0.35, 0, 0.25, 1);
+          }
+        }
+
+        &:hover:not(:active){
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2); 
+          border: mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+        }
+
+        &.cdk-focused:active{
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2); 
+          border: mat.get-color-from-palette(theme.$xy-critical, A100) 1px solid;
+        }
+
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2);
+        }
+      }
+
+      &.mat-mdc-unelevated-button:not([disabled]){
+        color: mat.get-color-from-palette(theme.$xy-critical, A400-contrast);
+        background-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+        border-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+
+        &.cdk-program-focused:not(:active):not(:hover),
+        &:focus-visible:not(:active):not(:hover){
+          border: mat.get-color-from-palette(theme.$xy-critical, A100) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A700);
+
+          ::ng-deep .mat-mdc-button-focus-overlay {
+            background-color: transparent;
+          }
+        }
+
+        &:hover:not(:active){
+          border: mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A700);
+        }
+
+        &.cdk-focused:active{
+          border: mat.get-color-from-palette(theme.$xy-critical, A400) 1px solid;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A700);
+        }
+
+        ::ng-deep .mat-ripple-element {
+          background-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.36);
+        }
+      }
+
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-critical, A400-contrast);
+        border-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+        background-color: mat.get-color-from-palette(theme.$xy-critical, A400);
+      }
+
+      &.mat-mdc-icon-button:not([disabled]){
+        ::ng-deep .mat-ripple-element{
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+        }
+
+        &:hover:not(.cdk-focused):not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.1) !important;
+            }
+          }
+        }
+        &.cdk-focused:active{
+          border:mat.get-color-from-palette(theme.$xy-critical, A100) 1px solid!important;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+        }
+        &:active:not(.cdk-focused):not(:hover){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+              border: none;
+            }
+          }
+        }
+        &:focus-visible:not(:active){
+          ::ng-deep {
+            .mat-ripple{
+              background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+              border: mat.get-color-from-palette(theme.$xy-critical, 500) 1px solid !important;
+            }
+            .mat-mdc-button-focus-overlay{
+              background-color: transparent !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.mat-mdc-button-disabled {
+      &.mat-mdc-button{
+        color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3) !important;
+      }
+      &.mat-mdc-outlined-button{
+        color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3) !important;
+      }
+      &.mat-mdc-unelevated-button{
+        color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      &.mat-raised-button{
+        color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3) !important;
+        border-color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+        background-color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      &.mat-mdc-icon-button {
+        ::ng-deep {
+          i, .mat-icon {
+            color: mat.get-color-from-palette(theme.$xy-white-palette, 400, 0.3);
+          }
+        }
+      }
+    }
+  }
+}

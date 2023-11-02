@@ -1,0 +1,157 @@
+
+
+<section>
+  <form [formGroup]="dwellingValues">
+    <xy-card title="Form">
+      <table>
+        <tr>
+          <th>Search</th>
+          <td>
+            <xy-searchbox #searchbox1  formControlName="searchControl" (search)="onSubmit()" (reset)="reset()"></xy-searchbox>
+          </td>
+        </tr> 
+        <tr>
+          <th>Input</th>
+          <td>
+            <xy-input label="Input" required placeholder="Input Text Fill Here"  [inputFormControl]="inputControl" >
+              <xy-error *ngIf="inputControl.touched && inputControl.hasError('required')">
+                <p>Error Message</p>
+              </xy-error>
+            </xy-input>
+          </td>
+        </tr> 
+        <tr>
+          <th>Textarea</th>
+          <td>
+            <xy-textarea label="Textarea" required placeholder="Input Text Fill Here" value="" [textareaControl]="textControl"></xy-textarea>
+          </td>
+        </tr>
+       
+        <tr>
+          <th>Slide Toggle</th>
+          <td>
+            <!-- <xy-slide-toggle color="accent" value="on" [slideControl]="slideToggleControl">On</xy-slide-toggle> -->
+          </td>
+        </tr>
+        <tr>
+          <tr>
+            <th>Checkbox</th>
+            <td class="column-layout">
+              <xy-checkbox
+                id="checkbox-1"
+                name="checkbox-1"
+                value="Term 1"
+                color="accent"
+                required
+                [checkedFormControl]="checkboxControl1"
+              >
+                Value 1
+              </xy-checkbox>
+              <xy-checkbox
+                id="checkbox-2"
+                name="checkbox-2"
+                value="Term 2"
+                color="accent"
+                required
+                [checkedFormControl]="checkboxControl2"
+              >
+                Value 2
+              </xy-checkbox>
+            </td>
+          </tr>
+          <tr>
+            <th>Date Picker</th>
+            <td class="column-layout">
+              <xy-input label="date" type="date" value=""  [inputFormControl]="datePickerControl">
+                <xy-hint>Please enter date</xy-hint>
+              </xy-input>
+            </td>
+          </tr>
+          <tr>
+            <th>Radio</th>
+            <td class="column-layout">
+              <mat-radio-group name="radio-group" formControlName="radioControl">
+                <xy-radio
+                  id="radio-1"
+                  value="value1"
+                  color="accent">
+                  Value 1
+                </xy-radio>
+                <xy-radio
+                  id="radio-2"
+                  value="value2"
+                  color="accent"
+                >
+                  Value 2                  
+                </xy-radio>
+              </mat-radio-group>
+            </td>
+          </tr>
+          <tr>
+            <th>Select Dropdown</th>
+            <td>
+              <!-- <xy-select placeholder="Choose one option"  [selectFormControl]="selectControl" required label="Choose one" > 
+                  <xy-option *ngFor="let data of array" [value]="data.displayName" [id]="data.id" [icon]="data.icon">      
+                    {{data.displayName}}
+                  </xy-option> 
+              </xy-select>
+              <xy-select label="Dropdown List Name" [multiple]="true"  [selectFormControl]="selectControl"  value="option3">
+                <xy-option value="All Notifications">All Notifications</xy-option>
+                <xy-option value="Battery Low">Battery Low (disabled)</xy-option>
+                <xy-option value="Signal Shift Detected">Signal Shift Detected</xy-option>
+                <xy-option value="Inactive">Inactive</xy-option>
+              </xy-select> -->
+
+              <xy-select label="Dropdown List Name" [multiple]="true" errorMessage="Please select an option" required formControlName="selectControl"
+              >
+                <xy-option value="All Notifications">All Notifications</xy-option>
+                <xy-option value="Battery Low">Battery Low (disabled)</xy-option>
+                <xy-option value="Signal Shift Detected">Signal Shift Detected</xy-option>
+                <xy-option value="Inactive">Inactive</xy-option>
+                <xy-hint>Required</xy-hint>
+              </xy-select>
+            </td>
+          </tr>
+      </table>
+      <xy-card-actions>
+        <xy-button text-button color="accent" (click)="onSetvalue()">Set Value</xy-button>
+        <xy-button standard-button color="accent" (click)="onSubmit()">Submit</xy-button>
+      </xy-card-actions>
+    </xy-card>
+  </form>
+</section>
+
+ <section>
+  <h4>Result</h4>
+  <table>
+    <tr>
+      <th>Input</th>
+      <td>{{this.dwellingValues.getRawValue().inputControl}}</td>
+    </tr>
+   
+    <tr>
+      <th>Textarea</th>
+      <td>{{this.dwellingValues.getRawValue().textControl}}</td>
+    </tr>
+    <tr>
+      <th>Slide Toggle</th>
+      <td>{{this.dwellingValues.getRawValue().slideToggleControl}}</td>
+    </tr>
+    <tr>
+      <th>Checkbox</th>
+      <td>{{this.dwellingValues.getRawValue().checkboxControl1}} {{this.dwellingValues.getRawValue().checkboxControl2}}</td>
+    </tr>
+    <tr>
+      <th>Radio</th>
+      <td>{{this.dwellingValues.getRawValue().radioControl}}</td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <td>{{this.dwellingValues.getRawValue().datePickerControl}}</td>
+    </tr>
+    <tr>
+      <th>Select</th>
+      <td>{{this.dwellingValues.getRawValue().selectControl}}</td>
+    </tr>
+</table>
+</section>

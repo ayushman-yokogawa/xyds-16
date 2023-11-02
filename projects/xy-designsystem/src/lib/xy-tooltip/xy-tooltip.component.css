@@ -1,0 +1,4 @@
+:ng-deep .ng-tooltip:after {
+  content: "";
+  position: absolute;
+}/*# sourceMappingURL=xy-tooltip.component.css.map */

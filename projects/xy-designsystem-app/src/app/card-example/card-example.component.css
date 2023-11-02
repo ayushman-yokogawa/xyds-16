@@ -1,0 +1,12 @@
+xy-card {
+  margin: 8px auto;
+}
+
+.flex {
+  display: flex;
+  gap: 0px 15px;
+}
+
+.col {
+  width: 100%;
+}/*# sourceMappingURL=card-example.component.css.map */

@@ -1,0 +1,61 @@
+<table>
+  <tr>
+    <th class="example-label">Checkbox</th>
+    <td class="example-button-row">
+      <xy-checkbox
+        id="checkbox-accent"
+        value="checkbox-accent"
+        color="accent"
+        (change)="onChange($event, 'Accent')"
+        >
+        Accent
+      </xy-checkbox>
+    </td>
+   
+    <td class="example-button-row">
+      <xy-checkbox
+        id="checkbox-error"
+        value="checkbox-error"
+        color="error"
+        (change)="onChange($event, 'Error')">
+        Error
+      </xy-checkbox>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Checkbox Disabled</th>
+    <td class="example-button-row">
+      <xy-checkbox disabled
+                    color="accent"
+                    (change)="onChange($event, 'Accent')">
+        Accent
+      </xy-checkbox>
+    </td>
+   
+    <td class="example-button-row">
+      <xy-checkbox disabled
+                    color="error"
+                    (change)="onChange($event, 'Error')">
+        Error
+      </xy-checkbox>
+    </td>
+   
+    
+  </tr>
+  <tr>
+    <th class="example-label">Checked Checkbox Disabled</th>
+    <td class="example-button-row">
+      <xy-checkbox disabled [checked]="true" color="accent">
+        Accent
+      </xy-checkbox>
+    </td>
+   
+    <td class="example-button-row">
+      <xy-checkbox disabled [checked]="true" color="error">
+        Error
+      </xy-checkbox>
+    </td>
+   
+  </tr>
+
+</table>

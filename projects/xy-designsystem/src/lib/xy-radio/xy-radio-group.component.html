@@ -1,0 +1,6 @@
+<mat-radio-group [name]="name" [color]="_color" (change)="onChange($event)">
+  <ng-content></ng-content>
+</mat-radio-group>
+<mat-error *ngFor="let item of errors;">
+  {{item.content.nativeElement.innerText}}
+</mat-error>

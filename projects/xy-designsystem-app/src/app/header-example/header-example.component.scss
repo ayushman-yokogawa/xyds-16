@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+    ::ng-deep{
+        .search{
+            position: absolute;
+            right: 6px;
+        }
+       
+    }
+}

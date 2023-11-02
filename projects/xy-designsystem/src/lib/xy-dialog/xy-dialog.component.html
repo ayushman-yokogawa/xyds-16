@@ -1,0 +1,14 @@
+<div class="xy-dialog-title">
+  <h2 *ngIf="title" mat-dialog-title>{{title}}</h2>
+  <xy-button *ngIf="showClose" color="accent" (click)="isCustomClose ? myEvent.emit() : onClickClose($event)" icon-button class="xy-dialog-close-button" [tabindex]="-1">
+    <mat-icon>close</mat-icon>
+  </xy-button>
+</div>
+<mat-divider></mat-divider>
+<mat-dialog-content [class]="contentStyle()">
+  <ng-content></ng-content>
+</mat-dialog-content>
+<mat-dialog-actions *ngIf="cardActions">
+   <ng-content select="xy-dialog-actions"></ng-content>
+</mat-dialog-actions>
+

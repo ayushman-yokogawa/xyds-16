@@ -1,0 +1,373 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+:host {
+  display: inline-block;
+
+  ::ng-deep .mat-mdc-radio-button {
+    font-family: theme.$base-font;
+
+    .mdc-label {
+      font-size: 1rem;
+    }
+
+    .mat-radio-container {
+      height: 16px;
+      width: 16px;
+    }
+
+    .mdc-radio__outer-circle {
+      position: absolute;
+      z-index: 100;
+      height: 20px;
+      width: 20px;
+      border-width: 1px;
+    }
+
+    .mat-radio-inner-circle {
+      position: absolute;
+      z-index: 100;
+      height: 20px;
+      width: 20px;
+    }
+
+    .mat-radio-ripple {
+      .mat-ripple-element {
+        box-sizing: border-box;
+        border: transparent 1px solid;
+      }
+    }
+
+    &:hover:not(:active):not(.cdk-focused):not(.mat-radio-disabled) {
+      .mat-radio-persistent-ripple {
+        opacity: 0.2 !important;
+      }
+    }
+
+    &:active {
+      .mat-radio-persistent-ripple {
+        opacity: 0 !important;
+      }
+
+      .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+        opacity: 0.3 !important;
+      }
+    }
+
+    &.cdk-focused {
+      .mat-radio-persistent-ripple {
+        opacity: 1 !important;
+        border: 1px transparent solid;
+      }
+    }
+
+    &.xy-radio-accent {
+      .mdc-label {
+        color: mat.get-color-from-palette(theme.$xy-accent, A700) !important;
+      }
+
+      .mdc-radio__outer-circle {
+        border-color: mat.get-color-from-palette(theme.$xy-accent, A500) !important;
+      }
+
+      .mdc-radio__inner-circle{
+        background-color: mat.get-color-from-palette(theme.$xy-accent, A500) !important;
+      }
+
+      .mat-radio-persistent-ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-accent, 500) !important;
+      }
+
+      .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+        background-color: mat.get-color-from-palette(theme.$xy-accent, 500) !important;
+      }
+
+      &.cdk-focused {
+        .mat-radio-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-radio-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-accent, 700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-accent, A500, 0.2) !important;
+        }
+      }
+    }
+
+    &.xy-radio-critical {
+      .mdc-label {
+        color: mat.get-color-from-palette(theme.$xy-critical, A700) !important;
+      }
+
+      .mat-radio-outer-circle {
+        border-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+      }
+
+      .mat-radio-inner-circle {
+        background-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+      }
+
+      .mat-radio-persistent-ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+      }
+
+      .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+        background-color: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+      }
+
+      &.cdk-focused {
+        .mat-radio-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-radio-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-critical, A700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-critical, A400, 0.2) !important;
+        }
+      }
+    }
+
+    &.xy-radio-error {
+      .mdc-label {
+        color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+      }
+
+      .mdc-radio__outer-circle  {
+        border-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+
+      .mdc-radio__inner-circle {
+       border-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+
+      .mat-radio-persistent-ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+
+      .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+        background-color: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+      }
+
+      &.cdk-focused {
+        .mat-radio-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-radio-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-error, A400, 0.2) !important;
+        }
+      }
+    }
+
+    &.xy-radio-warning {
+      .mdc-label {
+        color: mat.get-color-from-palette(theme.$xy-warn, A700) !important;
+      }
+
+      .mat-radio-outer-circle {
+        border-color: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+      }
+
+      .mat-radio-inner-circle {
+        background-color: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+      }
+
+      .mat-radio-persistent-ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+      }
+
+      .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+        background-color: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+      }
+
+      &.cdk-focused {
+        .mat-radio-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-radio-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-warn, A700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-warn, A400, 0.2) !important;
+        }
+      }
+    }
+
+    &.xy-radio-attention {
+      .mdc-label {
+        color: mat.get-color-from-palette(theme.$xy-attention, A700) !important;
+      }
+
+      .mat-radio-outer-circle {
+        border-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+      }
+
+      .mat-radio-inner-circle {
+        background-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+      }
+
+      .mat-radio-persistent-ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+      }
+
+      .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+        background-color: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+      }
+
+      &.cdk-focused {
+        .mat-radio-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-radio-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-attention, A700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-attention, A400, 0.2) !important;
+        }
+      }
+    }
+
+    &.xy-radio-safe_normal {
+      .mdc-label {
+        color: mat.get-color-from-palette(theme.$xy-safe_normal, A700) !important;
+      }
+
+      .mat-radio-outer-circle {
+        border-color: mat.get-color-from-palette(theme.$xy-safe_normal, A200) !important;
+      }
+
+      .mat-radio-inner-circle {
+        background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A200) !important;
+      }
+
+      .mat-radio-persistent-ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400) !important;
+      }
+
+      .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+        background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400) !important;
+      }
+
+      &.cdk-focused {
+        .mat-radio-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-radio-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-safe_normal, A700) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-safe_normal, A400, 0.2) !important;
+        }
+      }
+    }
+
+    .mdc-radio--disabled{
+      ~.mdc-label{
+        opacity: 1;
+        color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mdc-radio__outer-circle{
+        opacity: 1;
+        border-color:  mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mdc-radio__inner-circle{
+        opacity: 1;
+        border-color:  mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+    }
+  }
+
+  .mat-error{
+    font-size: 75%;
+    color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+  }
+
+ 
+}
+
+// -----------------
+
+:host-context(.dark-theme) {
+  ::ng-deep .mat-mdc-radio-button {
+
+    .mdc-label {
+      color: mat.get-color-from-palette(theme.$xy-dark-base, 50) !important;
+    }
+
+    &.mat-accent {
+      &.mat-radio-checked:not(.mat-radio-disabled){
+        .mdc-label {
+          color: mat.get-color-from-palette(theme.$xy-dark-primary, 500) !important;
+        }
+      }
+
+      .mdc-radio__outer-circle {
+        border-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500) !important;
+      }
+
+      .mdc-radio__inner-circle {
+        background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500) !important;
+      }
+
+      &:hover:not(:active):not(.cdk-focused):not(.mat-radio-disabled) {
+        .mat-radio-persistent-ripple {
+          opacity: 0.1 !important;
+        }
+      }
+
+      .mat-radio-persistent-ripple {
+        background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500) !important;
+      }
+
+      &:active {
+        .mat-radio-persistent-ripple {
+          opacity: 0 !important;
+        }
+
+        .mat-ripple-element:not(.mat-radio-persistent-ripple) {
+          opacity: 0.2 !important;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500) !important;
+        }
+      }
+
+      &.cdk-focused {
+        .mat-radio-persistent-ripple {
+          background-color: transparent !important;
+        }
+      }
+
+      &.cdk-focused.cdk-keyboard-focused {
+        .mat-radio-persistent-ripple {
+          border-color: mat.get-color-from-palette(theme.$xy-dark-primary, 200) !important;
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+        }
+      }
+    }
+
+    .mdc-radio--disabled{
+      ~.mdc-label{
+        opacity: 1;
+        color: mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mdc-radio__outer-circle{
+        opacity: 1;
+        border-color:  mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+      .mdc-radio__inner-circle{
+        opacity: 1;
+        border-color:  mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+    }
+  }
+}

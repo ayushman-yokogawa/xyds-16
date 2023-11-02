@@ -1,0 +1,210 @@
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+@use '../../../theme/xy-spacing' as spacing;
+
+
+
+:host {
+  
+    color: mat.get-color-from-palette(theme.$xy-base, 900);
+   
+  .xy-dialog-title{
+    position: relative;
+   
+    .xy-dialog-close-button{
+      position: absolute;
+      right: 0px;
+      top: 10px;
+    }
+  }
+
+  .mat-mdc-dialog-title{
+    font-family: theme.$base-font;
+    margin-left: spacing.$spacing-s;
+    margin-right: spacing.$spacing-s;
+    margin-bottom: spacing.$spacing-s;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: mat.get-color-from-palette(theme.$xy-base, 900);
+  }
+
+  .mat-mdc-dialog-content{
+    margin: spacing.$spacing-s 0;
+    font-size: 0.875rem;
+  }
+
+  .mat-mdc-dialog-actions{
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 1rem;
+    min-height: 38px;
+
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-s * 1.5);
+    }
+  }
+  .mat-divider {
+    border-top-color: mat.get-color-from-palette(theme.$xy-base, 300);
+  }
+}
+
+:host-context(.spacing-xxs) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-xxs;
+    margin-right: spacing.$spacing-xxs;
+    margin-bottom: spacing.$spacing-xxs;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-xxs 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-xxs * 1.5);
+    }
+  }
+}
+
+:host-context(.spacing-xs) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-xs;
+    margin-right: spacing.$spacing-xs;
+    margin-bottom: spacing.$spacing-xs;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-xs 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-xs * 1.5);
+    }
+  }
+}
+
+:host-context(.spacing-s) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-s;
+    margin-right: spacing.$spacing-s;
+    margin-bottom: spacing.$spacing-s;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-s 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-s * 1.5);
+    }
+  }
+}
+
+:host-context(.spacing-m) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-m;
+    margin-right: spacing.$spacing-m;
+    margin-bottom: spacing.$spacing-m;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-m 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-m * 1.5);
+    }
+  }
+}
+
+:host-context(.spacing-l) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-l;
+    margin-right: spacing.$spacing-l;
+    margin-bottom: spacing.$spacing-l;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-l 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-l * 1.5);
+    }
+  }
+}
+
+:host-context(.spacing-xl) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-xl;
+    margin-right: spacing.$spacing-xl;
+    margin-bottom: spacing.$spacing-xl;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-xl 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-xl * 1.5);
+    }
+  }
+}
+
+:host-context(.spacing-xxl) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-xxl;
+    margin-right: spacing.$spacing-xxl;
+    margin-bottom: spacing.$spacing-xxl;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-xxl 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-xxl * 1.5);
+    }
+  }
+}
+
+:host-context(.spacing-xxxl) {
+  .mat-dialog-title{
+    margin-left: spacing.$spacing-xxxl;
+    margin-right: spacing.$spacing-xxxl;
+    margin-bottom: spacing.$spacing-xxxl;
+  }
+
+  .mat-dialog-content{
+    margin: spacing.$spacing-xxxl 0;
+  }
+
+  .mat-mdc-dialog-actions{
+    ::ng-deep button{
+      margin-left: (spacing.$spacing-xxxl * 1.5);
+    }
+  }
+}
+
+:host-context(.dark-theme) {
+  :host {
+    color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+
+    .mat-dialog-title{
+      color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+    }
+
+    .mat-divider {
+      border-top-color: mat.get-color-from-palette(theme.$xy-dark-base, 400);
+    }
+
+ 
+  }
+}

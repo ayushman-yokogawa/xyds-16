@@ -1,0 +1,60 @@
+<table class="fullWidth">
+  <tr>
+    <td>
+      <xy-select label="Direction" value={{direction}} (change)="onChangeDirection($event)">
+        <xy-option value="horizontal">Horizontal</xy-option>
+        <xy-option value="vertical">Vertical</xy-option>
+      </xy-select>
+      <xy-select value={{align}} label="Alignment" (change)="onChangeAlign($event)">
+        <xy-option value="left">Left</xy-option>
+        <xy-option value="right">Right</xy-option>
+        <xy-option value="center">Center</xy-option>
+        <xy-option value="justify">Justify</xy-option>
+      </xy-select>
+      <xy-select value={{valign}} label="Vertical Alignment" (change)="onChangeVerticalAlign($event)">
+        <xy-option value="top">Top</xy-option>
+        <xy-option value="middle">Center</xy-option>
+        <xy-option value="bottom">Bottom</xy-option>
+        <xy-option value="justify">Justify</xy-option>
+      </xy-select>
+      <xy-select label="Spacing" value={{spacing}} (change)="onChangeSpacing($event)">
+        <xy-option value="xss">XSS</xy-option>
+        <xy-option value="xs">XS</xy-option>
+        <xy-option value="s">S</xy-option>
+        <xy-option value="m">M</xy-option>
+        <xy-option value="l">L</xy-option>
+        <xy-option value="xl">XL</xy-option>
+        <xy-option value="xxl">XXL</xy-option>
+        <xy-option value="xxxl">XXXL</xy-option>
+      </xy-select>
+      <xy-select label="Wrap" value={{wrap}} (change)="onChangeWrap($event)">
+        <xy-option value="wrap">Wrap</xy-option>
+        <xy-option value="nowrap">Nowrap</xy-option>
+      </xy-select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <xy-container [align]="align" [valign]="valign" [spacing]="spacing" [direction]="direction" [wrap]="wrap">
+        <mat-radio-group name="group-container">
+          <xy-radio id="yr1" value="1" color="accent">Item 1</xy-radio>
+          <xy-radio id="yr2" value="2" color="accent">Item 2</xy-radio>
+          <xy-radio id="yr3" value="3" color="accent">Item 3</xy-radio>
+          <xy-radio id="yr4" value="4" color="accent">Item 4</xy-radio>
+          <xy-radio id="yr5" value="5" color="accent">Item 5</xy-radio>
+        </mat-radio-group>
+      </xy-container>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <xy-container [align]="align" [valign]="valign" [spacing]="spacing" [direction]="direction" [wrap]="wrap">
+        <xy-checkbox id="ycb1" value="1" color="accent">Item 1</xy-checkbox>
+        <xy-checkbox id="ycb2" value="2" color="accent">Item 2</xy-checkbox>
+        <xy-checkbox id="ycb3" value="3" color="accent">Item 3</xy-checkbox>
+        <xy-checkbox id="ycb4" value="4" color="accent">Item 4</xy-checkbox>
+        <xy-checkbox id="ycb5" value="5" color="accent">Item 5</xy-checkbox>
+      </xy-container>
+    </td>
+  </tr>
+</table>

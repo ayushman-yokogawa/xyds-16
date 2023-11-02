@@ -1,0 +1,29 @@
+:host {
+  section {
+    margin-bottom: 30px;
+  }
+  table {
+    width: 1000px;
+    border-collapse: collapse;
+
+    th {
+      padding: 4px 8px;
+      width: 200px;
+      text-align: left;
+      border: #ccc 1px solid;
+    }
+    td {
+      padding: 4px 8px;
+      border: #ccc 1px solid;
+
+      &.column-layout{
+        display: flex;
+        justify-content: flex-start;
+
+        & > * {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

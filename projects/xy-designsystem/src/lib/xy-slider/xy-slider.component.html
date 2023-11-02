@@ -1,0 +1,18 @@
+<h2 *ngIf="label" class="slider-label">{{label}}</h2>
+<div class="xy-slider">
+    <span>{{min}}</span>
+    <mat-slider 
+        color="{{color}}"
+        [min]="min"
+        [max]="max" 
+        [disabled]="disabled"
+        [discrete]="discrete"
+       
+        >
+        <input matSliderThumb [(ngModel)]="value" #slider>
+    </mat-slider>
+    <span class="max">{{max}}</span>
+</div>
+<span class="mat-slider-ripple"></span>
+
+      

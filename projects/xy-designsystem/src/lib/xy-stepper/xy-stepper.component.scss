@@ -1,0 +1,20 @@
+.xy-stepper{
+  display: flex;
+}
+
+.vertical-stepper{
+  display: block !important;
+}
+
+:host-context(.dark-theme){
+  ::ng-deep{
+    .vertical-stepper{
+      display: block !important;
+      .grid{
+        .line{
+          background-color: white !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+:host{
+    .xy-divider{
+        ::ng-deep{
+            .mat-divider{
+                border-top-color: #E1E3E6;
+            }
+          
+            .mat-divider.mat-divider-inset{
+                margin-left: 0px;
+                width: 94%;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+
+:host-context(.dark-theme){
+    .mat-divider.mat-divider-inset{
+        margin-left: 0px;
+        width: 94%;
+        margin: 0 auto;
+    }
+    .mat-divider{
+        border-top-color:  #444444 !important;
+    }
+}

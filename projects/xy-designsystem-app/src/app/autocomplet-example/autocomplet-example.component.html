@@ -1,0 +1,37 @@
+<form [formGroup]="dwellingValues">
+    <h3>Input Auto Complete</h3>
+    <br>
+    <xy-autocomplete 
+        formControlName="inputAutocompleteControl" 
+        [options]="countries" 
+        [placeholder]="'Search cites'"
+        (selected)="handleSelectedValue($event)"
+        errorMessage="Please choose a option"
+        [disabled]=false
+        [inputAutocomplete]="true">
+        <xy-hint>Please choose a option</xy-hint>
+    </xy-autocomplete>
+    <br>
+    <br>
+    <h3>Search Auto Complete </h3>
+    <br>
+    <xy-autocomplete 
+        formControlName="searchAutocompleteControl" 
+        [options]="countries" 
+        [placeholder]="'Search Users'"
+        (selected)="handleSelectedValue($event)"
+        [disabled]=false
+        [searchAutocomplete]="true">
+    </xy-autocomplete>
+
+    <h3>Search Auto Complete (Disabled)</h3>
+    <br>
+    <xy-autocomplete 
+        formControlName="searchAutocompleteDsabledControl" 
+        [options]="countries" 
+        [placeholder]="'Search Users'"
+        (selected)="handleSelectedValue($event)"
+        [disabled]=disabled
+        [searchAutocomplete]="true">
+    </xy-autocomplete>
+</form>

@@ -1,0 +1,256 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+
+:host{
+  .header_fixed{
+    position: fixed;
+  }
+    mat-toolbar{
+      top: 0;
+      z-index: 999;
+      &.mat-toolbar-row, &.mat-toolbar-single-row {
+        height: 60px;
+    }
+  }
+  .menu-flex{
+      display: flex;
+      align-items: center;
+      gap: 0px 5px;
+      mat-icon{
+          color: white;
+      }
+  }
+  ::ng-deep{
+      .mat-mdc-form-field .xy-searchbox-search-button{
+          position: absolute;
+          top: 10px;
+          right: 4px;
+          width: auto !important;
+          height: 1.5rem;
+      }
+      &.inverted-badge .mat-badge-content {
+          top: -6px !important;
+      }
+      .header-row{
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+          align-items: center;
+          .profile-slot{
+              line-height: 0;
+          }
+          .main-title{
+              padding-left: 15px;
+              @media (max-width: 767px){
+                font-size: 16px !important;
+                width: 192px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+          }
+          .profile-slot, .profile{
+              display: flex;
+              justify-content: flex-end;
+              gap: 20px 30px;
+              align-items: center;
+             h6{
+                  line-height: 0;
+                  font-size: 1rem;
+             }
+             .userRole{
+                  font-size: 0.9rem;
+                  font-weight: 100;
+                  color: #f1f1f2;
+                  margin-top: 6px;
+             }
+             .userData{
+                  line-height: 2;
+                  margin-top: 29px;
+                  margin-left: 1rem;
+                  padding-right: 15px;
+             }
+             .line{
+                  position: relative;
+                  width: 1px;
+                  height: 47px;
+                  background: white;
+                  left: 0px;
+                  margin-left: 0rem;
+                  margin-right: 0rem;
+             }
+          }
+          .avatar{
+              width: 45px;
+              border-radius: 100%;
+              height: 45px;
+          }
+          .col{
+              width: 100%;
+          }
+      
+      }
+  }
+}
+
+
+:host{
+  .leftCol{
+    display: flex;
+  }
+  mat-toolbar {
+    justify-content: space-between;
+    align-items: center;
+    font-family: theme.$base-font !important;
+    .mat-icon{
+      color: theme.$xy-white;
+    }
+   
+    &.mat-primary{
+      color: theme.$xy-white;
+      background-color: mat.get-color-from-palette(theme.$xy-primary, 800) !important;
+      .mat-icon{
+        color: theme.$xy-white;
+      }
+    }
+    &.mat-accent{
+      color: theme.$xy-white;
+      background-color: mat.get-color-from-palette(theme.$xy-accent, A700) !important;
+      .mat-icon{
+        color: theme.$xy-white;
+      }
+    }
+
+    &.mat-toolbar-row, &.mat-toolbar-single-row {
+      padding: 0 12px;
+      height: 60px;
+
+      h1{
+        margin-left: 8px;
+      }
+      xy-button + h1{
+        margin-left: 0;
+      }
+
+      .xy-sidenav-button{
+        margin-right: -20px;
+      }
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    .mat-divider {
+      border-color: mat.get-color-from-palette(theme.$xy-base, 600) !important;
+      height: calc(100% - 32px);
+    }
+  }
+
+  ::ng-deep{
+    .mat-toolbar,
+    .mat-toolbar h1,
+    .mat-toolbar h2,
+    .mat-toolbar h3,
+    .mat-toolbar h4,
+    .mat-toolbar h5,
+    .mat-toolbar h6{
+      font-family: theme.$base-font !important;
+    }
+
+    .mat-toolbar{
+      h1{
+        font-size: 1.25rem;
+      }
+      h2{
+        font-size: 1.20rem;
+      }
+      h3{
+        font-size: 1.15rem;
+      }
+      h4{
+        font-size: 1.10rem;
+      }
+      h5{
+        font-size: 1.05rem;
+      }
+      h6{
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+
+:host-context(.dark-theme) {
+  mat-toolbar {
+    &.mat-primary {
+      color: theme.$xy-white;
+      background-color: mat.get-color-from-palette(theme.$xy-dark-base, 700) !important;
+    }
+    &.mat-accent{
+      color: theme.$xy-white;
+      background-color: mat.get-color-from-palette(theme.$xy-dark-base, 700) !important;
+    }
+  }
+}
+
+:host-context(.light-theme .xy-blue-theme) {
+  mat-toolbar {
+    &.mat-primary {
+      color: theme.$xy-white;
+      background-color: mat.get-color-from-palette(theme.$xy-primary, 700) !important;
+    }
+  }
+}
+
+:host-context(.light-theme, .light-theme .xy-indigo-theme) {
+  mat-toolbar {
+    &.mat-primary {
+      color: theme.$xy-white;
+      background-color: mat.get-color-from-palette(theme.$xy-primary, 800) !important;
+    }
+   
+  }
+}
+
+
+@media (max-width: 767px) {
+    ::ng-deep{
+      .main-title{
+        padding-left: 0px !important;
+      }
+      .line{
+        display: none;
+      }
+      .avatar{
+        position: absolute;
+        left: 7px;
+        transform: scale(0.9);
+      }
+      .userData{
+        display: none;
+      }
+      .profile-slot, .header-row .profile {
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px 20px !important;
+        align-items: center;
+    }
+      .hamburger{
+        margin-right: -5px !important;
+        margin-left: -8px;
+        .mat-icon{
+          background: white;
+          color: black !important;
+          padding: 2px;
+          z-index: 999999;
+          position: absolute;
+          border-radius: 100%;
+          transform: scale(0.8);
+        }
+      }
+    }
+}

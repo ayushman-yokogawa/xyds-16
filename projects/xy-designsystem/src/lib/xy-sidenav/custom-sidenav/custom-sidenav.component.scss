@@ -1,0 +1,204 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../../theme/xy-theme' as theme;
+
+.xy-sidenav-toolbox{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  ::ng-deep > * {
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+    &:first-child {
+      margin-left: 4px;
+    }
+
+    &:last-child {
+      margin-right: 4px;
+    }
+  }
+}
+
+::ng-deep{
+  .mat-expansion-indicator{
+     margin-right: 15px!important;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.mat-list-base {
+  padding-top: 0;
+}
+.mat-list-item{
+  color: mat.get-color-from-palette(theme.$xy-primary, 700);
+  font-family: theme.$base-font;
+  outline: 0;
+  box-sizing: border-box;
+  border: transparent 1px solid !important;
+
+  &:active{
+    background-color: theme.$xy-white !important;
+    
+  }
+  &:hover:not(:active):not(.xy-sidenav-active):not(.cdk-drag-placeholder){
+    background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.2) !important;
+    color: #004f9b !important;
+    ::ng-deep .mat-ripple-element{
+      display: none !important;
+   
+    }
+  }
+  &:focus:not(:active):not(.xy-sidenav-active){
+    border-color: mat.get-color-from-palette(theme.$xy-primary, 700) !important;
+    background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.2) !important;
+    color: #004f9b !important;
+  }
+
+  &.cdk-drag-placeholder{
+    background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.2) !important;
+    border-top: mat.get-color-from-palette(theme.$xy-primary, 700) 1px solid !important;
+    ::ng-deep .mat-ripple-element{
+      display: none !important;
+    }
+  }
+
+  .mat-list-item-content{
+    padding: 0 13px 0 12px !important;
+  }
+  ::ng-deep .mat-ripple-element{
+    background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.3);
+  }
+
+  .mat-icon{
+    margin-right: 15px;
+    &.xy-sidenav-item-dragging-icon{
+      display: none;
+    }
+    &.xy-sidenav-item-left-icon{
+      margin-right: 16px;
+    }
+    &.xy-sidenav-item-right-icon{
+      margin-left: 16px;
+    }
+  }
+
+  &.xy-sidenav-active:not(:active){
+    color: mat.get-color-from-palette(theme.$xy-primary, 700);
+    background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.3) !important;
+  }
+  .xy-sidenav-item-content{
+    flex-grow: 1;
+  }
+}
+
+::ng-deep body > .mat-list-item{
+  text-decoration: none;
+
+  color: mat.get-color-from-palette(theme.$xy-primary, 700);
+  background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.3) !important;
+  box-shadow: 0 2px 4px 0 gray;
+  .mat-ripple-element{
+    display: none;
+  }
+
+  .mat-list-item-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+    padding: 0 16px !important;
+    position: relative !important;
+    height: inherit !important;
+  }
+
+  &.cdk-drag-preview {
+    .mat-icon.xy-sidenav-item-dragging-icon {
+      display: block !important;
+    }
+  }
+}
+
+:host-context(.xy-sidenav-small) {
+  ::ng-deep {
+   
+    .collapse-hide, .mat-expansion-indicator{
+      display: none ;
+    }
+  
+    .mat-icon{
+      margin-right: 0px !important;
+      &.xy-sidenav-item-dragging-icon{
+        display: none;
+      }
+      &.xy-sidenav-item-right-icon{
+        display: none;
+      }
+    }
+
+    .mat-list-item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      .mat-icon.xy-sidenav-item-left-icon {
+        margin: 0;
+      }
+    }
+
+    .xy-sidenav-active{
+      .mat-ripple-element {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .xy-sidenav-item-content{
+    display: none;
+  }
+}
+
+:host-context(.dark-theme) {
+  .mat-list-item{
+    color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+
+    &:active{
+      background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+      color: #004f9b !important;
+    }
+    &:hover:not(:active):not(.xy-sidenav-active):not(.cdk-drag-placeholder){
+      color: mat.get-color-from-palette(theme.$xy-dark-primary, 500);
+      background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.1) !important;
+    }
+    &:focus:not(:active):not(.xy-sidenav-active){
+      border-color: mat.get-color-from-palette(theme.$xy-dark-primary, 200) !important;
+      background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+    }
+
+    &.cdk-drag-placeholder{
+      background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+      border-top: mat.get-color-from-palette(theme.$xy-dark-primary, 500) 1px solid !important;
+    }
+
+    ::ng-deep .mat-ripple-element{
+      background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2);
+    }
+
+    &.xy-sidenav-active:not(:active){
+      color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+      background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+    }
+  }
+
+  ::ng-deep body > .mat-list-item{
+    color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+    background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+  }
+}

@@ -1,0 +1,34 @@
+<div class="xy-step" [class]="styleClass()">
+    <div class="grid">
+        <div class="indicator">
+            <ng-container 
+                *ngIf="(currentStep <= stepNumber) ||
+                 (currentStep > stepNumber && isLast) ; then stepOngoing; else stepDone">
+            </ng-container>
+            <ng-template #stepOngoing>
+                <span *ngIf="!icon">{{stepNumber}}</span>
+                <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+            </ng-template>
+            <ng-template #stepDone>
+                <div *ngIf="!icon" class="check">{{stepNumber}}</div>
+                <mat-icon *ngIf="icon" class="check">{{icon}}</mat-icon>
+            </ng-template>
+            <div class="title" >
+                <ng-content select="[step-title]"></ng-content>
+            </div>
+        </div>
+       
+        <ng-container *ngIf="
+                (currentStep === stepNumber) || 
+                (currentStep > stepNumber && isLast) || 
+                (currentStep < stepNumber && isFirst)">
+            <div class="divider">
+                <div class="line" *ngIf="!isLast"></div>
+            </div>
+            <div class="content">
+                <ng-content select="[step-content]"></ng-content>
+                <ng-content select="[step-action]"></ng-content>
+            </div>
+        </ng-container>
+    </div>
+</div>

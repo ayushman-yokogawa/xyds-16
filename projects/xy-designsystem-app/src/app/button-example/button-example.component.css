@@ -1,0 +1,11 @@
+table, td, th {
+  border-spacing: 0px;
+}
+
+.example-button-row {
+  text-align: left !important;
+}
+
+table {
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=button-example.component.css.map */

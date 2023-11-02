@@ -1,0 +1,95 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+:host{
+    .xy-footer{
+        background-color: white;
+        padding: 3px 2rem;
+        box-shadow: 0px -3px 4px -1px #80808038;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: capitalize;
+        @media (max-width :767px) {
+            padding: 2rem 0.5rem;
+            background-color: #F1F1F2;
+            width: auto;
+            justify-content: center;
+            box-shadow: 0px -3px 6px 0px rgba(0, 0, 0, 0.161);
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .link{
+            margin-bottom: 0px;
+            line-height: 0;
+        }
+        .logo{
+            margin-right: 1rem;
+            @media(max-width: 767px){
+                margin-bottom: 1rem;
+            }
+        }
+       .col-left{
+            display: flex;
+            align-items: center;
+            @media (max-width :767px) {
+                justify-content: center;
+                flex-wrap: wrap;
+                text-align: center;
+                div{
+                    display: grid;
+                    grid-template-columns: 0.9fr 0.9fr 0.9fr;
+                    grid-column-gap: 1px;
+                    grid-row-gap: 10px;
+                    text-align: center;
+                    white-space: nowrap;
+                }
+            }
+            .title{
+                font-weight: 700;
+                line-height: 0;
+                margin-right: 1rem;
+            }
+            ::ng-deep a{
+                text-decoration: none !important;
+                font-size: 0.8rem !important;
+                color: black;
+                margin-right: 1rem;
+                font-family: 'Noto Sans', sans-serif;
+            }
+       }
+        .content{
+            font-size: 0.8rem;
+            font-family: 'Noto Sans', sans-serif;
+            font-weight: 700;
+        }
+    }
+
+}
+
+
+:host-context(.dark-theme){
+    .xy-footer{
+        background-color: #333333 !important;
+        .col-left{
+            display: flex;
+            align-items: center;
+            .logo{
+                filter: invert(1);
+            }
+            .title{
+                font-weight: 700;
+                line-height: 0;
+                margin-right: 1rem;
+                color: white;
+            }
+            ::ng-deep a{
+                text-decoration: none !important;
+                font-size: 0.8rem !important;
+                color: white;
+                margin-right: 1rem;
+                font-family: 'Noto Sans', sans-serif;
+            }
+       }
+    }
+}

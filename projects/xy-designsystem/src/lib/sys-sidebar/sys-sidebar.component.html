@@ -1,0 +1,18 @@
+<div class="d-fle">
+  <div class="sidenav-container" [@slideInOut]>
+    <nav class="nav" [ngClass]="{'small': small}" class="{{className}}">
+      <ul class="xy-sidebar-menu">
+        <div class="data">
+          <div class="xy-sidenav-toolbox">
+            <ng-content select=".xy-sidenav-toolbox-item"></ng-content>
+          </div>
+          <ng-content></ng-content>
+        </div>
+      </ul>
+    </nav>
+  </div>
+  <div class="xy-sidebar-content" [ngClass]="{'fluid': fluid}" >
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

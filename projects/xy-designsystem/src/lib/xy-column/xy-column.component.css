@@ -1,0 +1,33 @@
+:host ::ng-deep > xy-input mat-mdc-form-field {
+  display: block;
+  width: 100%;
+}
+:host .one-column {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+:host .one-column ::ng-deep > * {
+  display: block;
+  width: 100%;
+}
+:host .two-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+:host .two-columns ::ng-deep > * {
+  display: block;
+  width: calc(50% - 12px);
+}
+:host .three-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+:host .three-columns ::ng-deep > * {
+  display: block;
+  width: calc((100% - 48px) / 3);
+}/*# sourceMappingURL=xy-column.component.css.map */

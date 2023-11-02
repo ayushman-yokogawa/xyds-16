@@ -1,0 +1,17 @@
+:host .xy-divider ::ng-deep .mat-divider {
+  border-top-color: #E1E3E6;
+}
+:host .xy-divider ::ng-deep .mat-divider.mat-divider-inset {
+  margin-left: 0px;
+  width: 94%;
+  margin: 0 auto;
+}
+
+:host-context(.dark-theme) .mat-divider.mat-divider-inset {
+  margin-left: 0px;
+  width: 94%;
+  margin: 0 auto;
+}
+:host-context(.dark-theme) .mat-divider {
+  border-top-color: #444444 !important;
+}/*# sourceMappingURL=xy-divider.component.css.map */

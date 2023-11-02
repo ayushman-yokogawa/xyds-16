@@ -1,0 +1,27 @@
+<mat-form-field  [ngClass]="{'autocomplete-disabled ': disabled}">
+  <input matInput [disabled]="disabled" [formControl]="autoCompleteControl" class="xy-input" [matAutocomplete]="auto" [placeholder]="placeholder" *ngIf="inputAutocomplete" autocomplete=off>
+   
+  <input matInput [disabled]="disabled" [formControl]="autoCompleteControl" class="xy-searchbox" [matAutocomplete]="auto" [placeholder]="placeholder"  *ngIf="searchAutocomplete"
+       (keyup)="onKeyUp($event)"
+       (change)="onChange($event)">
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="optionSelected($event.option.value)">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+      {{ option }}
+    </mat-option>
+  </mat-autocomplete>
+  
+  <button *ngIf="!searched && searchAutocomplete" class="xy-searchbox-search-button" (click)="onClickSearch($event)">
+    <mat-icon>search</mat-icon>
+  </button>
+  <button *ngIf="searched && searchAutocomplete" class="xy-searchbox-clear-button" (click)="onClickClear($event)">
+    <mat-icon>clear</mat-icon>
+  </button>
+  <mat-error *ngIf="hasError()" class="xy-input-icon xy-input-error-icon">
+    {{ getErrorMessage() }}
+  </mat-error>
+  
+  <mat-hint *ngIf="hint"  class="xy-input-icon">
+    <ng-content select="xy-hint"></ng-content>
+  </mat-hint>
+</mat-form-field>
+

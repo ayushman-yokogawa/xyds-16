@@ -1,0 +1,26 @@
+.xy-grid{
+    display: flex;
+    gap: 0px 50px;
+   
+}
+.col{
+    width: 95%;
+}
+.inset-devider{
+    width: 100%;
+    .checkbox{
+        padding: 1rem;
+    }
+}
+
+.full{
+    ::ng-deep{
+        
+         .mat-card{
+             padding: 0 !important;
+             .card-header{
+                padding: 1rem;
+             }
+         }
+    }
+ }

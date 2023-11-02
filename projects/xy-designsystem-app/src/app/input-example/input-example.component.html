@@ -1,0 +1,306 @@
+<table>
+  <tr>
+    <th class="example-label"></th>
+    <th>Basic</th>
+    <th>Mandatory</th>
+    <th>Small</th>
+  </tr>
+  <tr>
+    <th class="example-label">Input Field<br>
+      <xy-button text-button (click)="doFocus(input)" >Focus</xy-button>
+      <xy-button text-button (click)="doBlur(input)" >Blur</xy-button>
+      <xy-button text-button (click)="doSetValue(input,'ABCDEF')" >Set value</xy-button>
+    </th>
+    <td class="example-button-row">
+      <xy-input #input label="Label"  placeholder="Input Text Fill Here" value="123456"></xy-input>
+    </td>
+    <td>
+      <xy-input #input2 label="Label" required placeholder="Input Text Fill Here" value="123456" [formControl]="requiredFormControl">
+        <xy-error *ngIf="requiredFormControl.touched && requiredFormControl.hasError('required')">
+          <p>Error Message</p>
+        </xy-error>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+      <xy-input label="Label" placeholder="Input Text Fill Here" small value="123456"></xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Input Field</th>
+    <td class="example-button-row">
+      <xy-input label="Label" placeholder="Input Text Fill Here" value="123456">
+        <xy-hint>Required / Only alphanumeric characters are allowed (A-Z, a-z, 0-9)</xy-hint>
+      </xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Disabled Field</th>
+    <td class="example-button-row">
+      <xy-input label="Label" disabled placeholder="Input Text Fill Here" value="123456">
+        <xy-hint>Disabled</xy-hint>
+      </xy-input>
+    </td>
+    <td></td>
+    <td class="example-button-row">
+      <xy-input label="Label" disabled placeholder="Input Text Fill Here" small value="123456">
+        <xy-hint>Disabled</xy-hint>
+      </xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Error State</th>
+    <td class="example-button-row">
+      <xy-input label="Label" placeholder="Input Text Fill Here" value="" [has-error]="true">
+        <xy-hint>Error</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+      <xy-input label="Label" required placeholder="Input Text Fill Here" value="" [has-error]="true">
+        <xy-hint>Label is required</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+      <xy-input label="Label" small placeholder="Input Text Fill Here" value="" [has-error]="true">
+        <xy-hint>Error</xy-hint>
+      </xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Loading State</th>
+    <td class="example-button-row">
+      <xy-input label="Label" placeholder="Input Text Fill Here" value="" [is-loading]="true">
+        <xy-hint>Loading</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+      <xy-input label="Label" small placeholder="Input Text Fill Here" value="" [is-loading]="true">
+        <xy-hint>Loading</xy-hint>
+      </xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Readonly Field</th>
+    <td class="example-button-row">
+      <xy-input label="Label" readonly="true" placeholder="Input Text Fill Here" value="123456">
+        <xy-hint>Read only</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+      <xy-input label="Label" small readonly="true" placeholder="Input Text Fill Here" value="123456">
+        <xy-hint>Read only</xy-hint>
+      </xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Edited State</th>
+    <td class="example-button-row">
+      <xy-input label="Label" placeholder="Input Text Fill Here" value="" [edited]="true">
+        <xy-hint>Edited</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+      <xy-input label="Label" small placeholder="Input Text Fill Here" value="" [edited]="true">
+        <xy-hint>Edited</xy-hint>
+      </xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Success State</th>
+    <td class="example-button-row">
+      <xy-input label="Label" placeholder="Input Text Fill Here" value="" [success]="true">
+        <xy-hint>Success</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+      <xy-input label="Label" small placeholder="Input Text Fill Here" value="" [success]="true">
+        <xy-hint>Success</xy-hint>
+      </xy-input>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Type: Number</th>
+    <td class="example-button-row">
+      <xy-input label="number" type="number" value="1234567">
+        <xy-hint>Please enter number</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Type: Date</th>
+    <td class="example-button-row">
+      <xy-input label="date" type="date" value="" > 
+        <xy-hint>Please enter date</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Type: Time</th>
+    <td class="example-button-row">
+      <xy-input label="time" type="time">
+        <xy-hint>Please enter time</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Type: e-mail</th>
+    <td class="example-button-row">
+      <xy-input #input3 label="e-mail" required type="email" value="">
+        <xy-error *ngIf="input3.formControl && input3.formControl.touched && input3.formControl.hasError('email')">
+          <p>Invalid email</p>
+        </xy-error>
+        <xy-hint>Please enter email address</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Type: password</th>
+    <td class="example-button-row">
+      <xy-input label="password" type="password">
+        <xy-hint>Please enter password</xy-hint>
+      </xy-input>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Search Box</th>
+    <td class="example-button-row">
+      <xy-searchbox #searchbox1 value=""  (search)="onSearch($event)" (reset)="onReset()"></xy-searchbox>
+    </td>
+    <td>
+      <div><label>Keyword: {{searchKeyword}}</label></div>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Incremental Search Box</th>
+    <td class="example-button-row">
+      <xy-searchbox #searchbox2 value="" incremental-search (search)="onIncrementalSearch($event)" (reset)="onReset()"></xy-searchbox>
+    </td>
+    <td>
+      <div><label>Keyword: {{incrementalSearchKeyword}}</label></div>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Disabled Search Box</th>
+    <td class="example-button-row">
+      <xy-searchbox #searchbox3 disabled></xy-searchbox>
+    </td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label"></th>
+    <th>Multiple-line</th>
+    <th>With schroll bar</th>
+  </tr>
+  <tr>
+    <th class="example-label">Textarea<br>
+      <xy-button text-button (click)="doFocus(textarea)" >Focus</xy-button>
+      <xy-button text-button (click)="doBlur(textarea)" >Blur</xy-button>
+    </th>
+    <td class="example-button-row">
+      <xy-textarea #textarea label="Label" rows=3 placeholder="Input Text Fill Here" value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et."></xy-textarea>
+    </td>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 placeholder="Input Text Fill Here" value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. at vero eos et accusam et justo duo dolores et ea rebum. stet clita kasd gubergren, no sea takimata"></xy-textarea>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Textarea</th>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 placeholder="Input Text Fill Here" value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.">
+        <xy-hint>Required / Only alphanumeric characters are allowed (A-Z, a-z, 0-9)</xy-hint>
+      </xy-textarea>
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Disabled State</th>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 disabled placeholder="Input Text Fill Here" value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.">
+        <xy-hint>Disabled</xy-hint>
+      </xy-textarea>
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Error State</th>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 placeholder="Input Text Fill Here" value="" [has-error]="true">
+        <xy-hint>Error</xy-hint>
+      </xy-textarea>
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Loading State</th>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 placeholder="Input Text Fill Here" value="" [is-loading]="true">
+        <xy-hint>Loading</xy-hint>
+      </xy-textarea>
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Readonly Field</th>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 readonly="true" placeholder="Input Text Fill Here" value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et.">
+        <xy-hint>Read only</xy-hint>
+      </xy-textarea>
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Edited State</th>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 placeholder="Input Text Fill Here" value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et." [edited]="true">
+        <xy-hint>Edited</xy-hint>
+      </xy-textarea>
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Success State</th>
+    <td class="example-button-row">
+      <xy-textarea label="Label" rows=3 placeholder="Input Text Fill Here" value="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et." [success]="true">
+        <xy-hint>Success</xy-hint>
+      </xy-textarea>
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+</table>
+<br/>
+<br/>

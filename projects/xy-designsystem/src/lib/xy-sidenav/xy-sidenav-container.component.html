@@ -1,0 +1,10 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav #sidenav mode="side" [class]="styleClass()">
+    <span (click)="closeByClick? customClass(): null">
+      <ng-content select="xy-sidenav"></ng-content>
+    </span>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

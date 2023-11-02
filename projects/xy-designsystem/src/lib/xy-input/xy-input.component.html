@@ -1,0 +1,56 @@
+<mat-form-field appearance="standard" [class]="styleClass()">
+  <mat-label *ngIf="label && !small" [class]="labelClass()">{{label}}</mat-label>
+  <ng-container matPrefix>
+    <ng-content select="[matPrefix]"></ng-content>
+  </ng-container>
+
+  <input #textInput
+      matInput
+      [value]="value"
+      [placeholder]="placeholder"
+      [readonly]="_readonly"
+      [required]="_required"
+      [disabled]="_disabled"
+      [formControl]="inputFormControl"
+      [type]="type"
+      [errorStateMatcher]="errorStateMatcher"
+      (focus)="onFocus($event)"
+      (blur)="onBlur($event)"
+      (change)="onChange($event)"
+      class="xy-input" 
+      *ngIf="isXyAutocomplete == false || datePicker == false"
+  >
+
+
+  <div *ngIf="type=='email'" class="xy-input-icon xy-input-email-icon">
+    <mat-icon>mail_outline</mat-icon>
+  </div>
+  <div *ngIf="type=='date' && !disabled" class="xy-input-icon xy-input-date-icon">
+    <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+  </div>
+  <div *ngIf="type=='time' && !disabled" class="xy-input-icon xy-input-time-icon">
+    <mat-icon>schedule</mat-icon>
+  </div>
+  <div *ngIf="_hasError" class="xy-input-icon xy-input-error-icon">
+    <mat-icon>clear</mat-icon>
+  </div>
+  <div *ngIf="_edited" class="xy-input-icon xy-input-edited-icon">
+    <mat-icon>edit</mat-icon>
+  </div>
+  <div *ngIf="_success" class="xy-input-icon xy-input-success-icon">
+    <mat-icon>check</mat-icon>
+  </div>
+  <mat-spinner *ngIf="_isLoading" [diameter]="spinnerDiameter" class="xy-input-loading-icon"></mat-spinner>
+  <mat-hint *ngIf="note">
+    <xy-hint>{{note}}</xy-hint>
+  </mat-hint>
+  <mat-hint *ngIf="hint">
+    <ng-content select="xy-hint"></ng-content>
+  </mat-hint>
+  <mat-error *ngFor="let item of errors;">
+    {{item.content.nativeElement.innerText}}
+  </mat-error>
+  <ng-container matSuffix>
+    <ng-content select="[matSuffix]"></ng-content>
+  </ng-container>
+</mat-form-field>

@@ -1,0 +1,64 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+:host {
+  ::ng-deep {
+    font-family: theme.$base-font !important;
+    font-weight: bold !important;
+    .xy-breadcrumb {
+      display: inline-block;
+      a{
+        text-decoration: none;
+        color: mat.get-color-from-palette(theme.$xy-base, 900);
+      }
+      a:visited {
+        color: mat.get-color-from-palette(theme.$xy-primary, 700);
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:hover{
+        text-decoration:underline;  
+      }
+    }
+
+    div span:last-child{
+      a:hover{
+        text-decoration: none;
+      }
+    }
+
+    .xy-breadcrumb:first-child:before {
+      display: none;
+    }
+
+    .xy-breadcrumb:before {
+      content: '>';
+      vertical-align: top;
+      display: inline-block;
+      margin: 4px 10px 0 8px;
+      font-weight: 600;
+      color: mat.get-color-from-palette(theme.$xy-base, 900);
+    }
+  }
+}
+:host-context(.dark-theme) {
+  :host{
+    ::ng-deep {
+      .xy-breadcrumb {
+        a{
+          color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+        }
+        a:visited {
+          color: mat.get-color-from-palette(theme.$xy-dark-primary, A300);
+        }
+        a:hover{
+          color: mat.get-color-from-palette(theme.$xy-dark-primary, A400);
+        }
+      }
+      .xy-breadcrumb:before {
+        color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+      }
+    }
+  }
+}

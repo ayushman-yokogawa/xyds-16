@@ -1,0 +1,19 @@
+<div class="xy-tabs ">
+  <button class="control-btn right" *ngIf="controls" (click)="scrollTabs(1)"><mat-icon>chevron_left</mat-icon></button>
+  <div class="tabs-container" #tabsContainer>
+    <ul class="nav nav-tabs" #tabsList [style.transform]="'translateX(' + tabPosition + 'px)'">
+      <li class="tab" *ngFor="let tab of tabs" [ngClass]="{'active': tab.active === true,'disabled-tab': tab.disabled=== true}"> 
+        <button type="button" [disabled]="tab.disabled" (click)="selectTab(tab)"  #tabButton> 
+            <mat-icon *ngIf="tab.icon">{{tab.icon}}</mat-icon> {{ tab.label }} 
+        </button>
+      </li>
+    </ul>
+    <div>
+      <div class="underline"></div>
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <button class="control-btn left" (click)="scrollTabs(-1)" *ngIf="controls">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

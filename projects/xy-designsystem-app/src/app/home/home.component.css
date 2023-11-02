@@ -1,0 +1,24 @@
+::ng-deep .desktopMenu {
+  display: block;
+}
+::ng-deep .mobileMenu {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  ::ng-deep .desktopMenu {
+    display: none !important;
+  }
+  ::ng-deep .mobileMenu {
+    display: block !important;
+  }
+  ::ng-deep .mobileMenu xy-menu .mat-button-wrapper {
+    margin-top: 8px;
+    margin-left: -17px;
+    font-weight: 800;
+    display: block;
+  }
+  ::ng-deep .nav.small {
+    display: none;
+  }
+}/*# sourceMappingURL=home.component.css.map */

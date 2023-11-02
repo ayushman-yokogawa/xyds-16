@@ -1,0 +1,70 @@
+<xy-dialog title="Pop Up Title" [column]=1 [showClose]="true" [isCustomClose]="true" (myEvent)="onMyEvent()">
+  <div>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+  nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    fugiat nulla pariat Lorem ipsum dolor.</p>
+  </div>
+  <xy-column>
+    <xy-input label="Label" placeholder="Input Text Fill Here" value="Text Inputed"></xy-input>
+    <xy-input label="Label" placeholder="Input Text Fill Here" value="123456"></xy-input>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+  </xy-column>
+  <xy-column [column]=2>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+  </xy-column>
+  <xy-column [column]=3>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+    <xy-select label="Dropdown List Name" value="option3">
+      <xy-option value="option1">All Notifications</xy-option>
+      <xy-option value="option2" disabled>Battery Low (disabled)</xy-option>
+      <xy-option value="option3">Signal Shift Detected</xy-option>
+      <xy-option value="option4">Inactive</xy-option>
+    </xy-select>
+  </xy-column>
+  <xy-dialog-actions>
+      <xy-button text-button color="accent" [tabindex]="1" (click)="onNoClick()">Cancel</xy-button>
+      <xy-button standard-button color="accent" [tabindex]="2" [mat-dialog-close]="data" cdkFocusInitial>OK</xy-button>
+  </xy-dialog-actions>
+</xy-dialog>
+

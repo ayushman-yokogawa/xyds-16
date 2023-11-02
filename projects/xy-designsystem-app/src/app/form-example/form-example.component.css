@@ -1,0 +1,24 @@
+:host section {
+  margin-bottom: 30px;
+}
+:host table {
+  width: 1000px;
+  border-collapse: collapse;
+}
+:host table th {
+  padding: 4px 8px;
+  width: 200px;
+  text-align: left;
+  border: #ccc 1px solid;
+}
+:host table td {
+  padding: 4px 8px;
+  border: #ccc 1px solid;
+}
+:host table td.column-layout {
+  display: flex;
+  justify-content: flex-start;
+}
+:host table td.column-layout > * {
+  margin-right: 10px;
+}/*# sourceMappingURL=form-example.component.css.map */

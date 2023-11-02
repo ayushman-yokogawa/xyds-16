@@ -1,0 +1,95 @@
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+
+
+:host{
+    .xy-progress-spinner{
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+   ::ng-deep{
+       /* Spinner */
+        .mat-progress-spinner circle, .mat-spinner circle {
+            stroke-linecap: round !important;
+        }
+        .mat-progress-spinner::after{
+            content: "";
+            width: 80px;
+            border-radius: 50%;
+            position: absolute;
+            height: 80%;
+            z-index: -1;
+            border: 10px solid #D0D4D6;
+
+            // #ffffffc2
+        }
+        .mat-progress-spinner{
+            position: relative;
+            circle::after{
+                content: "";
+                width: 80px;
+                border-radius: 50%;
+                position: absolute;
+                height: 80%;
+                z-index: -1;
+                border: 10px solid #056fcf17;
+            }
+        }
+        span{          
+            position: absolute;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            top: 42px;
+            bottom: 50px;
+            right: 50px;
+            left: 38px;
+        }
+        .mat-critical {
+            circle{
+                stroke: mat.get-color-from-palette(theme.$xy-critical, A400) !important;
+            }
+        }
+        .mat-progress-spinner.mat-accent circle, .mat-spinner.mat-accent circle{
+            stroke: #056fcf;      
+        }
+        .mat-error {
+            circle{
+                stroke: mat.get-color-from-palette(theme.$xy-error, A400) !important;
+            }
+        }
+        .mat-warning {
+            circle{
+                stroke: mat.get-color-from-palette(theme.$xy-warn, A400) !important;
+            }
+        }
+        .mat-attention {
+            circle{
+                stroke: mat.get-color-from-palette(theme.$xy-attention, A400) !important;
+            }
+        }
+        .mat-safe_normal {
+            circle{
+                stroke: mat.get-color-from-palette(theme.$xy-safe_normal, A400) !important;
+            }
+        }
+       
+   }
+}
+
+
+:host-context(.dark-theme){
+    ::ng-deep{
+        .mat-progress-spinner::after{
+            content: "";
+            width: 80px;
+            border-radius: 50%;
+            position: absolute;
+            height: 80%;
+            z-index: -1;
+            border: 10px solid #BBBBBB !important;
+        }
+    }
+}

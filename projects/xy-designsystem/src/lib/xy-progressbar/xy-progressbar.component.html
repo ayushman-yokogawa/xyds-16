@@ -1,0 +1,18 @@
+<div class="xy-progressbar inline">
+    <h2 *ngIf="label" class="progress-label">{{label}}</h2>
+    <div class="xy-progress-bar ">
+        <mat-progress-bar
+            color="{{color}}"
+            [mode]="mode"
+            [value]="value">
+        </mat-progress-bar>
+        <span *ngIf="help" class="progress-help"><strong>{{value}} %</strong></span>
+    </div>
+
+    <span *ngIf="value === '100'" class="progress-success">
+        <img src="../../../assets/images/icon_success.svg" alt="" >
+    </span>
+    <span *ngIf="help" class="progress-help">{{help}}</span>
+</div>
+
+

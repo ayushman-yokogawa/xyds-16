@@ -1,0 +1,21 @@
+{
+  "name": "@yokogawaelectric/xy-designsystem",
+  "version": "3.4.0",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/yokogawaelectric"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yokogawaelectric/xy-designsystem.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^16.2.1",
+    "@angular/core": "^16.2.1",
+    "@angular/forms": "^16.2.1",
+    "@angular/material": "^16.2.1"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}

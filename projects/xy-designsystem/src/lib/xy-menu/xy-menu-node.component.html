@@ -1,0 +1,97 @@
+<ng-container *ngIf="hasChildren()">
+  <ng-container *ngIf="xPosition == null && yPosition == null">
+    <ng-container *ngIf="rootNode">
+      <button mat-button [disabled]="_disabled" [matMenuTriggerFor]="mat_menu" (mouseenter)="isOverOpen? openMyMenu(): null">
+        {{data.content}}
+      </button> 
+      <button mat-icon-button [disabled]="_disabled" [matMenuTriggerFor]="mat_menu" (mouseenter)="isOverOpen? openMyMenu(): null">
+          <mat-icon *ngIf="icon">{{icon}}</mat-icon>
+      </button>
+    </ng-container>
+    <ng-container *ngIf="!rootNode">
+      <button mat-menu-item class="xy-menu-item" [disabled]="data.disabled"  [matMenuTriggerFor]="mat_menu" #menuTrigger (menuClosed)="onCloseMenu(menuTrigger)" (mouseenter)="mouseEnter()">
+        <xy-checkbox #check *ngIf="_checkable && !_small" [value]="data.value" [checked]="data.checked" (change)="onChangeCheckbox(check, data)"></xy-checkbox>
+        <mat-icon *ngIf="!_small && data.icon">{{data.icon}}</mat-icon>
+        <div class="xy-menu-item-label">{{data.content}}</div>
+      </button>
+      <div [className]="dividerStyle()" *ngIf="!_isLast"></div>
+    </ng-container>
+    <mat-menu #mat_menu="matMenu">
+      <div [className]="menuStyle()"  (mouseleave)="isOverOpen? closeMyMenu(): null">
+        <ng-container *ngFor="let child of data.children">
+          <xy-menu-node [data]="child" [rootNode]="false" [small]="_small" [fit]="_fit" [checkable]="_checkable" [is-last]="isLast(child)" [parent]="this"></xy-menu-node>
+        </ng-container>
+      </div>
+    </mat-menu>
+  </ng-container>
+  <ng-container *ngIf="xPosition != null && yPosition == null">
+    <ng-container *ngIf="rootNode">
+      <button mat-button [disabled]="_disabled"  [matMenuTriggerFor]="mat_menu">{{data.content}}</button>
+    </ng-container>
+    <ng-container *ngIf="!rootNode">
+      <button mat-menu-item class="xy-menu-item" [disabled]="data.disabled" [matMenuTriggerFor]="mat_menu" #menuTrigger (menuClosed)="onCloseMenu(menuTrigger)"  (mouseenter)="mouseEnter()">
+        <xy-checkbox #check *ngIf="_checkable && !_small" [value]="data.value" [checked]="data.checked" (change)="onChangeCheckbox(check, data)"></xy-checkbox>
+        <mat-icon *ngIf="!_small && data.icon">{{data.icon}}</mat-icon>
+        <div class="xy-menu-item-label">{{data.content}}</div>
+      </button>
+      <div [className]="dividerStyle()" *ngIf="!_isLast"></div>
+    </ng-container>
+    <mat-menu #mat_menu="matMenu" [xPosition]=xPosition>
+      <div [className]="menuStyle()"  (mouseleave)="isOverOpen? closeMyMenu(): null">
+        <ng-container *ngFor="let child of data.children">
+          <xy-menu-node [data]="child"  [rootNode]="false" [small]="_small" [fit]="_fit" [checkable]="_checkable" [is-last]="isLast(child)" [parent]="this"></xy-menu-node>
+        </ng-container>
+      </div>
+    </mat-menu>
+  </ng-container>
+  <ng-container *ngIf="xPosition == null && yPosition != null">
+    <ng-container *ngIf="rootNode">
+      <button mat-button [disabled]="_disabled"  [matMenuTriggerFor]="mat_menu">{{data.content}}</button>
+    </ng-container>
+    <ng-container *ngIf="!rootNode">
+      <button mat-menu-item class="xy-menu-item"  [disabled]="data.disabled" [matMenuTriggerFor]="mat_menu" #menuTrigger (menuClosed)="onCloseMenu(menuTrigger)" (mouseenter)="mouseEnter()">
+        <xy-checkbox #check *ngIf="_checkable && !_small" [value]="data.value" [checked]="data.checked" (change)="onChangeCheckbox(check, data)"></xy-checkbox>
+        <mat-icon *ngIf="!_small && data.icon">{{data.icon}}</mat-icon>
+        <div class="xy-menu-item-label">{{data.content}}</div>
+      </button>
+      <div [className]="dividerStyle()" *ngIf="!_isLast"></div>
+    </ng-container>
+    <mat-menu #mat_menu="matMenu" [yPosition]=yPosition>
+      <div [className]="menuStyle()" (mouseleave)="isOverOpen? closeMyMenu(): null">
+        <ng-container *ngFor="let child of data.children">
+          <xy-menu-node [data]="child" [rootNode]="false" [small]="_small" [fit]="_fit" [checkable]="_checkable" [is-last]="isLast(child)" [parent]="this"></xy-menu-node>
+        </ng-container>
+      </div>
+    </mat-menu>
+  </ng-container>
+  <ng-container *ngIf="xPosition != null && yPosition != null">
+    <ng-container *ngIf="rootNode">
+      <button mat-button [disabled]="_disabled" [matMenuTriggerFor]="mat_menu">{{data.content}}</button>
+    </ng-container>
+    <ng-container *ngIf="!rootNode">
+      <button mat-menu-item class="xy-menu-item" [disabled]="data.disabled" [matMenuTriggerFor]="mat_menu" #menuTrigger (menuClosed)="onCloseMenu(menuTrigger)" (mouseenter)="mouseEnter()">
+        <xy-checkbox #check *ngIf="_checkable && !_small" [value]="data.value" [checked]="data.checked" (change)="onChangeCheckbox(check, data)"></xy-checkbox>
+        <mat-icon *ngIf="!_small && data.icon">{{data.icon}}</mat-icon>
+        <div class="xy-menu-item-label">{{data.content}}</div>
+      </button>
+      <div [className]="dividerStyle()" *ngIf="!_isLast"></div>
+    </ng-container>
+    <mat-menu #mat_menu="matMenu" [xPosition]=xPosition [yPosition]=yPosition>
+      <div [className]="menuStyle()" (mouseleave)="isOverOpen? closeMyMenu(): null">
+        <ng-container *ngFor="let child of data.children">
+          <xy-menu-node [data]="child" [rootNode]="false" [small]="_small" [fit]="_fit" [checkable]="_checkable" [is-last]="isLast(child)" [parent]="this"></xy-menu-node>
+        </ng-container>
+      </div>
+    </mat-menu>
+  </ng-container>
+</ng-container>
+<ng-container *ngIf="!hasChildren()">
+  <ng-container *ngIf="!rootNode">
+    <button mat-menu-item class="xy-menu-item" [disabled]="data.disabled" (mouseenter)="mouseEnter()" (click)="onClick($event)">
+      <xy-checkbox #check *ngIf="_checkable && !_small" [value]="data.value" [checked]="data.checked" (change)="onChangeCheckbox(check, data)"></xy-checkbox>
+      <mat-icon *ngIf="!_small && data.icon">{{data.icon}}</mat-icon>
+      <div class="xy-menu-item-label">{{data.content}}</div>
+    </button>
+    <div [className]="dividerStyle()" *ngIf="!_isLast"></div>
+  </ng-container>
+</ng-container>

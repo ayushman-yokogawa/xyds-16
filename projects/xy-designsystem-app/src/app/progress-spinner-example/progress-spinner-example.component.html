@@ -1,0 +1,48 @@
+<!-- <h3>Progress Spinner</h3>
+<table>
+  <tr>
+    <th class="example-label">Color</th>
+    <td class="example-button-row">
+      <xy-radio-group name="radio-group-color" [formControl]="colorControl">
+        <xy-radio id="radio-accent" value="accent" color="accent" [checked]="true">
+          Accent
+        </xy-radio>
+        <xy-radio id="radio-critical" value="critical" color="critical">
+          Critical
+        </xy-radio>
+        <xy-radio id="radio-warning" value="warning" color="warning">
+          Warning
+        </xy-radio>
+      </xy-radio-group>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Mode</th>
+    <td class="example-button-row">
+      <xy-radio-group name="radio-group-mode" [formControl]="modeControl" >
+        <xy-radio id="accent" value="determinate" [checked]="true" color="accent">
+          Determinate
+        </xy-radio>
+        <xy-radio id="indeterminate" color="accent" value="indeterminate" >
+          Indeterminate
+        </xy-radio>
+      </xy-radio-group>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Result</th>
+    <td class="example-button-row">
+      <xy-progress-spinner value=50 color="{{colorControl.value ? colorControl.value : 'accent'}}"
+        mode="{{modeControl.value? modeControl.value: mode}}"></xy-progress-spinner>
+    </td>
+  </tr>
+</table> -->
+<h3>
+    Determinate Progress Spinner
+</h3>
+<xy-progress-spinner value="60" color="accent" mode="determinate"></xy-progress-spinner>
+<br>
+<h3>
+    Indeterminate Progress Spinner
+</h3>
+<xy-progress-spinner value="30" color="accent" mode="indeterminate"></xy-progress-spinner>

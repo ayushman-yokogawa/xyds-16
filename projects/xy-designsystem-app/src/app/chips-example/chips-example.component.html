@@ -1,0 +1,90 @@
+
+
+<table>
+    <thead>
+        <tr>
+          <th class="example-label"><h3> Filter Chips</h3></th>
+        </tr>
+    </thead>
+    <tr>
+      <td class="example-button-row">
+          <xy-chips chipsLabel="Docs" [selected]="true"></xy-chips>
+      </td>
+      <td class="example-button-row">
+          <xy-chips chipsLabel="Slides" [selected]="true"></xy-chips>
+      </td>
+      <td class="example-button-row">
+          <xy-chips chipsLabel="Sheets"></xy-chips>
+      </td>
+      <td class="example-button-row">
+          <xy-chips chipsLabel="Images" [selected]="true" [disabled]="true"></xy-chips>
+      </td>
+      <td class="example-button-row">
+          <xy-chips chipsLabel="Videos"  [disabled]="true"></xy-chips>
+      </td>
+    
+    </tr>
+  </table>
+  
+  <br>
+  <table>
+      <thead>
+          <tr>
+            <th class="example-label"> Assets Chips</th>
+          </tr>
+      </thead>
+      <tr>
+          <td class="example-button-row">
+              <xy-chips chipsLabel="Add to my itinerary" icon="update"></xy-chips>
+          </td>
+          <td class="example-button-row">
+              <xy-chips chipsLabel="Event Location" icon="update"></xy-chips>
+          </td>
+          <td class="example-button-row">
+              <xy-chips chipsLabel="Chat" icon="update"></xy-chips>
+          </td>
+      </tr>
+  </table>
+    
+  <br>
+  
+  <table>
+      <thead>
+          <tr>
+            <th class="example-label"> Assets Chips</th>
+          </tr>
+      </thead>
+      <tr>
+        <td class="example-button-row">
+            <xy-chips chipsLabel="I agree" ></xy-chips>
+        </td>
+        <td class="example-button-row">
+            <xy-chips chipsLabel="Looks good to me"></xy-chips>
+        </td>
+        <td class="example-button-row">
+            <xy-chips chipsLabel="Thankyou"></xy-chips>
+        </td>
+       
+      </tr>
+  </table>
+  
+  <br>
+  
+  
+  <h3></h3>
+  
+  <table>
+      <thead>
+          <tr>
+              <th class="example-label"> Input Chips</th>
+         </tr>
+      </thead>
+      <tr>
+          <td *ngFor="let label of keywords" class="example-button-row">
+              <xy-chips  [chipsLabel]="label" [removeBtn]="true"  (removeChips)="removeChips(label)"></xy-chips>
+          </td>
+      </tr>
+  </table>
+<br>
+<xy-button light-weight-button color="accent" (click)="reset()">Reset</xy-button>
+  

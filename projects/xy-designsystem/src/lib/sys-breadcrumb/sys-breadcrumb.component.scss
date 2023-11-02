@@ -1,0 +1,43 @@
+.breadcrumb {
+  padding: 10px 12px;
+  list-style: none !important;
+  list-style-type: none;
+}
+.breadcrumb li {
+  display: inline;
+  
+}
+.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "\203A";
+  font-size: 23px;
+}
+.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+  font-size: 14px !important;
+}
+ol.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+.inactive-link a{
+  color: black !important;
+  text-decoration: none !important;
+  pointer-events: none;
+}
+ol{
+  padding-left: 0 !important;
+}
+
+:host-context(.dark-theme){
+  .inactive-link a{
+    color: white !important;
+  }
+  .breadcrumb li+li:before {
+    padding: 8px;
+    color: white;
+    content: "\203A";
+  }
+}

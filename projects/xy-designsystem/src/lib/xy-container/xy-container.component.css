@@ -1,0 +1,347 @@
+:host {
+  background: black;
+}
+:host > div {
+  height: inherit;
+}
+:host > div.xy-wrap {
+  flex-wrap: wrap;
+}
+:host > div.xy-wrap ::ng-deep .mat-radio-group {
+  flex-wrap: wrap;
+}
+:host > div.xy-nowrap {
+  flex-wrap: nowrap;
+}
+:host > div.xy-nowrap ::ng-deep .mat-radio-group {
+  flex-wrap: nowrap;
+}
+:host > div.xy-horizontal {
+  width: 100%;
+  display: flex;
+}
+:host > div.xy-horizontal ::ng-deep .mat-radio-group {
+  width: 100%;
+  display: flex;
+}
+:host > div.xy-horizontal.xy-center {
+  justify-content: center;
+}
+:host > div.xy-horizontal.xy-center ::ng-deep .mat-radio-group {
+  justify-content: center;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-xxs ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-xxs ::ng-deep xy-checkbox {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-xs ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-xs ::ng-deep xy-checkbox {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-s ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-s ::ng-deep xy-checkbox {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-m ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-m ::ng-deep xy-checkbox {
+  margin-left: 24px;
+  margin-right: 24px;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-l ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-l ::ng-deep xy-checkbox {
+  margin-left: 32px;
+  margin-right: 32px;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-xl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-xl ::ng-deep xy-checkbox {
+  margin-left: 48px;
+  margin-right: 48px;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-xxl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-xxl ::ng-deep xy-checkbox {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+:host > div.xy-horizontal.xy-center.xy-spacing-xxxl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-center.xy-spacing-xxxl ::ng-deep xy-checkbox {
+  margin-left: 96px;
+  margin-right: 96px;
+}
+:host > div.xy-horizontal.xy-left {
+  justify-content: flex-start;
+}
+:host > div.xy-horizontal.xy-left ::ng-deep .mat-radio-group {
+  justify-content: flex-start;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-xxs ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-xxs ::ng-deep xy-checkbox {
+  margin-right: 4px;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-xs ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-xs ::ng-deep xy-checkbox {
+  margin-right: 8px;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-s ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-s ::ng-deep xy-checkbox {
+  margin-right: 16px;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-m ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-m ::ng-deep xy-checkbox {
+  margin-right: 24px;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-l ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-l ::ng-deep xy-checkbox {
+  margin-right: 32px;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-xl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-xl ::ng-deep xy-checkbox {
+  margin-right: 48px;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-xxl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-xxl ::ng-deep xy-checkbox {
+  margin-right: 64px;
+}
+:host > div.xy-horizontal.xy-left.xy-spacing-xxxl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-left.xy-spacing-xxxl ::ng-deep xy-checkbox {
+  margin-right: 96px;
+}
+:host > div.xy-horizontal.xy-right {
+  justify-content: flex-end;
+}
+:host > div.xy-horizontal.xy-right ::ng-deep .mat-radio-group {
+  justify-content: flex-end;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-xxs ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-xxs ::ng-deep xy-checkbox {
+  margin-left: 4px;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-xs ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-xs ::ng-deep xy-checkbox {
+  margin-left: 8px;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-s ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-s ::ng-deep xy-checkbox {
+  margin-left: 16px;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-m ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-m ::ng-deep xy-checkbox {
+  margin-left: 24px;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-l ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-l ::ng-deep xy-checkbox {
+  margin-left: 32px;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-xl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-xl ::ng-deep xy-checkbox {
+  margin-left: 48px;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-xxl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-xxl ::ng-deep xy-checkbox {
+  margin-left: 64px;
+}
+:host > div.xy-horizontal.xy-right.xy-spacing-xxxl ::ng-deep xy-radio,
+:host > div.xy-horizontal.xy-right.xy-spacing-xxxl ::ng-deep xy-checkbox {
+  margin-left: 96px;
+}
+:host > div.xy-horizontal.xy-justify {
+  justify-content: space-between;
+}
+:host > div.xy-horizontal.xy-justify ::ng-deep .mat-radio-group {
+  justify-content: space-between;
+}
+:host > div.xy-horizontal.xy-vertical-top {
+  align-items: flex-start;
+}
+:host > div.xy-horizontal.xy-vertical-top ::ng-deep .mat-radio-group {
+  align-items: flex-start;
+}
+:host > div.xy-horizontal.xy-vertical-center {
+  align-items: center;
+}
+:host > div.xy-horizontal.xy-vertical-center ::ng-deep .mat-radio-group {
+  align-items: center;
+}
+:host > div.xy-horizontal.xy-vertical-bottom {
+  align-items: flex-end;
+}
+:host > div.xy-horizontal.xy-vertical-bottom ::ng-deep .mat-radio-group {
+  align-items: flex-end;
+}
+:host > div.xy-horizontal.xy-vertical-justify {
+  align-items: center;
+}
+:host > div.xy-horizontal.xy-vertical-justify ::ng-deep .mat-radio-group {
+  align-items: center;
+}
+:host > div.xy-vertical {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+}
+:host > div.xy-vertical ::ng-deep .mat-radio-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+:host > div.xy-vertical.xy-wrap {
+  height: inherit;
+}
+:host > div.xy-vertical.xy-wrap ::ng-deep .mat-radio-group {
+  height: inherit;
+}
+:host > div.xy-vertical.xy-left {
+  align-items: flex-start;
+}
+:host > div.xy-vertical.xy-left ::ng-deep .mat-radio-group {
+  align-items: flex-start;
+}
+:host > div.xy-vertical.xy-center {
+  align-items: center;
+}
+:host > div.xy-vertical.xy-center ::ng-deep .mat-radio-group {
+  align-items: center;
+}
+:host > div.xy-vertical.xy-right {
+  align-items: flex-end;
+}
+:host > div.xy-vertical.xy-right ::ng-deep .mat-radio-group {
+  align-items: flex-end;
+}
+:host > div.xy-vertical.xy-justify {
+  align-items: center;
+}
+:host > div.xy-vertical.xy-justify ::ng-deep .mat-radio-group {
+  align-items: center;
+}
+:host > div.xy-vertical.xy-vertical-top {
+  justify-content: flex-start;
+}
+:host > div.xy-vertical.xy-vertical-top ::ng-deep .mat-radio-group {
+  justify-content: flex-start;
+}
+:host > div.xy-vertical.xy-vertical-top.sxy-pacing-xxs ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.sxy-pacing-xxs ::ng-deep xy-checkbox {
+  margin-bottom: 4px;
+}
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xs ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xs ::ng-deep xy-checkbox {
+  margin-bottom: 8px;
+}
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-s ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-s ::ng-deep xy-checkbox {
+  margin-bottom: 16px;
+}
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-m ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-m ::ng-deep xy-checkbox {
+  margin-bottom: 24px;
+}
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-l ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-l ::ng-deep xy-checkbox {
+  margin-bottom: 32px;
+}
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xl ::ng-deep xy-checkbox {
+  margin-bottom: 48px;
+}
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xxl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xxl ::ng-deep xy-checkbox {
+  margin-bottom: 64px;
+}
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xxxl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-top.xy-spacing-xxxl ::ng-deep xy-checkbox {
+  margin-bottom: 96px;
+}
+:host > div.xy-vertical.xy-vertical-center {
+  justify-content: center;
+}
+:host > div.xy-vertical.xy-vertical-center ::ng-deep .mat-radio-group {
+  justify-content: center;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xxs ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xxs ::ng-deep xy-checkbox {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xs ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xs ::ng-deep xy-checkbox {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-s ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-s ::ng-deep xy-checkbox {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-m ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-m ::ng-deep xy-checkbox {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-l ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-l ::ng-deep xy-checkbox {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xl ::ng-deep xy-checkbox {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xxl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xxl ::ng-deep xy-checkbox {
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xxxl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-center.xy-spacing-xxxl ::ng-deep xy-checkbox {
+  margin-top: 96px;
+  margin-bottom: 96px;
+}
+:host > div.xy-vertical.xy-vertical-bottom {
+  justify-content: flex-end;
+}
+:host > div.xy-vertical.xy-vertical-bottom ::ng-deep .mat-radio-group {
+  justify-content: flex-end;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xxs ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xxs ::ng-deep xy-checkbox {
+  margin-top: 4px;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xs ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xs ::ng-deep xy-checkbox {
+  margin-top: 8px;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-s ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-s ::ng-deep xy-checkbox {
+  margin-top: 16px;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-m ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-m ::ng-deep xy-checkbox {
+  margin-top: 24px;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-l ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-l ::ng-deep xy-checkbox {
+  margin-top: 32px;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xl ::ng-deep xy-checkbox {
+  margin-top: 48px;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xxl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xxl ::ng-deep xy-checkbox {
+  margin-top: 64px;
+}
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xxxl ::ng-deep xy-radio,
+:host > div.xy-vertical.xy-vertical-bottom.xy-spacing-xxxl ::ng-deep xy-checkbox {
+  margin-top: 96px;
+}
+:host > div.xy-vertical.xy-vertical-justify {
+  justify-content: space-between;
+}
+:host > div.xy-vertical.xy-vertical-justify ::ng-deep .mat-radio-group {
+  height: inherit;
+  justify-content: space-between;
+}/*# sourceMappingURL=xy-container.component.css.map */

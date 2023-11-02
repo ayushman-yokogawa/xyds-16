@@ -1,0 +1,303 @@
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+@use '../../../theme/xy-spacing' as spacing;
+@use '../../../theme/xy-typography' as typography;
+
+:host{
+  display: block;
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .xyCard-img{
+    width: 100%;
+  }
+  
+  .mat-mdc-card {
+    @media(max-width: 767px){
+      box-shadow: 0px 4px 3px 0px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(225, 227, 230, 1);
+      border-radius: 9px;
+      
+      .mat-mdc-card-title{
+        font-weight: 700 !important;
+        font-size: 14px;
+      }
+      .mat-mdc-card-image{
+        margin: 0 -16px 0 -16px;
+      }
+      .mat-mdc-card-content{
+        margin: 0 !important;
+      }
+    }
+    font-family: typography.$base-font;
+    color: mat.get-color-from-palette(theme.$xy-base, 900);
+    padding: spacing.$spacing-s;
+
+    .mat-mdc-card-title{
+      margin-left: spacing.$spacing-s;
+      margin-right: spacing.$spacing-s;
+      // margin-bottom: spacing.$spacing-s;
+      font-size: 1rem;
+      line-height: 1;
+      font-weight: 700;
+      color: mat.get-color-from-palette(theme.$xy-base, 900);
+    }
+
+    .xy-card-close-button{
+      position: absolute;
+      top: calc(spacing.$spacing-s / 2);
+      right: spacing.$spacing-s;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-s 0;
+      padding: 0;
+      font-size: 0.875rem;
+    }
+
+    .mat-mdc-card-actions{
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0;
+      min-height: 38px;
+
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-s * 1.5);
+      }
+    }
+
+    .mat-divider {
+      border-top-color: mat.get-color-from-palette(theme.$xy-base, 300);
+      @media(max-width: 768px){
+        display: none;
+      }
+    }
+  }
+  ::ng-deep{
+    .mat-divider.mat-divider-inset{
+      margin: 0;
+    }
+  }
+  ::ng-deep .one-column{
+    ::ng-deep {
+      > *{
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  ::ng-deep{
+    xy-card-header-action button{
+      margin-top: -15px;
+    }
+  }
+  ::ng-deep .two-column{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    ::ng-deep {
+      > *{
+        display: block;
+        width: calc(50% - 12px);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-xxs) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-xxs;
+
+    .mat-mdc-card-title{
+      margin-left: 0px;
+      margin-right: spacing.$spacing-xxs;
+      margin-bottom: spacing.$spacing-xxs;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-xxs 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-xxs * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-xs) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-xs;
+
+    .mat-mdc-card-title{
+      margin-left: 0px;
+      margin-right: spacing.$spacing-xs;
+      margin-bottom: spacing.$spacing-xs;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-xs 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-xs * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-s) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-s;
+
+    .mat-mdc-card-title{
+      margin-left: 0px;
+      margin-right: spacing.$spacing-s;
+      margin-bottom: spacing.$spacing-s;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-s 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-s * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-m) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-m;
+
+    .mat-mdc-card-title{
+      margin-left: 0;
+      margin-right: spacing.$spacing-m;
+      margin-bottom: spacing.$spacing-m;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-m 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-m * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-l) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-l;
+
+    .mat-mdc-card-title{
+      margin-left: 0;
+      margin-right: spacing.$spacing-l;
+      margin-bottom: spacing.$spacing-l;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-l 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-l * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-xl) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-xl;
+
+    .mat-mdc-card-title{
+      margin-left: 0;
+      margin-right: spacing.$spacing-xl;
+      margin-bottom: spacing.$spacing-xl;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-xl 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-xl * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-xxl) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-xxl;
+
+    .mat-mdc-card-title{
+      margin-left: 0;
+      margin-right: spacing.$spacing-xxl;
+      margin-bottom: spacing.$spacing-xxl;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-xxl 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-xxl * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.spacing-xxxl) {
+  .mat-mdc-card {
+    padding: spacing.$spacing-xxxl;
+
+    .mat-mdc-card-title{
+      margin-left: 0;
+      margin-right: spacing.$spacing-xxxl;
+      margin-bottom: spacing.$spacing-xxxl;
+    }
+
+    .mat-mdc-card-content{
+      // margin: spacing.$spacing-xxxl 0;
+    }
+
+    .mat-mdc-card-actions{
+      ::ng-deep button{
+        margin-left: (spacing.$spacing-xxxl * 1.5);
+      }
+    }
+  }
+}
+
+:host-context(.dark-theme) {
+  :host{
+    .mat-mdc-card {
+      color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+      background-color: mat.get-color-from-palette(theme.$xy-dark-base, 700);
+
+      .mat-mdc-card-title{
+        color: mat.get-color-from-palette(theme.$xy-dark-base, 50);
+      }
+
+      .mat-divider {
+        border-top-color: mat.get-color-from-palette(theme.$xy-dark-base, 400);
+      }
+    }
+  }
+}

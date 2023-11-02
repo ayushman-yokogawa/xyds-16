@@ -1,0 +1,124 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+:host{
+  .mat-button,
+  .mat-raised-button,
+  .mat-icon-button,
+  .mat-stroked-button,
+  .mat-flat-button,
+  .mat-fab,
+  .mat-mini-fab{
+    font-family: theme.$base-font;
+  }
+
+  ::ng-deep {
+    .mat-button-disabled {
+      color: mat.get-color-from-palette(theme.$xy-base, 400) !important;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-mdc-menu-panel {
+    .mat-mdc-menu-item:hover:not([disabled]):not(:active),
+    .mat-mdc-menu-item.cdk-program-focused:not([disabled]),
+    .mat-mdc-menu-item.cdk-keyboard-focused:not([disabled]),
+    .mat-mdc-menu-item-highlighted:not([disabled]) {
+      background-color: mat.get-color-from-palette(theme.$xy-accent, 500) !important;
+    }
+    .mat-mdc-menu-content{
+      padding: 0;
+    }
+    .mat-mdc-menu-item-text{
+      display: flex;
+      align-items: center;
+    }
+    max-width: initial !important;
+    $i: 1;
+    @while $i <= 30 {
+      .xy-menu-rows-#{$i} {
+        max-height: (48px * $i);
+      }
+      $i: $i + 1;
+    }
+
+    .xy-menu-item {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      width: 280px;
+      font-family: theme.$base-font;
+
+      &:not(.mat-button-disabled) {
+        &.mat-mdc-menu-item {
+          &:hover {
+            background-color: mat.get-color-from-palette(theme.$xy-accent, 500, 0.2) !important;
+          }
+
+          &:active {
+            background-color: theme.$xy-white !important;
+          }
+
+          .mat-menu-ripple{
+            .mat-ripple-element {
+              opacity: 0.2;
+              background-color: mat.get-color-from-palette(theme.$xy-accent, 500);
+            }
+          }
+        }
+      }
+
+      .mat-mdc-checkbox {
+        margin: 0 10px 0 16px;
+      }
+
+      mat-icon {
+        vertical-align: bottom;
+        font-size: 1.125rem;
+        height: 1.125rem;
+        width: 1.125rem;
+        margin: 0 0 0 20px;
+      }
+
+      .xy-menu-item-label{
+        margin: 0 10px 0 10px;
+      }
+    }
+
+    .xy-menu-small{
+      .xy-menu-item {
+        width: 128px;
+      }
+    }
+
+    .xy-menu-fit{
+      .xy-menu-item {
+        width: 100%;
+        margin-right: 28px;
+      }
+    }
+    .xy-menu-divider {
+      padding: 0;
+      margin: 0 8px;
+      width: calc(100% - 16px);
+      height: 1px;
+      background-color: mat.get-color-from-palette(theme.$xy-base, 100);
+
+      &.checkable {
+        margin-left: 16px;
+        margin-right: 8px;
+        width: calc(100% - 24px);
+      }
+    }
+  }
+
+  .mat-error{
+    font-size: 75%;
+    color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+  }
+}
+

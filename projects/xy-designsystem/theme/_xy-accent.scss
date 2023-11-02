@@ -1,0 +1,257 @@
+@use 'sass:map';
+
+$dark-primary-text: #143342;
+$dark-secondary-text: #546874;
+$dark-focused: rgba(black, 0.12);
+$light-primary-text: white;
+$light-secondary-text: white;
+$light-focused: rgba(white, 0.12);
+
+$primary-dividers: #546874;
+$secondary-dividers: #82919a;
+$tertiary-dividers: #d2d9de;
+
+$yl-black-palette: (
+  400: #000000,
+  contrast: (
+    400: #000000
+  )
+);
+$yl-white-palette: (
+  400: #ffffff,
+  contrast: (
+    400: #ffffff
+  )
+);
+
+$disabled-palette: (
+  300: #dfe4e8,
+  400: #34414D,
+  500: #b2bdc3,
+  600: #82919a,
+  700: #546874,
+  contrast: (
+    300: #b2bdc3,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+  )
+);
+$critical-palette: (
+  A100: #FFCCFF,
+  A200: #FF7BFE,
+  A400: #E700E7,
+  A700: #890089,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$error-palette: (
+  A100: #FFCCCC,
+  A200: #FF7D80,
+  A400: #FF0000,
+  A700: #990000,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$warning-palette: (
+  A100: #FFCC99,
+  A200: #FF9900,
+  A400: #F56B00,
+  A700: #863A00,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$attention-palette: (
+  A100: #FFFF66,
+  A200: #FFCD03,
+  A400: #B68800,
+  A700: #614900,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$safe_normal-palette: (
+  A100: #A9EEEE,
+  A200: #00CCCC,
+  A400: #389595,
+  A700: #005555,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+
+$y-red-palette: (
+  A100: #ffcccc,
+  A200: #ff7d80,
+  A400: #ff0000,
+  A700: #990000,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-pink-palette: (
+  A100: #f8bdd1,
+  A200: #f387ab,
+  A400: #ec407a,
+  A700: #8a2547,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-magenta-palette: (
+  A100: #ffccff,
+  A200: #ff7bfe,
+  A400: #e700e7,
+  A700: #890089,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-purple-palette: (
+  A100: #ddc7f2,
+  A200: #b379e1,
+  A400: #8f38ce,
+  A700: #5b11a9,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-violet-palette: (
+  A100: #c9d4ff,
+  A200: #8ba0ff,
+  A400: #4068ff,
+  A700: #0036a9,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-cyan-palette: (
+  A100: #9fe0f0,
+  A200: #00d4f5,
+  A400: #439eca,
+  A700: #335c7f,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-teal-palette: (
+  A100: #a9eeee,
+  A200: #00cccc,
+  A400: #389595,
+  A700: #005555,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-green-palette: (
+  A100: #c6edcd,
+  A200: #77d78b,
+  A400: #64a36f,
+  A700: #486a4d,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-yellowgreen-palette: (
+  A100: #c3e17e,
+  A200: #94c70e,
+  A400: #6fa41b,
+  A700: #5c8126,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-olive-palette: (
+  A100: #d3d9b0,
+  A200: #bcc47a,
+  A400: #969664,
+  A700: #5b5a41,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-yellow-palette: (
+  A100: #ffff66,
+  A200: #ffcd03,
+  A400: #b68800,
+  A700: #614900,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-orange-palette: (
+  A100: #ffcc99,
+  A200: #ff9900,
+  A400: #f56b00,
+  A700: #863a00,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);
+$y-gray-palette: (
+  A100: #dddddd,
+  A200: #bbbbbb,
+  A400: #777777,
+  A700: #333333,
+  contrast: (
+    A100: $dark-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  )
+);

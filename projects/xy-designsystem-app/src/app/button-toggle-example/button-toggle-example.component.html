@@ -1,0 +1,54 @@
+<h3>Single with Form Group</h3>
+<xy-button-toggle-group name="singleForm" value="visibility" [formGroup]="formGroup">
+  <xy-button-toggle value="favorite" icon="favorite"></xy-button-toggle>
+  <xy-button-toggle value="visibility" icon="visibility"></xy-button-toggle>
+  <xy-button-toggle value="notifications" icon="notifications"></xy-button-toggle>
+</xy-button-toggle-group>
+<p>Chosen value is {{singleFormValue}}</p>
+
+<h3>Single with ngModel</h3>
+<xy-button-toggle-group name="single" value="visibility" [(ngModel)]="singleValue">
+  <xy-button-toggle value="favorite" icon="favorite"></xy-button-toggle>
+  <xy-button-toggle value="visibility" icon="visibility"></xy-button-toggle>
+  <xy-button-toggle value="notifications" icon="notifications"></xy-button-toggle>
+</xy-button-toggle-group>
+<p>Chosen value is {{singleValue}}</p>
+
+<h3>Single with Change Event</h3>
+<xy-button-toggle-group name="single" value="visibility" (change)="onChange($event)">
+  <xy-button-toggle value="favorite" icon="favorite"></xy-button-toggle>
+  <xy-button-toggle value="visibility" icon="visibility"></xy-button-toggle>
+  <xy-button-toggle value="notifications" icon="notifications"></xy-button-toggle>
+</xy-button-toggle-group>
+<p>Chosen value is {{singleChangedValue}}</p>
+
+<h3>Single Disabled</h3>
+<xy-button-toggle-group name="single_disabled" value="favorite" disabled>
+  <xy-button-toggle value="favorite" icon="favorite"></xy-button-toggle>
+  <xy-button-toggle value="visibility" icon="visibility"></xy-button-toggle>
+  <xy-button-toggle value="notifications" icon="notifications"></xy-button-toggle>
+</xy-button-toggle-group>
+<p></p>
+
+<h3>Single - button disabled</h3>
+<xy-button-toggle-group name="single" value="favorite" (change)="onChange($event)">
+  <xy-button-toggle value="favorite" icon="favorite"></xy-button-toggle>
+  <xy-button-toggle value="visibility" icon="visibility" disabled></xy-button-toggle>
+  <xy-button-toggle value="notifications" icon="notifications"></xy-button-toggle>
+</xy-button-toggle-group>
+<p>Chosen value is {{singleChangedValue}}</p>
+
+<h3>Multiple</h3>
+<xy-button-toggle-group name="multipleForm" [value]="['favorite','visibility']" [formGroup]="formGroup" multiple>
+  <xy-button-toggle value="favorite" icon="favorite"></xy-button-toggle>
+  <xy-button-toggle value="visibility" icon="visibility"></xy-button-toggle>
+  <xy-button-toggle value="notifications" icon="notifications"></xy-button-toggle>
+</xy-button-toggle-group>
+<p>Chosen value is {{multipleFormValue}}</p>
+
+<h3>Multiple Disabled</h3>
+<xy-button-toggle-group name="multipleForm" [value]="['favorite','visibility']" disabled multiple>
+  <xy-button-toggle value="favorite" icon="favorite"></xy-button-toggle>
+  <xy-button-toggle value="visibility" icon="visibility"></xy-button-toggle>
+  <xy-button-toggle value="notifications" icon="notifications"></xy-button-toggle>
+</xy-button-toggle-group>

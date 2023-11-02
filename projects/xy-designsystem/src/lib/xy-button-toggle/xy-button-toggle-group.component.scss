@@ -1,0 +1,149 @@
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+@use '../../../theme/xy-typography' as typography;
+
+:host{
+  ::ng-deep {
+    .mat-button-toggle {
+      font-family: typography.$base-font;
+      &.mat-button-toggle-appearance-standard {
+        background-color: mat.get-color-from-palette(theme.$xy-base, 50);
+      }
+
+      ::ng-deep .mat-ripple-element {
+        opacity: 0.2;
+        background-color: mat.get-color-from-palette(theme.$xy-accent, 500);
+      }
+
+      &:not(.mat-button-toggle-disabled) {
+        button {
+          color: mat.get-color-from-palette(theme.$xy-base, 800);
+        }
+        &:hover {
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.2);
+        }
+      }
+
+      &.cdk-focused{
+       .mat-button-toggle-focus-overlay{
+          background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.2) !important;
+        }
+      }
+
+      &.mat-button-toggle-checked {
+        &:not(.mat-button-toggle-disabled) {
+          button {
+            color: mat.get-color-from-palette(theme.$xy-primary, 700);
+            background-color: mat.get-color-from-palette(theme.$xy-primary, 500, 0.3);
+          }
+        }
+        &.mat-button-toggle-disabled {
+          button {
+            color: mat.get-color-from-palette(theme.$xy-disabled, 400, 0.4);
+            background-color: mat.get-color-from-palette(theme.$xy-base, 400);
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.mat-button-toggle-disabled) {
+    .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+      border-left: solid 1px mat.get-color-from-palette(theme.$xy-base, 700) !important;
+    }
+
+    .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+    .mat-button-toggle-group-appearance-standard {
+      border: solid 1px mat.get-color-from-palette(theme.$xy-base, 700) !important;
+    }
+  }
+  &.mat-button-toggle-disabled {
+    .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+      border-left: solid 1px mat.get-color-from-palette(theme.$xy-base, 400) !important;
+    }
+
+    .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+    .mat-button-toggle-group-appearance-standard {
+      border: solid 1px mat.get-color-from-palette(theme.$xy-base, 400) !important;
+    }
+  }
+
+  .mat-mdc-form-field-error{
+    font-size: 75%;
+    color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+  }
+}
+
+:host-context(.dark-theme){
+  ::ng-deep {
+    .mat-button-toggle {
+      &.mat-button-toggle-appearance-standard {
+        background-color: mat.get-color-from-palette(theme.$xy-dark-base, 900);
+      }
+
+      .mat-ripple-element {
+        opacity: 0.2;
+        background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500);
+      }
+
+      &:not(.mat-button-toggle-disabled) {
+        button {
+          color: mat.get-color-from-palette(theme.$xy-dark-base, 100);
+         }
+         &:hover {
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500,0.02);
+        }
+      } 
+      &.mat-button-toggle-disabled {
+        button {
+          color: mat.get-color-from-palette(theme.$xy-dark-base, 500);
+        }
+      }
+
+      &.cdk-focused{
+        .mat-button-toggle-focus-overlay{
+          background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.2) !important;
+        }
+      }
+
+      &.mat-button-toggle-checked {
+        &:not(.mat-button-toggle-disabled) {
+          button {
+            color: mat.get-color-from-palette(theme.$xy-dark-primary, 700);
+            background-color: mat.get-color-from-palette(theme.$xy-dark-primary, 500, 0.3);
+          }
+        }
+
+        &.mat-button-toggle-disabled {
+          button {
+            color: mat.get-color-from-palette(theme.$xy-dark-base, 500);
+            background-color: mat.get-color-from-palette(theme.$xy-dark-base, 600);
+          }
+        }
+      }
+    }
+  }
+
+  :host{
+    &:not(.mat-button-toggle-disabled) {
+      .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+        border-left: solid 1px mat.get-color-from-palette(theme.$xy-dark-base, 200) !important;
+      }
+
+      .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+      .mat-button-toggle-group-appearance-standard {
+        border: solid 1px mat.get-color-from-palette(theme.$xy-dark-base, 200) !important;
+      }
+    }
+    &.mat-button-toggle-disabled {
+      .mat-button-toggle-group-appearance-standard .mat-button-toggle + .mat-button-toggle {
+        border-left: solid 1px mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+
+      .mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
+      .mat-button-toggle-group-appearance-standard {
+        border: solid 1px mat.get-color-from-palette(theme.$xy-dark-base, 500) !important;
+      }
+    }
+  }
+}

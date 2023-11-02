@@ -1,0 +1,9 @@
+<div class="xy-progress-spinner">
+    <mat-spinner
+    [value]="value"
+    color="{{color}}"
+    [mode]="mode">
+
+    </mat-spinner>
+    <span class="value" *ngIf='mode == "determinate"'>{{value}}%</span>
+</div>

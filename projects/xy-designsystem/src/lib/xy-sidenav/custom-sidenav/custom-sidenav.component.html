@@ -1,0 +1,19 @@
+<!-- nested-menu.component.html -->
+<mat-nav-list>
+    <ng-container *ngFor="let item of items">
+        <a [id]="item.id" [class]="item.class"  *ngIf="!item.children" mat-list-item mat-ripple  [routerLink]="[item.routerLink]" routerLinkActive="xy-sidenav-active">
+          <mat-icon mat-list-icon *ngIf="item.icon">{{ item.icon }}</mat-icon> 
+          <span class="collapse-hide"> {{ item.name }}</span>
+        </a>
+      <mat-expansion-panel *ngIf="item.children" (opened)="panelOpenState=true" (closed)="panelOpenState=false">
+        <mat-expansion-panel-header routerLinkActive="xy-sidenav-active">
+          <a [id]="item.id" [class]="item.class" mat-list-item mat-ripple [routerLink]="[item.routerLink]" routerLinkActive="xy-sidenav-active">
+            <mat-icon mat-list-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>  
+            <span class="collapse-hide"> {{ item.name }}</span>
+          </a>
+        </mat-expansion-panel-header>
+        <xy-custom-sidenav [items]="item.children" class="child-menus"></xy-custom-sidenav>
+    </mat-expansion-panel>
+  </ng-container>
+</mat-nav-list>
+  

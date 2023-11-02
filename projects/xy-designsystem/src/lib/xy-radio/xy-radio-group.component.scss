@@ -1,0 +1,10 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@use '../../../theme/xy-theme' as theme;
+
+:host {
+  .mat-error{
+    font-size: 75%;
+    color: mat.get-color-from-palette(theme.$xy-error, A700) !important;
+  }
+}

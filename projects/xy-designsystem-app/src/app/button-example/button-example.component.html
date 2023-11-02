@@ -1,0 +1,535 @@
+<h3> Standard Button</h3>
+<br>
+<table>
+  <thead>
+      <tr>
+        <th class="example-label">Accent State</th>
+        <th class="example-label">Disabled State</th>
+        <th class="example-label">With Icon</th>
+        <th class="example-label">Error</th>
+      </tr>
+  </thead>
+  <tr>
+    
+    <td class="example-button-row">
+      <xy-button standard-button color="accent">Standard Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent" disabled>Standard Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent" icon="settings">Standard Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="error" >Standard Button</xy-button>
+    </td>
+  </tr>
+</table>
+
+<br>
+
+<h3> Outline Button</h3>
+<br>
+<table>
+  <thead>
+      <tr>
+        <th class="example-label">Accent State</th>
+        <th class="example-label">Disabled State</th>
+        <th class="example-label">With Icon</th>
+        <th class="example-label">Error</th>
+      </tr>
+  </thead>
+  <tr>
+    
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent">Outline Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent" disabled>Outline Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent" icon="settings">Outline Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="error" >Outline Button</xy-button>
+    </td>
+  </tr>
+</table> 
+
+
+<br>
+<h3> Text Button</h3>
+<br>
+<table>
+  <thead>
+      <tr>
+        <th class="example-label">Accent State</th>
+        <th class="example-label">Disabled State</th>
+        <th class="example-label">With Icon</th>
+        <th class="example-label">Error</th>
+      </tr>
+  </thead>
+  <tr>
+    <td class="example-button-row">
+      <xy-button text-button color="accent">Text Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" disabled>Text Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" icon="settings">Text Button</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="error" >Text Button</xy-button>
+    </td>
+  </tr>
+</table> 
+
+
+<br>
+<h3> Icon Button</h3>
+<br>
+<table>
+  <thead>
+      <tr>
+        <th class="example-label">Accent State</th>
+        <th class="example-label">Disabled State</th>
+      </tr>
+  </thead>
+  <tr>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+        Settings
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+        Settings
+      </xy-button>
+    </td>
+   
+  </tr>
+</table> 
+
+
+<br>
+<h3> Blue Background</h3>
+<br>
+<table class="xy-blue">
+  <thead>
+      <tr>
+        <th class="example-label">Accent State</th>
+        <th class="example-label">Disabled State</th>
+      </tr>
+  </thead>
+  <tr >
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="error">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+  </tr>
+</table> 
+
+
+<!-- <table>
+  <tr>
+    <th class="example-label">Text Button</th>
+    <td class="example-button-row">
+      <xy-button text-button color="accent">Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" (click)="onClick($event,'accent')">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="error" (click)="onClick($event,'Error')">Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" >accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" >Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Text Button Disabled</th>
+    <td class="example-button-row">
+      <xy-button text-button disabled color="accent">Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button disabled color="error">Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button disabled color="accent">Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Outline Button</th>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent" #button1 (click)="onClick2($event, button1)">Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button id="outline-accent" #button2 light-weight-button color="accent" (click)="onClick2($event, button2)">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="error">Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent">Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Outline Button Disabled</th>
+    <td class="example-button-row">
+      <xy-button light-weight-button disabled color="accent">Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button disabled color="error">Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button disabled color="accent">Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Standard Button</th>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent" (click)="onClick($event, 'button 3')">Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="error">Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent">Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Standard Button Disabled</th>
+    <td class="example-button-row">
+      <xy-button standard-button disabled color="accent" (click)="onClick($event, 'button 3')">Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button disabled color="error">Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button disabled color="accent">accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button disabled color="accent">Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Text Button with Icon</th>
+    <td class="example-button-row">
+      <xy-button text-button color="accent"><mat-icon>home</mat-icon>Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" (click)="onClick($event,'accent')"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="error" (click)="onClick($event,'Error')"><mat-icon>home</mat-icon>Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" ><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button text-button color="accent" ><mat-icon>home</mat-icon>Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+  <tr>
+    <th class="example-label">Outline Button with Icon</th>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent"><mat-icon>home</mat-icon>Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="error"><mat-icon>home</mat-icon>Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button light-weight-button color="accent"><mat-icon>home</mat-icon>Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Standard Button with Icon</th>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent"><mat-icon>home</mat-icon>Accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="error"><mat-icon>home</mat-icon>Error</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent"><mat-icon>home</mat-icon>accent</xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button standard-button color="accent"><mat-icon>home</mat-icon>Safe&Normal</xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Icon Button</th>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent" icon="settings"></xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+        Settings
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="error">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Icon Button Disabled</th>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="error">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+  </tr>
+  <tr class="xy-blue">
+    <th class="example-label">Icon Button</th>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="error">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+  </tr>
+  <tr class="xy-blue">
+    <th class="example-label">Icon Button Disabled</th>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="error">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button disabled color="accent">
+        <mat-icon>settings</mat-icon>
+      </xy-button>
+    </td>
+  </tr>
+
+  <tr>
+    <th class="example-label"></th>
+    <td class="example-button-row">
+      Google Font Icon
+    </td>
+    <td class="example-button-row">
+      Inline PNG (use assets of user application)
+    </td>
+    <td class="example-button-row">
+      Inline SVG
+    </td>
+    <td class="example-button-row">
+      Preset PNG (base64 encode)
+    </td>
+    <td class="example-button-row">
+      Preset PNG (css)
+    </td>
+    <td class="example-button-row">
+      Preset SVG
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Original Icon</th>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent" icon="settings"></xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <img src="assets/images/Test-jpg.png" />
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="error">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><defs><style>.a{fill:#bbb;}</style></defs><path class="a" d="M3,6H1V1H6V3H3Zm7-5V3h3V6h2V1ZM3,10H1v5H6V13H3Zm10,3H10v2h5V10H13ZM11,9V7H9V5H7V7H5V9H7v2H9V9Z"/></svg>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <xy-icon>Test-png</xy-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <xy-icon>Test-css</xy-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <xy-icon>Test-svg</xy-icon>
+      </xy-button>
+    </td>
+  </tr>
+  <tr>
+    <th class="example-label">Font Icon</th>
+    <td class="example-button-row">
+      <xy-button icon-button color="accent">
+        <xy-icon>pacman</xy-icon>
+      </xy-button>
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+    <td class="example-button-row">
+    </td>
+  </tr>
+</table> -->

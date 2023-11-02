@@ -1,0 +1,73 @@
+<mat-radio-group name="group1">
+  <table>
+    <tr>
+      <th class="example-label">Radio</th>
+      <td class="example-button-row">
+        <xy-radio
+          id="radio-accent"
+          value="radio-accent"
+          color="accent"
+          (change)="onChange($event)">
+          Accent
+        </xy-radio>
+      </td>
+    
+      <td class="example-button-row">
+        <xy-radio
+          id="radio-error"
+          value="radio-error"
+          color="error"
+          (change)="onChange($event)">
+          Error
+        </xy-radio>
+      </td>
+     
+    </tr>
+  </table>
+</mat-radio-group>
+<mat-radio-group name="group-disabled">
+  <table>
+    <tr>
+      <th class="example-label">Radio Disabled</th>
+      <td class="example-button-row">
+        <xy-radio disabled
+                   color="accent"
+                   (change)="onChange($event)">
+          Accent
+        </xy-radio>
+      </td>
+     
+    
+      <td class="example-button-row">
+        <xy-radio disabled
+                   color="error"
+                   (change)="onChange($event)">
+          Error
+        </xy-radio>
+      </td>
+    </tr>
+  </table>
+</mat-radio-group>
+
+<table>
+  <tr>
+    <th class="example-label">Checked Radio Disabled</th>
+    <td class="example-button-row">
+      <xy-radio disabled [checked]="true"
+                 color="accent"
+                 (change)="onChange($event)">
+        Accent
+      </xy-radio>
+    </td>
+    <td class="example-button-row">
+      <xy-radio disabled [checked]="true"
+                 color="error"
+                 (change)="onChange($event)">
+        Error
+      </xy-radio>
+    </td>
+   
+   
+  </tr>
+</table>
+

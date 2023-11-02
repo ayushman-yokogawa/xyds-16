@@ -1,0 +1,99 @@
+<div class="header">
+  <xy-topAppBar  classlabel="labelCustom" [fixed]="true" title="XY Design System Component" [menuBtn]="true" color="primary" [multiple]="true" (menuClose)="menuClose()">
+    <div class="desktopMenu">
+      <xy-menu label="Theme">
+        <xy-menu-item (click)="onSelectTheme('light-indigo')">Light(Indigo)</xy-menu-item>
+        <xy-menu-item (click)="onSelectTheme('light-blue')">Light(Blue)</xy-menu-item>
+        <xy-menu-item (click)="onSelectTheme('dark')">Dark</xy-menu-item>
+      </xy-menu>
+
+      <xy-menu label="Font Size">
+        <xy-menu-item (click)="onSelectFontSize('x-small')">x-small</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('small')">small</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('medium')">medium</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('large')">large</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('x-large')">x-large</xy-menu-item>
+      </xy-menu>
+      
+      <xy-menu label="Font Size">
+        <xy-menu-item (click)="onSelectFontSize('x-small')">x-small</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('small')">small</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('medium')">medium</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('large')">large</xy-menu-item>
+        <xy-menu-item (click)="onSelectFontSize('x-large')">x-large</xy-menu-item>
+      </xy-menu>
+    </div>
+    <mat-icon>search</mat-icon>
+    <mat-icon>notifications_none</mat-icon>
+  </xy-topAppBar>
+</div>
+
+<xy-sidebar [small]="small" [fluid]="fluid" className="customSidebar" [fluid]="true"> 
+  <xy-sidebar-item icon="palette" className="mobileMenu">
+    <xy-menu label="Theme">
+      <xy-menu-item (click)="onSelectTheme('light-indigo')">Light(Indigo)</xy-menu-item>
+      <xy-menu-item (click)="onSelectTheme('light-blue')">Light(Blue)</xy-menu-item>
+      <xy-menu-item (click)="onSelectTheme('dark')">Dark</xy-menu-item>
+    </xy-menu>
+  </xy-sidebar-item>
+  <xy-sidebar-item icon="format_size" className="mobileMenu">
+    <xy-menu label="Font Size">
+      <xy-menu-item (click)="onSelectFontSize('x-small')">x-small</xy-menu-item>
+      <xy-menu-item (click)="onSelectFontSize('small')">small</xy-menu-item>
+      <xy-menu-item (click)="onSelectFontSize('medium')">medium</xy-menu-item>
+      <xy-menu-item (click)="onSelectFontSize('large')">large</xy-menu-item>
+      <xy-menu-item (click)="onSelectFontSize('x-large')">x-large</xy-menu-item>
+    </xy-menu>
+  </xy-sidebar-item>
+  <xy-sidebar-item icon="format_line_spacing" className="mobileMenu">
+    <xy-menu label="Spacing">
+      <xy-menu-item (click)="onSelectSpacing('xxs')">XXS</xy-menu-item>
+      <xy-menu-item (click)="onSelectSpacing('xs')">XS</xy-menu-item>
+      <xy-menu-item (click)="onSelectSpacing('s')">S</xy-menu-item>
+      <xy-menu-item (click)="onSelectSpacing('m')">M</xy-menu-item>
+      <xy-menu-item (click)="onSelectSpacing('l')">L</xy-menu-item>
+      <xy-menu-item (click)="onSelectSpacing('xl')">XL</xy-menu-item>
+      <xy-menu-item (click)="onSelectSpacing('xxl')">XXL</xy-menu-item>
+      <xy-menu-item (click)="onSelectSpacing('xxxl')">XXXL</xy-menu-item>
+    </xy-menu>
+  </xy-sidebar-item>
+  <hr class="mobileMenu">
+
+  <xy-sidebar-item icon="home" label="Home" className="custom" [charLimit]="2"  [menuTooltip]="true" (clickMenuNode)="test()"> </xy-sidebar-item>
+  <xy-sidebar-item routerLink="autoCompletes" icon="text_fields" className="dashboard"  >Autocomplete</xy-sidebar-item>
+  <xy-sidebar-item customIcon="counter_1" label="Badge" routerLink="badges" [menuTooltip]="true">Badge</xy-sidebar-item>
+  <xy-sidebar-item icon="bottomSheet" label="Bottom Sheet" routerLink="/bottomSheet" [tooltip]="'Bottom Sheet'" [tooltipClass]="'xy-tooltip-right'" placement="right" [tooltip]="'BottomSheet'" [tooltipClass]="'xy-tooltip-right'" placement="right">BottomSheet</xy-sidebar-item>
+  <xy-sidebar-item icon="chevron_right" class="mySideNav" label="Breadcrumb" routerLink="breadcrumb"  [tooltip]="'Breadcrumb'" [tooltipClass]="'xy-tooltip-right'" placement="right">Breadcrumb</xy-sidebar-item>
+  <xy-sidebar-item icon="crop_7_5" label="Button" routerLink="/button" [tooltip]="'Button'" [tooltipClass]="'xy-tooltip-right'" placement="right">Button</xy-sidebar-item>
+  <xy-sidebar-item icon="view_column" label="Button Toggle" routerLink="/button_toggle" [tooltip]="'Button Toggle'" [tooltipClass]="'xy-tooltip-right'" placement="right">Button Toggle</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Card'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_agenda" label="Card" routerLink="/card">Card</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Badge'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="check_box" label="Checkbox" routerLink="/checkbox">Checkbox</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Chips'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="crop_16_9" label="Chips" routerLink="/chips">Chips</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Container'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_module" label="Container" routerLink="/container">Container</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Datepicker'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="calendar_month" label="Datepicker" routerLink="/datePicker">Datepicker</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Dialog'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="open_in_new" label="Dialog" routerLink="/dialog">Dialog</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Divider'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="horizontal_rule" label="Divider" routerLink="/divider">Divider</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Drop Down'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="segment" label="Drop Down" routerLink="/select">Drop Down</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Elevation'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="apps" label="Elevation" routerLink="/elevation">Elevation</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Expension Panel'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="expand_more" label="Expension Panel" routerLink="/expention-panel">Expension Panel</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Footer'" [tooltipClass]="'xy-tooltip-right'" placement="right" customIcon="barefoot" label="Footer" routerLink="/footer">Footer</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Form'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="article" label="Form" routerLink="/form">Form</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Input'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="text_fields" label="Input" routerLink="/input">Input</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Menu'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="list" label="Menu" routerLink="/menu">Menu</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Progress Bar'" [tooltipClass]="'xy-tooltip-right'" placement="right" label="Progress Bar" icon="horizontal_rule" routerLink="/progressbar">Progress Bar</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Progress Spinner'" [tooltipClass]="'xy-tooltip-right'" placement="right" label="Progress Spinner" icon="data_saver_off" routerLink="/progress-spinner">Progress Spinner</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Radio'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="radio_button_checked" label="Radio" routerLink="/radio">Radio</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Side Nav'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="menu" label="Navigation drawer" routerLink="/sidenav">Side Nav</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Slide Toggle'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="toggle_off" label="Slide Toggle" routerLink="/slide-toggle">Slide Toggle</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Slider'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="tune" label="Slider" routerLink="/slider">Slider</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Snack Bar'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="space_bar" label="Snack Bar" routerLink="/snackbar">Snack Bar</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Stepper'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="account_tree" label="Stepper" routerLink="/stepper">Stepper</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Tab'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="tab" label="Tab" routerLink="/tab">Tab</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Table'" [tooltipClass]="'xy-tooltip-right'" placement="right" customIcon="table" label="Table" routerLink="/table">Table</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Tooltip'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="chat" label="Tooltip" routerLink="/tooltip">Tooltip</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Top App Bar'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="face" label="Top App Bar" routerLink="/xytopAppBar">Top App Bar</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Tree'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="account_tree" label="Tree" routerLink="/tree">Tree</xy-sidebar-item>
+  <xy-sidebar-item [tooltip]="'Typography'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="abc" label="Typography" routerLink="/typography">Typography</xy-sidebar-item>
+</xy-sidebar>
+
+

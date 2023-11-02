@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/xy-designsystem",
+  "assets": [
+    "./assets",
+    "./theme/*.scss",
+    "./theme/*.css"
+  ],
+  "lib": {
+    "entryFile": "src/public-api.ts",
+    "styleIncludePaths": ["theme"]
+  }
+}

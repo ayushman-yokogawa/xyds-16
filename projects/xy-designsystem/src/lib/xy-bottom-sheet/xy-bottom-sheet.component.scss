@@ -1,0 +1,22 @@
+@use '../../../theme/xy-theme' as theme;
+
+.drag-handler{
+    width: 29px;
+    height: 4px;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    background-color: #99A0A5;
+}
+.xybottomSheet{
+    padding: 8px 16px;
+  
+}
+
+:host-context(.dark-theme){
+    .xybottomSheet{
+        background-color: #333333;
+    }
+}

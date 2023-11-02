@@ -1,0 +1,12 @@
+
+<ng-container>
+  <ng-container *ngIf="columnDef.cellDef.type != 'image'">
+    {{columnDef.cellDef.value(data)}}
+  </ng-container>
+  <ng-container *ngIf="columnDef.cellDef.type === 'image'">
+    <img [src]="columnDef.cellDef.value(data)" width="30" alt="">
+  </ng-container>
+  <ng-container *ngIf="columnDef.cellDef.type === 'btn'">
+    <xy-button standard-button color="accent">{{columnDef.cellDef.value(data)}}</xy-button>
+  </ng-container>
+</ng-container>

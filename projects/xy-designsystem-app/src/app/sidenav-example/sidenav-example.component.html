@@ -1,0 +1,173 @@
+<div class="flex-box">
+  <div>
+    <h4>
+      Simple Navigation drawer
+    </h4>
+    <br>
+    <xy-sidebar [small]="small" [fluid]="fluid" className="customSidebar" [fluid]="true">
+      <xy-sidebar-item icon="home" label="Home" className="custom" [charLimit]="2" (clickMenuNode)="test()"
+        [tooltip]="'Home'" [tooltipClass]="'xy-tooltip-right'" placement="right"> </xy-sidebar-item>
+      <xy-sidebar-item routerLink="autoCompletes" icon="text_fields" className="dashboard" [tooltip]="'Autocomplete'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Autocomplete</xy-sidebar-item>
+      <xy-sidebar-item icon="counter_1" label="Badge" routerLink="badges" [menuTooltip]="true" [tooltip]="'Badge'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Badge</xy-sidebar-item>
+      <xy-sidebar-item icon="bottomSheet" label="Bottom Sheet" routerLink="/bottomSheet" [tooltip]="'Bottom Sheet'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right" [tooltip]="'BottomSheet'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">BottomSheet</xy-sidebar-item>
+      <xy-sidebar-item icon="chevron_right" class="mySideNav" label="Breadcrumb" routerLink="breadcrumb/child1"
+        [tooltip]="'Breadcrumb'" [tooltipClass]="'xy-tooltip-right'" placement="right">Breadcrumb</xy-sidebar-item>
+      <xy-sidebar-item icon="crop_7_5" label="Button" routerLink="/button" [tooltip]="'Button'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Button</xy-sidebar-item>
+      <xy-sidebar-item icon="view_column" label="Button Toggle" routerLink="/button_toggle" [tooltip]="'Button Toggle'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Button Toggle</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Card'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_agenda"
+        label="Card" routerLink="/card">Card</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Badge'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="check_box"
+        label="Checkbox" routerLink="/checkbox">Checkbox</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Chips'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="crop_16_9"
+        label="Chips" routerLink="/chips">Chips</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Container'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_module"
+        label="Container" routerLink="/container">Container</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Datepicker'" [tooltipClass]="'xy-tooltip-right'" placement="right"
+        icon="calendar_month" label="Datepicker" routerLink="/datePicker">Datepicker</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Dialog'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="open_in_new"
+        label="Dialog" routerLink="/dialog">Dialog</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Divider'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="open_in_new"
+        label="Divider" routerLink="/divider">Divider</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Drop Down'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="segment"
+        label="Drop Down" routerLink="/select">Drop Down</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Elevation'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="apps"
+        label="Elevation" routerLink="/elevation">Elevation</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Expension Panel'" [tooltipClass]="'xy-tooltip-right'" placement="right"
+        icon="expand_more" label="Expension Panel" routerLink="/expention-panel">Expension Panel</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Footer'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="barefoot"
+        label="Footer" routerLink="/footer">Footer</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Form'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="article"
+        label="Form" routerLink="/form">Form</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Input'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="text_fields"
+        label="Input" routerLink="/input">Input</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Icon Menu'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="settings"
+        label="Icon Menu" right-icon="more_vert">Icon Menu</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Icon Menu 2'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="settings"
+        label="Icon Menu 2" right-icon="more_vert" right-icon2="more_vert" routerLink="/inbox">Icon Menu
+        2</xy-sidebar-item>
+    </xy-sidebar>
+  </div>
+  <div>
+    <h4>
+      Navigation drawer with Tree
+    </h4>
+    <br>
+    <xy-sidebar [small]="small" [fluid]="fluid" className="customSidebar" [fluid]="true">
+      <xy-sidebar-item icon="home" label="Home" className="custom" [charLimit]="2" (clickMenuNode)="test()"
+        [tooltip]="'Home'" [tooltipClass]="'xy-tooltip-right'" placement="right"> </xy-sidebar-item>
+      <xy-sidebar-item routerLink="autoCompletes" icon="text_fields" className="dashboard" [tooltip]="'Autocomplete'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Autocomplete</xy-sidebar-item>
+      <xy-sidebar-item icon="counter_1" label="Badge" routerLink="badges" [menuTooltip]="true" [tooltip]="'Badge'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Badge</xy-sidebar-item>
+
+      <xy-sidebar-item icon="settings" className="tree" [tree]="true">
+        <xy-tree [dataSourceData]="TREE_DATA" draggable></xy-tree>
+      </xy-sidebar-item>
+      <xy-sidebar-item icon="bottomSheet" label="Bottom Sheet" routerLink="/bottomSheet" [tooltip]="'Bottom Sheet'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right" [tooltip]="'BottomSheet'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">BottomSheet</xy-sidebar-item>
+      <xy-sidebar-item icon="chevron_right" class="mySideNav" label="Breadcrumb" routerLink="breadcrumb/child1"
+        [tooltip]="'Breadcrumb'" [tooltipClass]="'xy-tooltip-right'" placement="right">Breadcrumb</xy-sidebar-item>
+      <xy-sidebar-item icon="crop_7_5" label="Button" routerLink="/button" [tooltip]="'Button'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Button</xy-sidebar-item>
+      <xy-sidebar-item icon="view_column" label="Button Toggle" routerLink="/button_toggle" [tooltip]="'Button Toggle'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Button Toggle</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Card'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_agenda"
+        label="Card" routerLink="/card">Card</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Badge'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="check_box"
+        label="Checkbox" routerLink="/checkbox">Checkbox</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Chips'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="crop_16_9"
+        label="Chips" routerLink="/chips">Chips</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Container'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_module"
+        label="Container" routerLink="/container">Container</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Datepicker'" [tooltipClass]="'xy-tooltip-right'" placement="right"
+        icon="calendar_month" label="Datepicker" routerLink="/datePicker">Datepicker</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Dialog'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="open_in_new"
+        label="Dialog" routerLink="/dialog">Dialog</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Divider'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="open_in_new"
+        label="Divider" routerLink="/divider">Divider</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Drop Down'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="segment"
+        label="Drop Down" routerLink="/select">Drop Down</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Elevation'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="apps"
+        label="Elevation" routerLink="/elevation">Elevation</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Expension Panel'" [tooltipClass]="'xy-tooltip-right'" placement="right"
+        icon="expand_more" label="Expension Panel" routerLink="/expention-panel">Expension Panel</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Footer'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="barefoot"
+        label="Footer" routerLink="/footer">Footer</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Form'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="article"
+        label="Form" routerLink="/form">Form</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Input'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="text_fields"
+        label="Input" routerLink="/input">Input</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Icon Menu'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="settings"
+        label="Icon Menu" right-icon="more_vert">Icon Menu</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Icon Menu 2'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="settings"
+        label="Icon Menu 2" right-icon="more_vert" right-icon2="more_vert" routerLink="/inbox">Icon Menu
+        2</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Menu'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="list" label="Menu"
+        routerLink="/menu">Menu</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'No Icon'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="noIcon"
+        label="No Icon">No Icon</xy-sidebar-item>
+    </xy-sidebar>
+  </div>
+  <div>
+    <h4>
+      Navigation drawer with Tree Control
+    </h4>
+    <br>
+    <xy-sidebar [small]="small" [fluid]="fluid" className="customSidebar" [fluid]="true">
+      <xy-sidebar-item *ngIf="treeControls"></xy-sidebar-item>
+      <xy-sidebar-item icon="home" label="Home" className="custom" [charLimit]="2" (clickMenuNode)="test()"
+        [tooltip]="'Home'" [tooltipClass]="'xy-tooltip-right'" placement="right"> </xy-sidebar-item>
+      <xy-sidebar-item routerLink="autoCompletes" icon="text_fields" className="dashboard" [tooltip]="'Autocomplete'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Autocomplete</xy-sidebar-item>
+      <xy-sidebar-item icon="counter_1" label="Badge" routerLink="badges" [menuTooltip]="true" [tooltip]="'Badge'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Badge</xy-sidebar-item>
+      <xy-sidebar-item icon="settings" className="tree" [tree]="true">
+        <xy-tree [dataSourceData]="TREE_DATA" draggable [treeControls]="treeControls"></xy-tree>
+      </xy-sidebar-item>
+      <xy-sidebar-item icon="bottomSheet" label="Bottom Sheet" routerLink="/bottomSheet" [tooltip]="'Bottom Sheet'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right" [tooltip]="'BottomSheet'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">BottomSheet</xy-sidebar-item>
+      <xy-sidebar-item icon="chevron_right" class="mySideNav" label="Breadcrumb" routerLink="breadcrumb/child1"
+        [tooltip]="'Breadcrumb'" [tooltipClass]="'xy-tooltip-right'" placement="right">Breadcrumb</xy-sidebar-item>
+      <xy-sidebar-item icon="crop_7_5" label="Button" routerLink="/button" [tooltip]="'Button'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Button</xy-sidebar-item>
+      <xy-sidebar-item icon="view_column" label="Button Toggle" routerLink="/button_toggle" [tooltip]="'Button Toggle'"
+        [tooltipClass]="'xy-tooltip-right'" placement="right">Button Toggle</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Card'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_agenda"
+        label="Card" routerLink="/card">Card</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Badge'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="check_box"
+        label="Checkbox" routerLink="/checkbox">Checkbox</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Chips'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="crop_16_9"
+        label="Chips" routerLink="/chips">Chips</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Container'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="view_module"
+        label="Container" routerLink="/container">Container</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Datepicker'" [tooltipClass]="'xy-tooltip-right'" placement="right"
+        icon="calendar_month" label="Datepicker" routerLink="/datePicker">Datepicker</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Dialog'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="open_in_new"
+        label="Dialog" routerLink="/dialog">Dialog</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Divider'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="open_in_new"
+        label="Divider" routerLink="/divider">Divider</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Drop Down'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="segment"
+        label="Drop Down" routerLink="/select">Drop Down</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Elevation'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="apps"
+        label="Elevation" routerLink="/elevation">Elevation</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Expension Panel'" [tooltipClass]="'xy-tooltip-right'" placement="right"
+        icon="expand_more" label="Expension Panel" routerLink="/expention-panel">Expension Panel</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Footer'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="barefoot"
+        label="Footer" routerLink="/footer">Footer</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Form'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="article"
+        label="Form" routerLink="/form">Form</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Input'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="text_fields"
+        label="Input" routerLink="/input">Input</xy-sidebar-item>
+      <xy-sidebar-item [tooltip]="'Icon Menu'" [tooltipClass]="'xy-tooltip-right'" placement="right" icon="settings"
+        label="Icon Menu" right-icon="more_vert">Icon Menu</xy-sidebar-item>
+    </xy-sidebar>
+  </div>
+</div>
