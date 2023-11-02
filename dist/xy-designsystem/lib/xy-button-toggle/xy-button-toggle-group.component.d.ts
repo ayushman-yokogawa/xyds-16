@@ -1,0 +1,51 @@
+import { AfterContentInit, EventEmitter, OnInit, QueryList } from "@angular/core";
+import { XyButtonToggleComponent } from "./xy-button-toggle.component";
+import { MatButtonToggleChange } from "@angular/material/button-toggle";
+import { ControlValueAccessor, FormControl, FormGroup } from "@angular/forms";
+import { XyErrorComponent } from "../xy-error/xy-error.component";
+import * as i0 from "@angular/core";
+interface XyButtonToggleItem {
+    content: string;
+    value: string;
+    icon: string;
+    _disabled: boolean;
+}
+export declare class XyButtonToggleGroupComponent implements OnInit, AfterContentInit, ControlValueAccessor {
+    id: string;
+    name: string;
+    _value: any;
+    set value(obj: any);
+    errors: QueryList<XyErrorComponent>;
+    _multiple: boolean;
+    set multiple(s: string | boolean);
+    get multiple(): boolean;
+    _required: boolean;
+    set required(s: string | boolean);
+    get required(): boolean;
+    _disabled: boolean;
+    set disabled(s: string | boolean);
+    get disabled(): boolean;
+    formGroup: FormGroup;
+    formControl: FormControl;
+    tabindex?: number;
+    dataSource: Array<XyButtonToggleItem>;
+    buttons: QueryList<XyButtonToggleComponent>;
+    change: EventEmitter<MatButtonToggleChange>;
+    private onTouchedCallback;
+    private onChangeCallback;
+    constructor();
+    ngOnInit(): void;
+    ngAfterContentInit(): void;
+    changed: (value: string) => void;
+    touched: (value: string) => void;
+    isDisabled: Boolean;
+    registerOnTouched(fn: any): void;
+    setDisabledState(isDisabled: boolean): void;
+    registerOnChange(fn: any): void;
+    onChanged(event: Event): void;
+    writeValue(value: any): void;
+    onChange($event: MatButtonToggleChange): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<XyButtonToggleGroupComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<XyButtonToggleGroupComponent, "xy-button-toggle-group", never, { "id": { "alias": "id"; "required": false; }; "name": { "alias": "name"; "required": false; }; "value": { "alias": "value"; "required": false; }; "multiple": { "alias": "multiple"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "formGroup": { "alias": "formGroup"; "required": false; }; "formControl": { "alias": "formControl"; "required": false; }; "tabindex": { "alias": "tabindex"; "required": false; }; }, { "change": "change"; }, ["errors", "buttons"], never, false, never>;
+}
+export {};

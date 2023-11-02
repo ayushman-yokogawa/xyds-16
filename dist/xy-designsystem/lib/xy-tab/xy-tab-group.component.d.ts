@@ -1,0 +1,30 @@
+import { ElementRef, QueryList } from "@angular/core";
+import { XyTabComponent } from "./xy-tab.component";
+import * as i0 from "@angular/core";
+export declare class XyTabGroupComponent {
+    _disabled: boolean;
+    event: XyTabComponent;
+    controls: boolean;
+    tabChange: any;
+    tabPosition: number;
+    maxTabPosition: number;
+    activeTabIndex: number;
+    ngOnInit(): void;
+    scrollTabs(direction: number): void;
+    private updateMaxTabPosition;
+    set disabled(s: string | boolean);
+    get disabled(): boolean;
+    tabs: QueryList<XyTabComponent>;
+    tabsContainer: ElementRef;
+    tabsList: ElementRef;
+    constructor();
+    ngAfterContentInit(): void;
+    selectTab(tab: XyTabComponent): void;
+    goToPreviousTab(): void;
+    goToNextTab(): void;
+    isFirstTabActive(): boolean;
+    isLastTabActive(): boolean;
+    scrollTabIntoView(tab: XyTabComponent): void;
+    static ɵfac: i0.ɵɵFactoryDeclaration<XyTabGroupComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<XyTabGroupComponent, "xy-tab-group", never, { "controls": { "alias": "controls"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; }, {}, ["tabs"], ["*"], false, never>;
+}

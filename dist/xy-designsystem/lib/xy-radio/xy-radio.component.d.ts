@@ -1,0 +1,38 @@
+import { EventEmitter } from "@angular/core";
+import { MatLegacyRadioButton as MatRadioButton, MatLegacyRadioChange as MatRadioChange } from "@angular/material/legacy-radio";
+import { XyRadioGroupComponent } from "./xy-radio-group.component";
+import * as i0 from "@angular/core";
+export declare class XyRadioComponent {
+    id: string;
+    value: any;
+    name: string;
+    label: string;
+    color: any | "accent" | "critical" | "error" | "warning" | "attention" | "safe_normal";
+    _checked: boolean;
+    set checked(s: string | boolean);
+    get checked(): boolean;
+    _required: boolean;
+    set required(s: string | boolean);
+    get required(): boolean;
+    _disabled: boolean;
+    set disabled(s: string | boolean);
+    get disabled(): boolean;
+    _disableRipple: boolean;
+    set disableRipple(s: string | boolean);
+    ariaDescribedby: string;
+    ariaLabel: string;
+    ariaLabelledby: string;
+    tabindex?: number;
+    onchange: EventEmitter<MatRadioChange>;
+    onclick: EventEmitter<MouseEvent>;
+    radio: MatRadioButton;
+    group: XyRadioGroupComponent;
+    constructor();
+    onChange(event: MatRadioChange): void;
+    onClick(event: MouseEvent): void;
+    onFocus(event: FocusEvent): void;
+    onBlur(event: FocusEvent): void;
+    styleClass(): string;
+    static ɵfac: i0.ɵɵFactoryDeclaration<XyRadioComponent, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<XyRadioComponent, "xy-radio", never, { "id": { "alias": "id"; "required": false; }; "value": { "alias": "value"; "required": false; }; "name": { "alias": "name"; "required": false; }; "label": { "alias": "label"; "required": false; }; "color": { "alias": "color"; "required": false; }; "checked": { "alias": "checked"; "required": false; }; "required": { "alias": "required"; "required": false; }; "disabled": { "alias": "disabled"; "required": false; }; "disableRipple": { "alias": "disableRipple"; "required": false; }; "ariaDescribedby": { "alias": "aria-describedby"; "required": false; }; "ariaLabel": { "alias": "aria-label"; "required": false; }; "ariaLabelledby": { "alias": "aria-labelledby"; "required": false; }; "tabindex": { "alias": "tabindex"; "required": false; }; }, { "onchange": "change"; "onclick": "click"; }, never, ["*"], false, never>;
+}
